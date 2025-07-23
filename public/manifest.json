@@ -1,0 +1,16 @@
+{
+  "name": "Alpha HKU",
+  "short_name": "AlphaHKU",
+  "description": "The official website for the Alpha Chapter at the University of Hong Kong.",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

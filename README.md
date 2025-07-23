@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ALPHA HKU Official Website
+
+This is the official website for the ALPHA University Chapter at the University of Hong Kong, built with Next.js, TypeScript, and shadcn/ui.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- [Node.js](https://nodejs.org/en/) (v18 or later)
+- [pnpm](https://pnpm.io/installation)
+
+### Installation
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/your-repo/alpha-hku.git
+    cd alpha-hku
+    ```
+
+2. **Install dependencies:**
+
+    ```bash
+    pnpm install
+    ```
+
+### Running the Development Server
+
+To start the development server, run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project follows a standard Next.js App Router structure:
 
-## Learn More
+```bash
+├── public/              # Static assets (images, fonts, etc.)
+├── src/
+│   ├── app/             # Application routes and layouts
+│   ├── components/      # Reusable components
+│   │   ├── ui/          # shadcn/ui components
+│   │   └── ...
+│   ├── lib/             # Utility functions
+│   └── ...
+├── .gitignore
+├── next.config.ts
+├── package.json
+├── README.md
+└── tsconfig.json
+```
 
-To learn more about Next.js, take a look at the following resources:
+- **`src/app`**: Contains all the application's routes, with each folder representing a URL segment. `layout.tsx` defines the root layout, and `page.tsx` defines the content for each route.
+- **`src/components`**: Home to all reusable React components.
+  - **`src/components/ui`**: This directory is specifically for components added from `shadcn/ui`.
+- **`src/lib`**: Contains shared utility functions, such as the `cn` function for merging Tailwind CSS classes.
+- **`public`**: Stores all static assets that are served directly, such as images and the site's manifest.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Building for Production
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To create a production-ready build, run the following command:
 
-## Deploy on Vercel
+```bash
+pnpm build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This will generate an optimized build in the `.next` directory, which can then be deployed.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## `shadcn/ui` Integration
+
+We leverage `shadcn/ui` for our core UI components to ensure consistency and accessibility.
+
+### Existing Components
+
+The following `shadcn/ui` components are currently in use:
+
+- `Button`
+- `Card`
+- `Carousel`
+- `Collapsible`
+- `DropdownMenu`
+- `NavigationMenu`
+- `Sheet`
+
+### Adding New Components
+
+To add a new component, use the `shadcn` CLI. This is the recommended approach as it handles all dependencies automatically.
+
+For example, to add the `Button` component, run:
+
+```bash
+pnpm dlx shadcn@latest add Button
+```
+
+This will add the new component to `src/components/ui` and ensure it's ready for use.
