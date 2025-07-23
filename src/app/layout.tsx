@@ -7,8 +7,10 @@ import { Footer } from "@/components/footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://alpha-hku.vercel.app"),
+  metadataBase: new URL(siteUrl!),
   title: {
     default: "ALPHA HKU",
     template: "%s - ALPHA HKU",
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ALPHA HKU",
     description: "The official website for the Alpha Chapter at the University of Hong Kong.",
-    url: "https://alpha-hku.vercel.app",
+    url: siteUrl!,
     siteName: "ALPHA HKU",
     images: [
       {
@@ -50,12 +52,12 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Alpha HKU',
-    url: 'https://alpha-hku.vercel.app',
-    logo: 'https://alpha-hku.vercel.app/placeholder.png',
+    url: siteUrl,
+    logo: `${siteUrl}/placeholder.png`,
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer support',
-      url: 'https://alpha-hku.vercel.app/contact-us'
+      url: `${siteUrl}/contact-us`
     }
   };
 

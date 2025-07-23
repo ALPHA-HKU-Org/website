@@ -10,9 +10,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/join-us',
     '/our-team',
   ];
+  
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
   return staticRoutes.map((route) => ({
-    url: `https://alpha-hku.vercel.app${route}`,
+    url: `${siteUrl}${route}`,
     lastModified: new Date(),
   }));
 }
