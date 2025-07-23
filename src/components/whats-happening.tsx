@@ -4,17 +4,17 @@ import { Card } from "@/components/ui/card";
 const events = [
   {
     title: "Event 1",
-    description: "Description for the first event. This is a brief summary of what&apos;s happening.",
+    description: "Description for the first event. This is a brief summary of what's happening.",
     image: "/file.svg",
   },
   {
     title: "Event 2",
-    description: "Description for the second event. This is a brief summary of what&apos;s happening.",
+    description: "Description for the second event. This is a brief summary of what's happening.",
     image: "/globe.svg",
   },
   {
     title: "Event 3",
-    description: "Description for the third event. This is a brief summary of what&apos;s happening.",
+    description: "Description for the third event. This is a brief summary of what's happening.",
     image: "/window.svg",
   },
 ];
@@ -23,7 +23,7 @@ export function WhatsHappening() {
   return (
     <section>
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">What&apos;s Happening</h2>
+        <h2 className="text-3xl font-bold text-center mb-8">What's Happening</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {events.map((event, index) => (
             <Card key={index} className="p-6 flex flex-col items-center text-center gap-4 hover:border-primary/50 transition-all">

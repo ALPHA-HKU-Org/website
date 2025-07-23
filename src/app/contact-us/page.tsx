@@ -1,25 +1,33 @@
-
 import { Metadata } from "next";
+import { ComingSoon } from "@/components/coming-soon";
 
 export const metadata: Metadata = {
-  title: "Contact Us - Alpha HKU",
+  title: "Contact Us",
   description: "Get in touch with the Alpha Chapter at the University of Hong Kong.",
   openGraph: {
-    title: "Contact Us - Alpha HKU",
+    title: "Contact Us",
     description: "Get in touch with the Alpha Chapter at the University of Hong Kong.",
+    images: [
+      {
+        url: "/placeholder.png",
+        width: 1200,
+        height: 630,
+        alt: "Contact Us",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us",
+    description: "Get in touch with the Alpha Chapter at the University of Hong Kong.",
+    images: ["/placeholder.png"],
   },
 };
 
-export default function ContactUsPage() {
+export default function ContactUs() {
   return (
-    <main className="container py-12">
-      <h1 className="text-4xl font-bold">Contact Us</h1>
-      <p className="mt-4 text-lg">
-        If you have any questions, please don&apos;t hesitate to contact us.
-      </p>
-      <p className="mt-2">
-        Email: <a href="mailto:alphahku1213@gmail.com" className="text-blue-500 hover:underline">alphahku1213@gmail.com</a>
-      </p>
+    <main className="flex flex-col items-center justify-start gap-8 md:gap-16">
+      <ComingSoon />
     </main>
   );
 }

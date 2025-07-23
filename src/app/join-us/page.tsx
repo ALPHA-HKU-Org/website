@@ -1,23 +1,33 @@
-
 import { Metadata } from "next";
+import { ComingSoon } from "@/components/coming-soon";
 
 export const metadata: Metadata = {
-  title: "Join Us - Alpha HKU",
-  description: "Become a member of the Alpha Chapter at the University of Hong Kong.",
+  title: "Join Us",
+  description: "Join the Alpha Chapter at the University of Hong Kong.",
   openGraph: {
-    title: "Join Us - Alpha HKU",
-    description: "Become a member of the Alpha Chapter at the University of Hong Kong.",
+    title: "Join Us",
+    description: "Join the Alpha Chapter at the University of Hong Kong.",
+    images: [
+      {
+        url: "/placeholder.png",
+        width: 1200,
+        height: 630,
+        alt: "Join Us",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Join Us",
+    description: "Join the Alpha Chapter at the University of Hong Kong.",
+    images: ["/placeholder.png"],
   },
 };
 
-export default function JoinUsPage() {
+export default function JoinUs() {
   return (
-    <main className="container py-12">
-      <h1 className="text-4xl font-bold">Join Us</h1>
-      <p className="mt-4 text-lg">
-        We are excited to have you join our community. Please fill out the form below to get started.
-      </p>
-      {/* Placeholder for a form */}
+    <main className="flex flex-col items-center justify-start gap-8 md:gap-16">
+      <ComingSoon />
     </main>
   );
 }

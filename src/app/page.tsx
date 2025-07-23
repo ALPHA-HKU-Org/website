@@ -5,10 +5,10 @@ import { WhoWeAre } from "@/components/who-we-are";
 import { WhatsHappening } from "@/components/whats-happening";
 
 export const metadata: Metadata = {
-  title: "Alpha HKU - Home",
+  title: "Home",
   description: "Welcome to the official website for the Alpha Chapter at the University of Hong Kong.",
   openGraph: {
-    title: "Alpha HKU - Home",
+    title: "Home",
     description: "Welcome to the official website for the Alpha Chapter at the University of Hong Kong.",
     images: [
       {

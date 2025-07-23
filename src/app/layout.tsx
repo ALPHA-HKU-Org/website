@@ -9,9 +9,34 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://alpha-hku.vercel.app"),
-  title: "Alpha HKU",
+  title: {
+    default: "ALPHA HKU",
+    template: "%s - ALPHA HKU",
+  },
   description: "The official website for the Alpha Chapter at the University of Hong Kong.",
   manifest: "/manifest.json",
+  openGraph: {
+    title: "ALPHA HKU",
+    description: "The official website for the Alpha Chapter at the University of Hong Kong.",
+    url: "https://alpha-hku.vercel.app",
+    siteName: "ALPHA HKU",
+    images: [
+      {
+        url: "/placeholder.png", // Must be an absolute URL
+        width: 1200,
+        height: 630,
+        alt: "ALPHA HKU",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ALPHA HKU",
+    description: "The official website for the Alpha Chapter at the University of Hong Kong.",
+    images: ["/placeholder.png"], // Must be an absolute URL
+  },
 };
 
 import { CursorFollower } from "@/components/cursor-follower";
@@ -23,9 +48,15 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'WebSite',
+    '@type': 'Organization',
     name: 'Alpha HKU',
     url: 'https://alpha-hku.vercel.app',
+    logo: 'https://alpha-hku.vercel.app/placeholder.png',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer support',
+      url: 'https://alpha-hku.vercel.app/contact-us'
+    }
   };
 
   return (
