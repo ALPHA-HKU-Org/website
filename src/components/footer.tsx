@@ -40,7 +40,7 @@ export function Footer() {
                 <Mail size={18} />
                 alphahku1213@gmail.com
               </a>
-              <a href="https://www.instagram.com/alpha.hku" target="_blank" rel="noopener" className="inline-flex items-center gap-2 hover:underline text-muted-foreground">
+              <a href="https://www.instagram.com/alpha.hku" target="_blank" rel="noopener" className="inline-flex items-center gap-2 text-sm hover:underline text-muted-foreground">
                 <Instagram size={18} />
                 Instagram
               </a>
