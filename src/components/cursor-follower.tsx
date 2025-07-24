@@ -4,28 +4,38 @@ import { useEffect, useState } from 'react';
 
 export function CursorFollower() {
   const [position, setPosition] = useState({ x: -100, y: -100 });
-  const [isMounted, setIsMounted] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
+    setIsClient(true);
+    const checkTouchDevice = () => {
+      return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    };
+    setIsTouchDevice(checkTouchDevice());
+
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    if (!checkTouchDevice()) {
+      window.addEventListener('mousemove', handleMouseMove);
+    }
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      if (!checkTouchDevice()) {
+        window.removeEventListener('mousemove', handleMouseMove);
+      }
     };
   }, []);
 
-  if (!isMounted) {
+  if (!isClient || isTouchDevice) {
     return null;
   }
 
   return (
     <div
-      className="pointer-events-none fixed z-50 h-8 w-8 rounded-full border-2 border-primary/50 transition-transform duration-100 ease-out"
+      className="pointer-events-none fixed z-50 h-8 w-8 rounded-full border-2 border-primary/50 transition-transform duration-100 ease-out hidden md:block"
       style={{
         transform: `translate(${position.x - 16}px, ${position.y - 16}px)`,
       }}

@@ -1,13 +1,10 @@
 import { Instagram, Mail } from "lucide-react";
 import Link from "next/link";
 
-const mainLinks = [
+const sitemapLinks = [
   { href: "/", label: "Home" },
   { href: "/about-us", label: "About Us" },
   { href: "/our-team", label: "Our Team" },
-];
-
-const secondaryLinks = [
   { href: "/events", label: "Events" },
   { href: "/blog", label: "Blog" },
   { href: "/join-us", label: "Join Us" },
@@ -24,31 +21,17 @@ export function Footer() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <h3 className="font-semibold">Sitemap</h3>
-              <ul className="space-y-2">
-                {mainLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href} className="text-sm hover:underline text-muted-foreground">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="space-y-4">
-              <h3 className="font-semibold invisible">.</h3>
-              <ul className="space-y-2">
-                {secondaryLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href} className="text-sm hover:underline text-muted-foreground">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="space-y-4">
+            <h3 className="font-semibold">Sitemap</h3>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {sitemapLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm hover:underline text-muted-foreground">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className="space-y-4">
             <h3 className="font-semibold">Connect with us!</h3>
