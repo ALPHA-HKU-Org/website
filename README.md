@@ -14,8 +14,8 @@ This is the official website for the ALPHA University Chapter at the University 
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-repo/alpha-hku.git
-    cd alpha-hku
+    git clone https://github.com/ALPHA-HKU/website.git
+    cd website
     ```
 
 2. **Install dependencies:**
@@ -93,7 +93,7 @@ To add a new component, use the `shadcn` CLI. This is the recommended approach a
 For example, to add the `Button` component, run:
 
 ```bash
-pnpm dlx shadcn@latest add Button
+pnpm dlx shadcn@latest add button
 ```
 
 This will add the new component to `src/components/ui` and ensure it's ready for use.
