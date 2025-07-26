@@ -35,7 +35,7 @@ export function CursorFollower() {
 
   return (
     <div
-      className="pointer-events-none fixed z-50 h-8 w-8 rounded-full border-2 border-primary/50 transition-transform duration-100 ease-out hidden md:block"
+      className="pointer-events-none fixed z-[var(--z-cursor)] h-8 w-8 rounded-full border-2 border-primary/50 transition-transform duration-100 ease-out hidden md:block"
       style={{
         transform: `translate(${position.x - 16}px, ${position.y - 16}px)`,
       }}

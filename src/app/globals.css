@@ -78,6 +78,10 @@
   --accent-orange: oklch(0.646 0.222 41.116);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
+
+  /* Z-index scale */
+  --z-header: 50;
+  --z-cursor: 9999;
 }
 
 .dark {

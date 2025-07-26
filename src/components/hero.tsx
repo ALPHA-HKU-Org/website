@@ -14,6 +14,9 @@ export function Hero() {
     <div className="relative w-full">
       <Carousel
         className="w-full"
+        opts={{
+          loop: true,
+        }}
         plugins={[
           Autoplay({
             delay: 5000,
