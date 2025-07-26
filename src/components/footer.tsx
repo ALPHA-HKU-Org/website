@@ -1,4 +1,5 @@
-import { Instagram, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import { SiInstagram } from "@icons-pack/react-simple-icons";
 import Link from "next/link";
 
 const sitemapLinks = [
@@ -41,7 +42,7 @@ export function Footer() {
                 alphahku1213@gmail.com
               </a>
               <a href="https://www.instagram.com/alpha.hku" target="_blank" rel="noopener" className="inline-flex items-center gap-2 text-sm hover:underline text-muted-foreground">
-                <Instagram size={18} />
+                <SiInstagram size={18} />
                 Instagram
               </a>
             </div>

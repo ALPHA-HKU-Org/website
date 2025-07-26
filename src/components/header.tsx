@@ -7,7 +7,8 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu"
 import { ModeToggle } from "./mode-toggle"
-import { Instagram, Menu } from "lucide-react"
+import { Menu } from "lucide-react"
+import { SiInstagram } from "@icons-pack/react-simple-icons";
 import Link from "next/link"
 import Image from "next/image"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -28,8 +29,8 @@ export function Header() {
 
   return (
     <Collapsible asChild onOpenChange={setIsOpen}>
-      <div>
-        <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="sticky top-0 z-50">
+        <header className="w-full border-b border-border/40 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 md:px-6">
             <div className="flex items-center gap-6">
               <Link href="/" className="flex items-center gap-2">
@@ -55,7 +56,7 @@ export function Header() {
               <a href="/join-us" className="hidden sm:block">Join Us</a>
               <a href="/contact-us" className="hidden sm:block">Contact Us</a>
               <a href="https://www.instagram.com/alpha.hku" target="_blank" rel="noopener" aria-label="Instagram">
-                <Instagram size={18} />
+                <SiInstagram size={18} />
               </a>
               <ModeToggle />
               <CollapsibleTrigger asChild>
@@ -77,7 +78,7 @@ export function Header() {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="overflow-hidden"
               >
-                <div className="border-b border-t bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+                <div className="border-b border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
                   <div className="container px-4 md:px-6 py-4">
                     <nav className="grid gap-4 text-sm">
                       {navLinks.map((link) => (
