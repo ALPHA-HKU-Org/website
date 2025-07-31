@@ -8,7 +8,7 @@ import { Footer } from "@/components/footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+const siteUrl = process.env.SITE_URL;
 
 const title = "ALPHA HKU";
 const description = "The official website for the ALPHA University Chapter at the University of Hong Kong. Join us to connect with students and professionals in the business and technology fields.";
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     siteName: title,
     images: [
       {
-        url: "/placeholder.png", // Must be an absolute URL
-        width: 1200,
-        height: 630,
+        url: "/ALPHA-HKU.png",
+        width: 882,
+        height: 802,
         alt: title,
       },
     ],
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: title,
     description: description,
-    images: ["/placeholder.png"], // Must be an absolute URL
+    images: ["/ALPHA-HKU.png"],
   },
 };
 
@@ -57,7 +57,7 @@ export default function RootLayout({
     '@type': 'Organization',
     name: "ALPHA University Chapter at the University of Hong Kong",
     url: siteUrl,
-    logo: `${siteUrl}/placeholder.png`,
+    logo: `${siteUrl}/ALPHA-HKU.png`,
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer support',

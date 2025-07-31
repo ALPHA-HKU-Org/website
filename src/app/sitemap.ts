@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/join-us',
   ];
   
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  const siteUrl = process.env.SITE_URL;
 
   return staticRoutes.map((route) => ({
     url: `${siteUrl}${route}`,
