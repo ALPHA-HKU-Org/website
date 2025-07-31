@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { ComingSoon } from "@/components/coming-soon";
+import { ComingSoon } from "@/components/sections/coming-soon";
 
 const title = "About Us";
 const description = "Learn more about the ALPHA Chapter at the University of Hong Kong.";

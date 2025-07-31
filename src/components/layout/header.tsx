@@ -7,14 +7,14 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu"
-import { ModeToggle } from "./mode-toggle";
+import { ModeToggle } from "@/components/features/theme/mode-toggle";
 import { Menu } from "lucide-react";
 import { FaLinkedin } from 'react-icons/fa';
 import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
 import Link from "next/link";
 import Image from "next/image";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 

@@ -2,9 +2,9 @@ import { siteConfig } from "@/lib/config";
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+import { ThemeProvider } from "@/components/features/theme/theme-provider";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
 };
 
-import { CursorFollower } from "@/components/cursor-follower";
+import { CursorFollower } from "@/components/features/cursor/cursor-follower";
 
 export default function RootLayout({
   children,
