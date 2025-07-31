@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-start gap-8 md:gap-16">
+    <main className="flex flex-col items-center justify-start">
       <Hero />
       <FeaturedProgram />
       <WhoWeAre />
