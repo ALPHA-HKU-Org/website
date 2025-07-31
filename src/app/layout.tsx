@@ -5,7 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/features/theme/theme-provider";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const siteUrl = process.env.SITE_URL;
