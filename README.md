@@ -13,16 +13,16 @@ This is the official website for the ALPHA University Chapter at the University 
 
 1. **Clone the repository:**
 
-    ```bash
-    git clone https://github.com/ALPHA-HKU/website.git
-    cd website
-    ```
+   ```bash
+   git clone https://github.com/ALPHA-HKU/website.git
+   cd website
+   ```
 
 2. **Install dependencies:**
 
-    ```bash
-    pnpm install
-    ```
+   ```bash
+   pnpm install
+   ```
 
 ### Running the Development Server
 

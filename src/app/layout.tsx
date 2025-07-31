@@ -11,7 +11,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const siteUrl = process.env.SITE_URL;
 
 const title = "ALPHA HKU";
-const description = "The official website for the ALPHA University Chapter at the University of Hong Kong. Join us to connect with students and professionals in the business and technology fields.";
+const description =
+  "The official website for the ALPHA University Chapter at the University of Hong Kong. Join us to connect with students and professionals in the business and technology fields.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl!),
@@ -53,26 +54,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
+    "@context": "https://schema.org",
+    "@type": "Organization",
     name: "ALPHA University Chapter at the University of Hong Kong",
     url: siteUrl,
     logo: `${siteUrl}/ALPHA-HKU.png`,
     contactPoint: {
-      '@type': 'ContactPoint',
-      contactType: 'customer support',
+      "@type": "ContactPoint",
+      contactType: "customer support",
       email: siteConfig.email,
-      url: `${siteUrl}/contact-us`
+      url: `${siteUrl}/contact-us`,
     },
-    sameAs: [
-      siteConfig.instagram,
-      siteConfig.github,
-      siteConfig.linkedin
-    ]
+    sameAs: [siteConfig.instagram, siteConfig.github, siteConfig.linkedin],
   };
 
   return (
-    <html lang="en" className={GeistSans.className} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={GeistSans.className}
+      suppressHydrationWarning
+    >
       <body>
         <script
           type="application/ld+json"

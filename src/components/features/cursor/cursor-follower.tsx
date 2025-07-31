@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 export function CursorFollower() {
   const [position, setPosition] = useState({ x: -100, y: -100 });
@@ -10,7 +10,7 @@ export function CursorFollower() {
   useEffect(() => {
     setIsClient(true);
     const checkTouchDevice = () => {
-      return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      return "ontouchstart" in window || navigator.maxTouchPoints > 0;
     };
     setIsTouchDevice(checkTouchDevice());
 
@@ -19,12 +19,12 @@ export function CursorFollower() {
     };
 
     if (!checkTouchDevice()) {
-      window.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener("mousemove", handleMouseMove);
     }
 
     return () => {
       if (!checkTouchDevice()) {
-        window.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener("mousemove", handleMouseMove);
       }
     };
   }, []);

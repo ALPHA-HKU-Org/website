@@ -11,7 +11,8 @@ export function FeaturedProgram() {
             <div className="space-y-4">
               <h2 className="text-3xl font-bold">Featured Program</h2>
               <p className="text-muted-foreground">
-                This is a description of the featured program. It highlights a key initiative and invites users to learn more.
+                This is a description of the featured program. It highlights a key initiative and invites
+                users to learn more.
               </p>
               <Button asChild>
                 <Link href="#placeholder">Learn More</Link>

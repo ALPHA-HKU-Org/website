@@ -5,7 +5,8 @@ import { WhoWeAre } from "@/components/sections/who-we-are";
 import { WhatsHappening } from "@/components/sections/whats-happening";
 
 const title = "Home - ALPHA HKU";
-const description = "Welcome to the official website for the ALPHA University Chapter at the University of Hong Kong.";
+const description =
+  "Welcome to the official website for the ALPHA University Chapter at the University of Hong Kong.";
 
 export const metadata: Metadata = {
   title,

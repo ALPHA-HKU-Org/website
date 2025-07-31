@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Carousel,
@@ -6,8 +6,8 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
-import Autoplay from "embla-carousel-autoplay"
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 export function Hero() {
   return (
@@ -52,5 +52,5 @@ export function Hero() {
         <CarouselNext />
       </Carousel>
     </div>
-  )
+  );
 }
