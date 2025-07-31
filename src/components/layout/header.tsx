@@ -70,7 +70,7 @@ export function Header() {
                 href={siteConfig.donate}
                 className="hidden sm:block"
               >
-                Donate Now
+                Donation
               </a>
               <a
                 href="/join-us"
@@ -84,30 +84,32 @@ export function Header() {
               >
                 Contact Us
               </a>
-              <a
-                href={siteConfig.github}
-                target="_blank"
-                rel="noopener"
-                aria-label="GitHub"
-              >
-                <SiGithub size={18} />
-              </a>
-              <a
-                href={siteConfig.instagram}
-                target="_blank"
-                rel="noopener"
-                aria-label="Instagram"
-              >
-                <SiInstagram size={18} />
-              </a>
-              <a
-                href={siteConfig.linkedin}
-                target="_blank"
-                rel="noopener"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin size={18} />
-              </a>
+              <div className="hidden md:flex items-center gap-4">
+                <a
+                  href={siteConfig.github}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="GitHub"
+                >
+                  <SiGithub size={18} />
+                </a>
+                <a
+                  href={siteConfig.instagram}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Instagram"
+                >
+                  <SiInstagram size={18} />
+                </a>
+                <a
+                  href={siteConfig.linkedin}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                >
+                  <FaLinkedin size={18} />
+                </a>
+              </div>
               <ModeToggle />
               <CollapsibleTrigger asChild>
                 <Button
@@ -151,7 +153,7 @@ export function Header() {
                         href={siteConfig.donate}
                         className="hover:text-foreground/80"
                       >
-                        Donate Now
+                        Donation
                       </Link>
                       <Link
                         href="/join-us"
