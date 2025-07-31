@@ -1,3 +1,4 @@
+import { siteConfig } from "@/lib/config";
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
@@ -9,25 +10,28 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
+const title = "ALPHA HKU";
+const description = "The official website for the ALPHA University Chapter at the University of Hong Kong. Join us to connect with students and professionals in the business and technology fields.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl!),
   title: {
-    default: "ALPHA HKU",
-    template: "%s - ALPHA HKU",
+    default: title,
+    template: `%s - ${title}`,
   },
-  description: "The official website for the Alpha Chapter at the University of Hong Kong.",
+  description: description,
   manifest: "/manifest.json",
   openGraph: {
-    title: "ALPHA HKU",
-    description: "The official website for the Alpha Chapter at the University of Hong Kong.",
+    title: title,
+    description: description,
     url: siteUrl!,
-    siteName: "ALPHA HKU",
+    siteName: title,
     images: [
       {
         url: "/placeholder.png", // Must be an absolute URL
         width: 1200,
         height: 630,
-        alt: "ALPHA HKU",
+        alt: title,
       },
     ],
     locale: "en_US",
@@ -35,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ALPHA HKU",
-    description: "The official website for the Alpha Chapter at the University of Hong Kong.",
+    title: title,
+    description: description,
     images: ["/placeholder.png"], // Must be an absolute URL
   },
 };
@@ -51,14 +55,20 @@ export default function RootLayout({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Alpha HKU',
+    name: "ALPHA University Chapter at the University of Hong Kong",
     url: siteUrl,
     logo: `${siteUrl}/placeholder.png`,
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer support',
+      email: siteConfig.email,
       url: `${siteUrl}/contact-us`
-    }
+    },
+    sameAs: [
+      siteConfig.instagram,
+      siteConfig.github,
+      siteConfig.linkedin
+    ]
   };
 
   return (

@@ -1,7 +1,7 @@
 {
-  "name": "Alpha HKU",
-  "short_name": "AlphaHKU",
-  "description": "The official website for the Alpha Chapter at the University of Hong Kong.",
+  "name": "ALPHA HKU",
+  "short_name": "ALPHA-HKU",
+  "description": "The official website for the ALPHA Chapter at the University of Hong Kong.",
   "icons": [
     {
       "src": "/favicon.ico",

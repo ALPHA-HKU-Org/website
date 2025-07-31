@@ -4,18 +4,21 @@ import { FeaturedProgram } from "@/components/featured-program";
 import { WhoWeAre } from "@/components/who-we-are";
 import { WhatsHappening } from "@/components/whats-happening";
 
+const title = "Home - ALPHA HKU";
+const description = "Welcome to the official website for the ALPHA University Chapter at the University of Hong Kong.";
+
 export const metadata: Metadata = {
-  title: "Home",
-  description: "Welcome to the official website for the Alpha Chapter at the University of Hong Kong.",
+  title,
+  description,
   openGraph: {
-    title: "Home",
-    description: "Welcome to the official website for the Alpha Chapter at the University of Hong Kong.",
+    title,
+    description,
     images: [
       {
         url: "/og-home.png",
         width: 800,
         height: 600,
-        alt: "Alpha HKU Home Page",
+        alt: "ALPHA HKU Home Page",
       },
     ],
   },

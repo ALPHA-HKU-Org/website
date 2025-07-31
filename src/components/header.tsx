@@ -1,16 +1,18 @@
 "use client";
 
+import { siteConfig } from "@/lib/config";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu"
-import { ModeToggle } from "./mode-toggle"
-import { Menu } from "lucide-react"
-import { SiInstagram } from "@icons-pack/react-simple-icons";
-import Link from "next/link"
-import Image from "next/image"
+import { ModeToggle } from "./mode-toggle";
+import { Menu } from "lucide-react";
+import { FaLinkedin } from 'react-icons/fa';
+import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
+import Link from "next/link";
+import Image from "next/image";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Button } from "./ui/button";
 import { AnimatePresence, motion } from "framer-motion";
@@ -19,8 +21,7 @@ import { useState } from "react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about-us", label: "About Us" },
-  { href: "/our-team", label: "Our Team" },
-  { href: "/events", label: "Events" },
+  { href: "/event", label: "Event" },
   { href: "/blog", label: "Blog" },
 ];
 
@@ -53,10 +54,17 @@ export function Header() {
             </div>
 
             <div className="flex items-center gap-4 text-sm">
+              <a href={siteConfig.donate} className="hidden sm:block">Donate Now</a>
               <a href="/join-us" className="hidden sm:block">Join Us</a>
-              <a href="/contact-us" className="hidden sm:block">Contact Us</a>
-              <a href="https://www.instagram.com/alpha.hku" target="_blank" rel="noopener" aria-label="Instagram">
+              <a href={`mailto:${siteConfig.email}`} className="hidden sm:block">Contact Us</a>
+              <a href={siteConfig.github} target="_blank" rel="noopener" aria-label="GitHub">
+                <SiGithub size={18} />
+              </a>
+              <a href={siteConfig.instagram} target="_blank" rel="noopener" aria-label="Instagram">
                 <SiInstagram size={18} />
+              </a>
+              <a href={siteConfig.linkedin} target="_blank" rel="noopener" aria-label="LinkedIn">
+                <FaLinkedin size={18} />
               </a>
               <ModeToggle />
               <CollapsibleTrigger asChild>
@@ -86,8 +94,9 @@ export function Header() {
                           {link.label}
                         </Link>
                       ))}
+                      <Link href={siteConfig.donate} className="hover:text-foreground/80">Donate Now</Link>
                       <Link href="/join-us" className="hover:text-foreground/80">Join Us</Link>
-                      <Link href="/contact-us" className="hover:text-foreground/80">Contact Us</Link>
+                      <a href={`mailto:${siteConfig.email}`} className="hover:text-foreground/80">Contact Us</a>
                     </nav>
                   </div>
                 </div>

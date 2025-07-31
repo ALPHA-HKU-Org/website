@@ -5,10 +5,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/about-us',
     '/blog',
-    '/contact-us',
-    '/events',
+    '/event',
     '/join-us',
-    '/our-team',
   ];
   
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;

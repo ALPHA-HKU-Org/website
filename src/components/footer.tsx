@@ -1,12 +1,13 @@
+import { siteConfig } from "@/lib/config";
 import { Mail } from "lucide-react";
-import { SiInstagram } from "@icons-pack/react-simple-icons";
+import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
+import { FaLinkedin } from 'react-icons/fa';
 import Link from "next/link";
 
 const sitemapLinks = [
   { href: "/", label: "Home" },
   { href: "/about-us", label: "About Us" },
-  { href: "/our-team", label: "Our Team" },
-  { href: "/events", label: "Events" },
+  { href: "/event", label: "Event" },
   { href: "/blog", label: "Blog" },
   { href: "/join-us", label: "Join Us" },
 ];
@@ -37,13 +38,21 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="font-semibold">Connect with us!</h3>
             <div className="flex flex-col items-center md:items-start gap-2">
-              <a href="mailto:alphahku1213@gmail.com" className="inline-flex items-center gap-2 text-sm hover:underline text-muted-foreground">
+              <a href={`mailto:${siteConfig.email}`} className="inline-flex items-center gap-2 text-sm hover:underline text-muted-foreground">
                 <Mail size={18} />
-                alphahku1213@gmail.com
+                {siteConfig.email}
               </a>
-              <a href="https://www.instagram.com/alpha.hku" target="_blank" rel="noopener" className="inline-flex items-center gap-2 text-sm hover:underline text-muted-foreground">
+              <a href={siteConfig.instagram} target="_blank" rel="noopener" className="inline-flex items-center gap-2 text-sm hover:underline text-muted-foreground">
                 <SiInstagram size={18} />
                 Instagram
+              </a>
+              <a href={siteConfig.github} target="_blank" rel="noopener" className="inline-flex items-center gap-2 text-sm hover:underline text-muted-foreground">
+                <SiGithub size={18} />
+                GitHub
+              </a>
+              <a href={siteConfig.linkedin} target="_blank" rel="noopener" className="inline-flex items-center gap-2 text-sm hover:underline text-muted-foreground">
+                <FaLinkedin size={18} />
+                LinkedIn
               </a>
             </div>
           </div>

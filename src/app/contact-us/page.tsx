@@ -1,25 +1,28 @@
 import { Metadata } from "next";
 import { ComingSoon } from "@/components/coming-soon";
 
+const title = "Contact Us";
+const description = "Get in touch with the ALPHA Chapter at the University of Hong Kong.";
+
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description: "Get in touch with the Alpha Chapter at the University of Hong Kong.",
+  title,
+  description,
   openGraph: {
-    title: "Contact Us",
-    description: "Get in touch with the Alpha Chapter at the University of Hong Kong.",
+    title,
+    description,
     images: [
       {
         url: "/placeholder.png",
         width: 1200,
         height: 630,
-        alt: "Contact Us",
+        alt: title,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Us",
-    description: "Get in touch with the Alpha Chapter at the University of Hong Kong.",
+    title,
+    description,
     images: ["/placeholder.png"],
   },
 };
