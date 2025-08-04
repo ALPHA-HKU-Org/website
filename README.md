@@ -1,99 +1,83 @@
-# ALPHA HKU Official Website
+# ALPHA HKU Website
 
-This is the official website for the ALPHA University Chapter at the University of Hong Kong, built with Next.js, TypeScript, and shadcn/ui.
+![ALPHA HKU Logo](./public/ALPHA-HKU.png)
+> The official website for the ALPHA University Chapter at the University of Hong Kong.
+
+This guide is for developers maintaining or contributing to this project.
+
+## Tech Stack
+
+- Framework: [Next.js](https://nextjs.org/) (App Router)
+- Language: [TypeScript](https://www.typescriptlang.org/)
+- UI: [shadcn/ui](https://ui.shadcn.com/)
+- Animations: [Framer Motion](https://www.framer.com/motion/)
+- Styling: [Tailwind CSS](https://tailwindcss.com/)
+- Code Quality: [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/)
+- Package Manager: [pnpm](https://pnpm.io/)
 
 ## Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/en/) (v18 or later)
-- [pnpm](https://pnpm.io/installation)
+- Node.js
+- pnpm
 
-### Installation
+### Setup
 
-1. **Clone the repository:**
+1. Clone the repo:
 
-   ```bash
-   git clone https://github.com/ALPHA-HKU/website.git
-   cd website
-   ```
+    ```bash
+    git clone https://github.com/ALPHA-HKU-Org/website.git
+    cd website
+    ```
 
-2. **Install dependencies:**
+2. Install dependencies:
 
-   ```bash
-   pnpm install
-   ```
+    ```bash
+    pnpm install
+    ```
 
-### Running the Development Server
+3. Run the dev server:
 
-To start the development server, run:
+    ```bash
+    pnpm dev
+    ```
 
-```bash
-pnpm dev
-```
+    The site will be running at `http://localhost:3000`.
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+## Available Scripts
+
+- `pnpm dev`: Starts the development server with Next.js Turbo.
+- `pnpm build`: Creates a production-ready build.
+- `pnpm start`: Starts the production server (requires `pnpm build` first).
+- `pnpm lint`: Runs ESLint to find code quality issues.
+- `pnpm prettier --write .`: Formats all files. It's recommended to use the [Prettier VSCode extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for format-on-save.
 
 ## Project Structure
 
-The project follows a standard Next.js App Router structure:
-
 ```bash
-├── public/              # Static assets (images, fonts, etc.)
+.
 ├── src/
-│   ├── app/             # Application routes and layouts
-│   ├── components/      # Reusable components
-│   │   ├── ui/          # shadcn/ui components
-│   │   └── ...
-│   ├── lib/             # Utility functions
-│   └── ...
-├── .gitignore
-├── next.config.ts
-├── package.json
-├── README.md
-└── tsconfig.json
+│   ├── app/             # Next.js App Router pages and layouts.
+│   ├── components/
+│   │   ├── features/    # Self-contained features (e.g., theme toggle, cursor).
+│   │   ├── layout/      # Global layout components (Header, Footer).
+│   │   ├── sections/    # Reusable page sections (e.g., Hero, WhoWeAre).
+│   │   └── ui/          # Base UI components from shadcn/ui.
+│   └── lib/             # Utilities (cn function) and site configuration.
+├── public/              # Static assets (images, icons).
 ```
 
-- **`src/app`**: Contains all the application's routes, with each folder representing a URL segment. `layout.tsx` defines the root layout, and `page.tsx` defines the content for each route.
-- **`src/components`**: Home to all reusable React components.
-  - **`src/components/ui`**: This directory is specifically for components added from `shadcn/ui`.
-- **`src/lib`**: Contains shared utility functions, such as the `cn` function for merging Tailwind CSS classes.
-- **`public`**: Stores all static assets that are served directly, such as images and the site's manifest.
+## Working with `shadcn/ui`
 
-## Building for Production
-
-To create a production-ready build, run the following command:
-
-```bash
-pnpm build
-```
-
-This will generate an optimized build in the `.next` directory, which can then be deployed.
-
-## `shadcn/ui` Integration
-
-We leverage `shadcn/ui` for our core UI components to ensure consistency and accessibility.
-
-### Existing Components
-
-The following `shadcn/ui` components are currently in use:
-
-- `Button`
-- `Card`
-- `Carousel`
-- `Collapsible`
-- `DropdownMenu`
-- `NavigationMenu`
-- `Sheet`
+This project uses `shadcn/ui`. Do not install components from npm or other package managers directly. Use the CLI to add new components to ensure they are added correctly to the project.
 
 ### Adding New Components
 
-To add a new component, use the `shadcn` CLI. This is the recommended approach as it handles all dependencies automatically.
-
-For example, to add the `Button` component, run:
+To add a new component, run the following command, replacing `button` with the component you need:
 
 ```bash
 pnpm dlx shadcn@latest add button
 ```
 
-This will add the new component to `src/components/ui` and ensure it's ready for use.
+This command will add the new component file (e.g., `button.tsx`) to `src/components/ui`. You can then import and use it throughout the application.
