@@ -7,6 +7,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { CursorFollower } from "@/components/features/cursor/cursor-follower";
 
 const siteUrl = process.env.SITE_URL;
 
@@ -46,8 +47,6 @@ export const metadata: Metadata = {
   },
 };
 
-import { CursorFollower } from "@/components/features/cursor/cursor-follower";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -86,7 +85,7 @@ export default function RootLayout({
           enableSystem
         >
           <Header />
-          <main className="flex-grow">{children}</main>
+          <main>{children}</main>
           <Footer />
         </ThemeProvider>
         <Analytics />

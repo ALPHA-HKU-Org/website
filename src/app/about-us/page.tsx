@@ -29,8 +29,8 @@ export const metadata: Metadata = {
 
 export default function AboutUs() {
   return (
-    <main className="flex flex-col items-center justify-start gap-8 md:gap-16">
+    <>
       <ComingSoon />
-    </main>
+    </>
   );
 }
