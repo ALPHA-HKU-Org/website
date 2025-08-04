@@ -40,13 +40,6 @@ export function Hero() {
               </div>
             </div>
           </CarouselItem>
-          <CarouselItem>
-            <div className="p-1">
-              <div className="flex h-96 items-center justify-center p-6">
-                <span className="text-4xl font-semibold text-center">Third Slide Placeholder</span>
-              </div>
-            </div>
-          </CarouselItem>
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
