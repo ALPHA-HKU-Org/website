@@ -35,7 +35,7 @@ export function Header() {
     >
       <div className="sticky top-0 z-[var(--z-header)]">
         <header className="w-full border-b border-border/40 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-          <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 md:px-6">
+          <div className="container flex h-16 max-w-full items-center justify-between px-4 md:px-6">
             <div className="flex items-center gap-6">
               <Link
                 href="/"
