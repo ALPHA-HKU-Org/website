@@ -3,6 +3,7 @@ import { Hero } from "@/components/sections/hero";
 import { FeaturedProgram } from "@/components/sections/featured-program";
 import { WhoWeAre } from "@/components/sections/who-we-are";
 import { WhatsHappening } from "@/components/sections/whats-happening";
+import { siteConfig } from "@/lib/config";
 
 const title = "Home - ALPHA HKU";
 const description =
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: "/ALPHA-HKU.png",
+        url: siteConfig.seoImage,
         width: 882,
         height: 802,
         alt: title,
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/ALPHA-HKU.png"],
+    images: [siteConfig.seoImage],
   },
 };
 

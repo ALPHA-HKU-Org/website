@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: title,
     images: [
       {
-        url: "/ALPHA-HKU.png",
+        url: siteConfig.seoImage,
         width: 882,
         height: 802,
         alt: title,
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: title,
     description: description,
-    images: ["/ALPHA-HKU.png"],
+    images: [siteConfig.seoImage],
   },
 };
 
@@ -57,7 +57,7 @@ export default function RootLayout({
     "@type": "Organization",
     name: "ALPHA University Chapter at the University of Hong Kong",
     url: siteUrl,
-    logo: `${siteUrl}/ALPHA-HKU.png`,
+    logo: `${siteUrl}${siteConfig.seoImage}`,
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",

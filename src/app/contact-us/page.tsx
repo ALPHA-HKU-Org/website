@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { ComingSoon } from "@/components/sections/coming-soon";
+import { siteConfig } from "@/lib/config";
 
 const title = "Contact Us";
 const description = "Get in touch with the ALPHA Chapter at the University of Hong Kong.";
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: "/ALPHA-HKU.png",
+        url: siteConfig.seoImage,
         width: 882,
         height: 802,
         alt: title,
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/ALPHA-HKU.png"],
+    images: [siteConfig.seoImage],
   },
 };
 

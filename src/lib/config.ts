@@ -5,4 +5,5 @@ export const siteConfig = {
   linkedin: "https://www.linkedin.com/company/alpha-hku/",
   donate: "mailto:alphahku1213@gmail.com?subject=Donation Inquiry",
   parentOrg: "https://alphaeducation.org",
+  seoImage: "/ALPHA-HKU.png",
 };
