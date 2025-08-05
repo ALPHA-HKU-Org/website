@@ -14,7 +14,7 @@ const sitemapLinks = [
 
 export function Footer() {
   return (
-    <footer className="w-full py-12 bg-muted/50">
+    <footer className="w-full py-12 bg-muted/60">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
           <div className="space-y-4">
