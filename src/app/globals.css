@@ -121,9 +121,6 @@
 }
 
 @layer base {
-  html {
-    @apply text-[16.5px];
-  }
   body {
     @apply bg-background text-foreground flex flex-col min-h-screen text-base transition-colors duration-300;
   }

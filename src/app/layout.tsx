@@ -60,9 +60,8 @@ export default function RootLayout({
     logo: `${siteUrl}${siteConfig.seoImage}`,
     contactPoint: {
       "@type": "ContactPoint",
-      contactType: "customer support",
+      contactType: "general inquiries",
       email: siteConfig.email,
-      url: `${siteUrl}/contact-us`,
     },
     sameAs: [siteConfig.instagram, siteConfig.github, siteConfig.linkedin],
   };
