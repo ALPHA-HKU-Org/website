@@ -1,20 +1,16 @@
 import { MetadataRoute } from "next";
-
-export const staticRoutes = [
-  "",
-  "/about-us",
-  "/upcoming-event",
-  "/blog",
-  "/our-work",
-  "/resources",
-  "/join-us",
-];
+import { siteConfig } from "@/lib/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = process.env.SITE_URL;
+  const allNavs = [...siteConfig.mainNav, ...siteConfig.utilityNav];
 
-  return staticRoutes.map((route) => ({
-    url: `${siteUrl}${route}`,
-    lastModified: new Date(),
-  }));
+  return allNavs.map((route) => {
+    return {
+      url: `${siteUrl}${route.href}`,
+      lastModified: new Date(),
+      ...(route.changeFrequency && { changeFrequency: route.changeFrequency }),
+      ...(route.priority && { priority: route.priority }),
+    };
+  });
 }

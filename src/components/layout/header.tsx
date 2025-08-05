@@ -18,14 +18,7 @@ import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about-us", label: "About Us" },
-  { href: "/upcoming-event", label: "Upcoming Event" },
-  { href: "/blog", label: "Blog" },
-  { href: "/our-work", label: "Our Work" },
-  { href: "/resources", label: "Resources" },
-];
+
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,7 +48,7 @@ export function Header() {
               <nav className="hidden lg:flex items-center gap-6 text-sm">
                 <NavigationMenu>
                   <NavigationMenuList>
-                    {navLinks.map((link) => (
+                    {siteConfig.mainNav.map((link) => (
                       <NavigationMenuItem key={link.href}>
                         <NavigationMenuLink asChild>
                           <Link href={link.href}>{link.label}</Link>
@@ -74,12 +67,15 @@ export function Header() {
               >
                 Donation
               </a>
-              <a
-                href="/join-us"
-                className="hidden sm:block"
-              >
-                Join Us
-              </a>
+              {siteConfig.utilityNav.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="hidden sm:block"
+                >
+                  {link.label}
+                </a>
+              ))}
               <div className="hidden lg:flex items-center gap-4">
                 <a
                   href={siteConfig.github}
@@ -142,7 +138,7 @@ export function Header() {
                 <div className="border-b border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
                   <div className="container px-4 lg:px-6 py-4">
                     <nav className="grid gap-4 text-sm">
-                      {navLinks.map((link) => (
+                      {siteConfig.mainNav.map((link) => (
                         <Link
                           key={link.href}
                           href={link.href}
@@ -157,12 +153,15 @@ export function Header() {
                       >
                         Donation
                       </Link>
-                      <Link
-                        href="/join-us"
-                        className="hover:text-foreground/80"
-                      >
-                        Join Us
-                      </Link>
+                      {siteConfig.utilityNav.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className="hover:text-foreground/80"
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
                     </nav>
                   </div>
                 </div>

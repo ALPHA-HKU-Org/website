@@ -3,15 +3,9 @@ import { Mail } from "lucide-react";
 import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
 import { FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
-import { staticRoutes } from "@/app/sitemap";
 
-const sitemapLinks = staticRoutes.map((route) => {
-  if (route === "") {
-    return { href: "/", label: "Home" };
-  }
-  const label = route.replace("/", "").replace("-", " ");
-  return { href: route, label: label.charAt(0).toUpperCase() + label.slice(1) };
-});
+const sitemapLinks = [...siteConfig.mainNav, ...siteConfig.utilityNav];
+
 
 export function Footer() {
   return (
