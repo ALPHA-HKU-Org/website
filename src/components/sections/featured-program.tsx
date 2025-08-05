@@ -6,7 +6,7 @@ export function FeaturedProgram() {
   return (
     <section>
       <div className="container mx-auto px-4">
-        <Card className="p-8 hover:border-primary/50 transition-all">
+        <Card className="p-8 border-primary/35 hover:border-primary transition-all">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold">Featured Program</h2>

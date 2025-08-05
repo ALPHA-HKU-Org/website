@@ -28,7 +28,7 @@ export function WhatsHappening() {
           {events.map((event, index) => (
             <Card
               key={index}
-              className="p-6 flex flex-col items-center text-center gap-4 hover:border-primary/50 transition-all"
+              className="p-6 flex flex-col items-center text-center gap-4 border-primary/35 hover:border-primary transition-all"
             >
               <div className="relative h-24 w-24">
                 <Image
