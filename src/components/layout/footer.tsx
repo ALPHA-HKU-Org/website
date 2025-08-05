@@ -6,7 +6,6 @@ import Link from "next/link";
 
 const sitemapLinks = [...siteConfig.mainNav, ...siteConfig.utilityNav];
 
-
 export function Footer() {
   return (
     <footer className="w-full py-12 bg-muted/60">

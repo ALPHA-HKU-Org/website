@@ -18,8 +18,6 @@ import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
-
-
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 

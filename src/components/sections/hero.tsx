@@ -29,14 +29,16 @@ export function Hero() {
           <CarouselItem>
             <div className="p-1">
               <div className="flex h-96 items-center justify-center p-6">
-                <span className="text-4xl font-semibold text-center">ALPHA University Chapter at HKU</span>
+                <span className="text-4xl font-semibold text-center">Next generation voices for peace.</span>
               </div>
             </div>
           </CarouselItem>
           <CarouselItem>
             <div className="p-1">
               <div className="flex h-96 items-center justify-center p-6">
-                <span className="text-4xl font-semibold text-center">Second Slide Placeholder</span>
+                <span className="text-4xl font-semibold text-center">
+                  ALPHA University Chapter at the University of Hong Kong.
+                </span>
               </div>
             </div>
           </CarouselItem>
