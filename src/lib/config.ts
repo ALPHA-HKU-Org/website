@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { isInternalHref } from "@/lib/utils";
+import type { Metadata } from "next";
 
 type NavItem = {
   href: string;
@@ -24,6 +25,9 @@ const mainNav: NavItem[] = [
 const utilityNav: NavItem[] = [];
 
 export const siteConfig = {
+  title: "ALPHA HKU",
+  description:
+    "The first and only global student initiative based in Hong Kong for constructive peace and humanity. First international student chapter of ALPHA Education.",
   email: "alphahku1213@gmail.com",
   instagram: "https://www.instagram.com/alpha.hku",
   github: "https://github.com/ALPHA-HKU",
@@ -41,3 +45,42 @@ export const siteConfig = {
       .map((item) => (item.href === "/" ? "" : item.href)),
   ],
 };
+
+export function getNavLabel(path: string): string | undefined {
+  // normalize trailing slash
+  const normalized = path === "/" ? "/" : path.replace(/\/$/, "");
+  return siteConfig.mainNav.find((i) => i.href === normalized)?.label;
+}
+
+export function buildPageMetadata(
+  path: string,
+  options?: { description?: string; title?: string }
+): Metadata {
+  const inferredLabel = getNavLabel(path) || siteConfig.title;
+  const label = options?.title || inferredLabel;
+
+  const description = options?.description ?? siteConfig.description;
+
+  return {
+    title: label,
+    description,
+    openGraph: {
+      title: label,
+      description,
+      images: [
+        {
+          url: siteConfig.seoImage,
+          width: siteConfig.seoImageWidth,
+          height: siteConfig.seoImageHeight,
+          alt: label,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: label,
+      description,
+      images: [siteConfig.seoImage],
+    },
+  } satisfies Metadata;
+}

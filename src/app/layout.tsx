@@ -12,8 +12,8 @@ import { CursorFollower } from "@/components/features/cursor/cursor-follower";
 const siteUrl = process.env.SITE_URL;
 
 const title = "ALPHA HKU";
-const description =
-  "The official website for the ALPHA University Chapter at the University of Hong Kong. Join us to connect with students and professionals in the business and technology fields.";
+export const description =
+  "The first and only global student initiative based in Hong Kong for constructive peace and humanity. First international student chapter of ALPHA Education.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl!),
