@@ -1,6 +1,7 @@
 "use client";
 
 import { siteConfig } from "@/lib/config";
+import { isInternalHref } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -49,7 +50,11 @@ export function Header() {
                     {siteConfig.mainNav.map((link) => (
                       <NavigationMenuItem key={link.href}>
                         <NavigationMenuLink asChild>
-                          <Link href={link.href}>{link.label}</Link>
+                          {isInternalHref(link.href) ? (
+                            <Link href={link.href}>{link.label}</Link>
+                          ) : (
+                            <a href={link.href}>{link.label}</a>
+                          )}
                         </NavigationMenuLink>
                       </NavigationMenuItem>
                     ))}
@@ -59,21 +64,6 @@ export function Header() {
             </div>
 
             <div className="flex items-center gap-4 text-sm">
-              <a
-                href={siteConfig.donate}
-                className="hidden sm:block"
-              >
-                Donation
-              </a>
-              {siteConfig.utilityNav.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="hidden sm:block"
-                >
-                  {link.label}
-                </a>
-              ))}
               <div className="hidden lg:flex items-center gap-4">
                 <a
                   href={siteConfig.github}
@@ -136,30 +126,25 @@ export function Header() {
                 <div className="border-b border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
                   <div className="container px-4 lg:px-6 py-4">
                     <nav className="grid gap-4 text-sm">
-                      {siteConfig.mainNav.map((link) => (
-                        <Link
-                          key={link.href}
-                          href={link.href}
-                          className="hover:text-foreground/80"
-                        >
-                          {link.label}
-                        </Link>
-                      ))}
-                      <Link
-                        href={siteConfig.donate}
-                        className="hover:text-foreground/80"
-                      >
-                        Donation
-                      </Link>
-                      {siteConfig.utilityNav.map((link) => (
-                        <Link
-                          key={link.href}
-                          href={link.href}
-                          className="hover:text-foreground/80"
-                        >
-                          {link.label}
-                        </Link>
-                      ))}
+                      {siteConfig.mainNav.map((link) =>
+                        isInternalHref(link.href) ? (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            className="hover:text-foreground/80"
+                          >
+                            {link.label}
+                          </Link>
+                        ) : (
+                          <a
+                            key={link.href}
+                            href={link.href}
+                            className="hover:text-foreground/80"
+                          >
+                            {link.label}
+                          </a>
+                        )
+                      )}
                     </nav>
                   </div>
                 </div>

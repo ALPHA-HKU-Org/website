@@ -18,3 +18,10 @@ export function noReturnDebounce<T extends unknown[]>(
     }, delay);
   };
 }
+
+export function isInternalHref(href: string): boolean {
+  if (!href) return false;
+  if (!href.startsWith("/")) return false;
+  if (href.startsWith("//")) return false; // protocol-relative
+  return true;
+}
