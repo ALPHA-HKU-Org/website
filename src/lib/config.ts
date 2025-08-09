@@ -26,6 +26,8 @@ export const siteConfig = {
   donate: "mailto:alphahku1213@gmail.com?subject=Donation Inquiry",
   parentOrg: "https://alphaeducation.org",
   seoImage: "/ALPHA-HKU.png",
+  seoImageWidth: 882,
+  seoImageHeight: 802,
   mainNav,
   utilityNav,
   staticRoutes: [

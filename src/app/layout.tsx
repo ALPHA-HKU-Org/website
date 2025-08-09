@@ -31,8 +31,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: siteConfig.seoImage,
-        width: 882,
-        height: 802,
+        width: siteConfig.seoImageWidth,
+        height: siteConfig.seoImageHeight,
         alt: title,
       },
     ],

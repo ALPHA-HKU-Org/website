@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { cn, noReturnDebounce } from "@/lib/utils";
 
 const IFRAME_DEFAULTS = {
-  WIDTH: 1338,
+  WIDTH: 1440,
   HEIGHT: 600,
 } as const;
 
