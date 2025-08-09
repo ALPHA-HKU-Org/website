@@ -15,6 +15,8 @@ This guide is for developers maintaining or contributing to this project.
 - Code Quality: [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/)
 - Package Manager: [pnpm](https://pnpm.io/)
 
+[![CodeFactor](https://www.codefactor.io/repository/github/alpha-hku-org/website/badge)](https://www.codefactor.io/repository/github/alpha-hku-org/website)
+
 ## Getting Started
 
 ### Prerequisites
