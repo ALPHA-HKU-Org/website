@@ -2,6 +2,8 @@ import { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/config";
 import { isInternalHref } from "@/lib/utils";
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const rawSiteUrl = process.env.SITE_URL || "";
   const siteUrl = rawSiteUrl.replace(/\/$/, ""); // remove trailing slash
