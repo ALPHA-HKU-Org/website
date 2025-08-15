@@ -11,7 +11,19 @@ export const metadata: Metadata = buildPageMetadata("/", { description, title: "
 export default function Home() {
   return (
     <>
-      <Hero />
+      <Hero
+        slides={[
+          {
+            imageSrc: "/home/Pond Lilies by the Law Faculty.webp",
+            text: "Next generation voices for peace.",
+          },
+          {
+            imageSrc: "/home/Main Building 4.webp",
+            text: "ALPHA University Chapter at the University of Hong Kong.",
+          },
+        ]}
+        heightClassName="h-[30rem]"
+      />
       <FeaturedProgram />
       <WhoWeAre />
       <WhatsHappening />

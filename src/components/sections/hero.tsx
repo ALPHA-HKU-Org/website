@@ -9,7 +9,24 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-export function Hero() {
+type HeroSlide = {
+  imageSrc: string;
+  text: string;
+};
+
+type HeroProps = {
+  slides: HeroSlide[];
+  /** Tailwind height utility. Example: h-[26rem] */
+  heightClassName: string;
+};
+
+export function Hero({ slides, heightClassName }: HeroProps) {
+  if (!slides || slides.length === 0) {
+    throw new Error("Hero: 'slides' is required and must contain at least one slide.");
+  }
+  if (!heightClassName) {
+    throw new Error("Hero: 'heightClassName' is required.");
+  }
   return (
     <div className="relative w-full">
       <Carousel
@@ -26,22 +43,21 @@ export function Hero() {
         useDots
       >
         <CarouselContent>
-          <CarouselItem>
-            <div className="p-1">
-              <div className="flex h-96 items-center justify-center p-6">
-                <span className="text-4xl font-semibold text-center">Next generation voices for peace.</span>
+          {slides.map((slide, index) => (
+            <CarouselItem key={index}>
+              <div className="p-1">
+                <div
+                  className={`relative flex ${heightClassName} items-center justify-center p-6 bg-cover bg-center bg-no-repeat`}
+                  style={{ backgroundImage: `url('${slide.imageSrc}')` }}
+                >
+                  <div className="absolute inset-0 bg-black/40" />
+                  <span className="relative z-10 text-4xl font-semibold text-center text-white">
+                    {slide.text}
+                  </span>
+                </div>
               </div>
-            </div>
-          </CarouselItem>
-          <CarouselItem>
-            <div className="p-1">
-              <div className="flex h-96 items-center justify-center p-6">
-                <span className="text-4xl font-semibold text-center">
-                  ALPHA University Chapter at the University of Hong Kong.
-                </span>
-              </div>
-            </div>
-          </CarouselItem>
+            </CarouselItem>
+          ))}
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
