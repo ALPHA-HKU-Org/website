@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write 'src/**/*.{ts,tsx}'"
+    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "diff": "git --no-pager diff --staged --function-context > commit.txt"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.7.0",

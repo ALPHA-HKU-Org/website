@@ -62,7 +62,7 @@ This guide is for developers maintaining or contributing to this project.
 ├── src/
 │   ├── app/             # Next.js App Router pages and layouts.
 │   ├── components/
-│   │   ├── features/    # Self-contained features (e.g., theme toggle, cursor).
+│   │   ├── features/    # Self-contained features (e.g., theme toggle).
 │   │   ├── layout/      # Global layout components (Header, Footer).
 │   │   ├── sections/    # Reusable page sections (e.g., Hero, WhoWeAre).
 │   │   └── ui/          # Base UI components from shadcn/ui.
