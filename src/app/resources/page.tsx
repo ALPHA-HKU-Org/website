@@ -8,7 +8,7 @@ export const metadata: Metadata = buildPageMetadata("/resources", { description 
 
 export default function Resources() {
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-8 text-center">
         <p className="text-lg text-muted-foreground">
           Here are some recommended websites. They offer more details and different perspectives on our
@@ -19,10 +19,12 @@ export default function Resources() {
         <ResourceIframe
           title="Where She Stood - WWII"
           websiteUrl="https://whereshestoodwwii.wixsite.com/where-she-stood"
+          hideTopPx={50}
         />
         <ResourceIframe
           title="The Spine of the Nation"
           websiteUrl="https://thespineofthenation.wordpress.com"
+          hideTopPx={49}
         />
       </div>
     </div>

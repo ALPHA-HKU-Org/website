@@ -15,12 +15,17 @@ function calculateResponsiveScale(containerWidth: number, sourceWidth: number): 
   return Math.min(containerWidth / sourceWidth, 1);
 }
 
-function createScaleTransformStyle(scale: number) {
+function createScaleTransformStyle(scale: number, hideTopPx: number = 0) {
+  const computedTopOffset = Math.max(0, hideTopPx) * scale;
+  const height = hideTopPx > 0 ? `calc(${100 / scale}% + ${hideTopPx}px)` : `${100 / scale}%`;
+
   return {
     transform: `scale(${scale})`,
     transformOrigin: "top left",
     width: `${100 / scale}%`,
-    height: `${100 / scale}%`,
+    height,
+    position: "relative" as const,
+    top: hideTopPx > 0 ? `-${computedTopOffset}px` : undefined,
   };
 }
 
@@ -53,6 +58,8 @@ interface ResourceIframeProps {
   scale?: number;
   desktopWidth?: number;
   containerHeight?: number;
+  /** Number of pixels to hide from the top of the iframe content (pre-scale units). */
+  hideTopPx?: number;
 }
 
 export function ResourceIframe({
@@ -62,16 +69,17 @@ export function ResourceIframe({
   scale: forcedScale,
   desktopWidth = IFRAME_DEFAULTS.WIDTH,
   containerHeight = IFRAME_DEFAULTS.HEIGHT,
+  hideTopPx = 0,
 }: ResourceIframeProps) {
   const [isLoading, setIsLoading] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
   const calculatedScale = useResponsiveScale(containerRef, desktopWidth);
 
   const finalScale = forcedScale ?? calculatedScale;
-  const scaleWrapperStyle = createScaleTransformStyle(finalScale);
+  const scaleWrapperStyle = createScaleTransformStyle(finalScale, hideTopPx);
 
   return (
-    <Card className={cn("w-full", className)}>
+    <Card className={cn("w-full gap-0 md:gap-6", className)}>
       <CardHeader>
         <div className="flex flex-wrap items-center justify-between gap-4">
           <CardTitle>{title}</CardTitle>
@@ -96,7 +104,7 @@ export function ResourceIframe({
           style={{ height: containerHeight }}
         >
           {isLoading && (
-            <div className="absolute inset-0 z-10 flex items-center justify-center bg-muted">
+            <div className="absolute inset-0 flex items-center justify-center bg-muted">
               <p className="text-muted-foreground">Loading website...</p>
             </div>
           )}
