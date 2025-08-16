@@ -124,6 +124,6 @@
     @apply bg-background text-foreground flex flex-col min-h-screen text-base transition-colors duration-300;
   }
   section {
-    @apply w-full py-9 md:py-18;
+    @apply w-full py-7 md:py-14;
   }
 }
