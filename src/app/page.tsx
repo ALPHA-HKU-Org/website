@@ -24,7 +24,15 @@ export default function Home() {
         ]}
         heightClassName="h-[30rem]"
       />
-      <FeaturedProgram />
+      <FeaturedProgram
+        heading="Featured Program"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        mediaSrc="/favicon/android-chrome-512x512.png"
+        mediaAlt="ALPHA HKU Icon"
+        isVideo={false}
+        ctaHref="/upcoming-event"
+        ctaLabel="Learn More"
+      />
       <WhoWeAre />
       <WhatsHappening />
     </>
