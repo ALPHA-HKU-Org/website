@@ -52,6 +52,7 @@ export const siteConfig = {
   staticRoutes: flattenByChildren(mainNav)
     .filter((item) => isInternalHref(item.href))
     .map((item) => (item.href === "/" ? "" : item.href)),
+  siteUrl: process.env.SITE_URL?.replace(/\/$/, ""),
 };
 
 export function getNavLabel(path: string): string | undefined {
@@ -72,6 +73,9 @@ export function buildPageMetadata(
   return {
     title: label,
     description,
+    alternates: {
+      canonical: path === "/" ? "/" : path.replace(/\/$/, ""),
+    },
     openGraph: {
       title: label,
       description,
