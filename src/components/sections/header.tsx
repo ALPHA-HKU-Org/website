@@ -8,7 +8,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import { ModeToggle } from "@/components/features/theme/mode-toggle";
+import { ModeToggle } from "@/components/primitives/mode-toggle";
 import { Menu, Mail } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa";
 import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
@@ -28,7 +28,7 @@ export function Header() {
       onOpenChange={setIsOpen}
     >
       <div className="sticky top-0 z-[var(--z-header)]">
-        <header className="w-full border-b border-border/40 bg-background/60 backdrop-blur supports-[backdrop-filter]:bg-background/40">
+        <header className="w-full border-b border-border/40 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <div className="container flex h-16 max-w-full items-center justify-between px-4 lg:px-6">
             <div className="flex items-center gap-6">
               <Link

@@ -53,7 +53,7 @@ This guide is for developers maintaining or contributing to this project.
 - `pnpm build`: Creates a production-ready build.
 - `pnpm start`: Starts the production server (requires `pnpm build` first).
 - `pnpm lint`: Runs ESLint to find code quality issues.
-- `pnpm prettier --write .`: Formats all files. It's recommended to use the [Prettier VSCode extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for format-on-save.
+- `pnpm format`: Formats all files. It's recommended to use the [Prettier VSCode extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for format-on-save.
 
 ## Project Structure
 
@@ -62,11 +62,11 @@ This guide is for developers maintaining or contributing to this project.
 ├── src/
 │   ├── app/             # Next.js App Router pages and layouts.
 │   ├── components/
-│   │   ├── features/    # Self-contained features (e.g., theme toggle).
-│   │   ├── layout/      # Global layout components (Header, Footer).
-│   │   ├── sections/    # Reusable page sections (e.g., Hero, WhoWeAre).
-│   │   └── ui/          # Base UI components from shadcn/ui.
-│   └── lib/             # Utilities (cn function) and site configuration.
+│   │   ├── sections/    # Reusable large components.
+│   │   ├── primitives/  # Reusable small components.
+│   │   └── ui/          # Unmodified shadcn/ui components.
+│   ├── lib/             # Utilities and site configuration.
+│   └── providers/       # App-wide context and state providers.
 ├── public/              # Static assets (images, icons).
 ```
 
