@@ -199,7 +199,7 @@ export function Header() {
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="overflow-hidden"
+                className="overflow-hidden absolute left-0 right-0"
               >
                 <div className="border-b border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
                   <div className="container px-4 lg:px-6 py-4">

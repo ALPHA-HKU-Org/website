@@ -43,7 +43,7 @@ export const siteConfig = {
   github: "https://github.com/ALPHA-HKU",
   linkedin: "https://www.linkedin.com/company/alpha-hku/",
   donate: donateLink,
-  parentOrg: "https://alphaeducation.org",
+  parentOrg: "https://www.alphaeducation.org",
   seoImage: "/ALPHA-HKU.png",
   seoImageWidth: 882,
   seoImageHeight: 802,

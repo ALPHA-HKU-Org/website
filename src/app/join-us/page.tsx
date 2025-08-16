@@ -9,7 +9,7 @@ export const metadata: Metadata = buildPageMetadata("/join-us", { description })
 
 export default function JoinUs() {
   return (
-    <section className="flex min-h-[85vh] flex-col items-center justify-center gap-4 text-center">
+    <section className="flex min-h-[85vh] flex-col items-center justify-center gap-4 text-center m-auto w-fit">
       <h1 className="max-w-4xl text-2xl font-bold tracking-tight md:text-4xl">
         Join The Team at ALPHA University Chapter at the University of Hong Kong, an initiative with great
         potential.
