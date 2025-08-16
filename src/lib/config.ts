@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { isInternalHref } from "@/lib/utils";
+import { isInternalHref, flattenByChildren } from "@/lib/utils";
 import type { Metadata } from "next";
 
 type NavItem = {
@@ -7,13 +7,23 @@ type NavItem = {
   label: string;
   priority?: MetadataRoute.Sitemap[0]["priority"];
   changeFrequency?: MetadataRoute.Sitemap[0]["changeFrequency"];
+  children?: NavItem[];
 };
 
 const donateLink = "mailto:alphahku1213@gmail.com?subject=Donation%20Inquiry";
 
 const mainNav: NavItem[] = [
   { href: "/", label: "Home" },
-  { href: "/about-us", label: "About Us" },
+  {
+    href: "/about-us",
+    label: "About Us",
+    children: [
+      { href: "/about-us/our-story", label: "Our Story" },
+      { href: "/about-us/annual-report", label: "Annual Report" },
+      { href: "/about-us/exco", label: "Executive Committee" },
+      { href: "/about-us/partners", label: "Partners" },
+    ],
+  },
   { href: "/upcoming-event", label: "Upcoming Event" },
   { href: "/our-work", label: "Our Work" },
   { href: "/blog", label: "Blog" },
@@ -39,17 +49,15 @@ export const siteConfig = {
   seoImageHeight: 802,
   mainNav,
   utilityNav,
-  staticRoutes: [
-    ...mainNav
-      .filter((item) => isInternalHref(item.href))
-      .map((item) => (item.href === "/" ? "" : item.href)),
-  ],
+  staticRoutes: flattenByChildren(mainNav)
+    .filter((item) => isInternalHref(item.href))
+    .map((item) => (item.href === "/" ? "" : item.href)),
 };
 
 export function getNavLabel(path: string): string | undefined {
   // normalize trailing slash
   const normalized = path === "/" ? "/" : path.replace(/\/$/, "");
-  return siteConfig.mainNav.find((i) => i.href === normalized)?.label;
+  return flattenByChildren(siteConfig.mainNav).find((i) => i.href === normalized)?.label;
 }
 
 export function buildPageMetadata(

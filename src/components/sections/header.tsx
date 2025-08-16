@@ -7,6 +7,8 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
 } from "@/components/ui/navigation-menu";
 import { ModeToggle } from "@/components/primitives/mode-toggle";
 import { Menu, Mail } from "lucide-react";
@@ -18,9 +20,11 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <Collapsible
@@ -44,18 +48,45 @@ export function Header() {
                 />
                 <span className="font-semibold">ALPHA HKU</span>
               </Link>
-              <nav className="hidden lg:flex items-center gap-6 text-sm">
-                <NavigationMenu>
-                  <NavigationMenuList>
+              <nav className="hidden lg:flex">
+                <NavigationMenu viewport={false}>
+                  <NavigationMenuList className="gap-0">
                     {siteConfig.mainNav.map((link) => (
                       <NavigationMenuItem key={link.href}>
-                        <NavigationMenuLink asChild>
-                          {isInternalHref(link.href) ? (
-                            <Link href={link.href}>{link.label}</Link>
-                          ) : (
-                            <a href={link.href}>{link.label}</a>
-                          )}
-                        </NavigationMenuLink>
+                        {link.children && link.children.length > 0 ? (
+                          <>
+                            <NavigationMenuTrigger
+                              className="p-2 font-normal bg-transparent"
+                              onClick={() => router.push(link.href)}
+                            >
+                              {link.label}
+                            </NavigationMenuTrigger>
+                            <NavigationMenuContent>
+                              <div className="w-28">
+                                {link.children.map((child) => (
+                                  <NavigationMenuLink
+                                    key={child.href}
+                                    asChild
+                                  >
+                                    {isInternalHref(child.href) ? (
+                                      <Link href={child.href}>{child.label}</Link>
+                                    ) : (
+                                      <a href={child.href}>{child.label}</a>
+                                    )}
+                                  </NavigationMenuLink>
+                                ))}
+                              </div>
+                            </NavigationMenuContent>
+                          </>
+                        ) : (
+                          <NavigationMenuLink asChild>
+                            {isInternalHref(link.href) ? (
+                              <Link href={link.href}>{link.label}</Link>
+                            ) : (
+                              <a href={link.href}>{link.label}</a>
+                            )}
+                          </NavigationMenuLink>
+                        )}
                       </NavigationMenuItem>
                     ))}
                   </NavigationMenuList>
@@ -126,25 +157,51 @@ export function Header() {
                 <div className="border-b border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
                   <div className="container px-4 lg:px-6 py-4">
                     <nav className="grid gap-4 text-sm">
-                      {siteConfig.mainNav.map((link) =>
-                        isInternalHref(link.href) ? (
-                          <Link
-                            key={link.href}
-                            href={link.href}
-                            className="hover:text-foreground/80"
-                          >
-                            {link.label}
-                          </Link>
-                        ) : (
-                          <a
-                            key={link.href}
-                            href={link.href}
-                            className="hover:text-foreground/80"
-                          >
-                            {link.label}
-                          </a>
-                        )
-                      )}
+                      {siteConfig.mainNav.map((link) => (
+                        <div
+                          key={link.href}
+                          className="grid gap-4"
+                        >
+                          {isInternalHref(link.href) ? (
+                            <Link
+                              href={link.href}
+                              className="hover:text-foreground/80"
+                            >
+                              {link.label}
+                            </Link>
+                          ) : (
+                            <a
+                              href={link.href}
+                              className="hover:text-foreground/80"
+                            >
+                              {link.label}
+                            </a>
+                          )}
+                          {link.children && link.children.length > 0 && (
+                            <div className="ml-4 grid gap-2">
+                              {link.children.map((child) =>
+                                isInternalHref(child.href) ? (
+                                  <Link
+                                    key={child.href}
+                                    href={child.href}
+                                    className="hover:text-foreground/80"
+                                  >
+                                    {child.label}
+                                  </Link>
+                                ) : (
+                                  <a
+                                    key={child.href}
+                                    href={child.href}
+                                    className="hover:text-foreground/80"
+                                  >
+                                    {child.label}
+                                  </a>
+                                )
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      ))}
                     </nav>
                   </div>
                 </div>

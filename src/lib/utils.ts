@@ -25,3 +25,7 @@ export function isInternalHref(href: string): boolean {
   if (href.startsWith("//")) return false; // protocol-relative
   return true;
 }
+
+export function flattenByChildren<T extends { children?: T[] }>(items: T[]): T[] {
+  return items.flatMap((item) => [item, ...(item.children ? flattenByChildren(item.children) : [])]);
+}
