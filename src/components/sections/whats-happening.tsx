@@ -1,25 +1,14 @@
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
 
-const events = [
-  {
-    title: "Event 1",
-    description: "Description for the first event. This is a brief summary of what's happening.",
-    image: "/file.svg",
-  },
-  {
-    title: "Event 2",
-    description: "Description for the second event. This is a brief summary of what's happening.",
-    image: "/globe.svg",
-  },
-  {
-    title: "Event 3",
-    description: "Description for the third event. This is a brief summary of what's happening.",
-    image: "/window.svg",
-  },
-];
+type WhatsHappeningEvent = {
+  title: string;
+  description: string;
+  image: string;
+  href: string;
+};
 
-export function WhatsHappening() {
+export function WhatsHappening({ events }: { events: WhatsHappeningEvent[] }) {
   return (
     <section>
       <div className="container mx-auto px-4">
@@ -42,7 +31,7 @@ export function WhatsHappening() {
                 <h3 className="text-2xl font-semibold">{event.title}</h3>
                 <p className="text-muted-foreground">{event.description}</p>
                 <a
-                  href="#placeholder"
+                  href={event.href}
                   className="text-primary hover:underline mt-2 inline-block"
                 >
                   Read More

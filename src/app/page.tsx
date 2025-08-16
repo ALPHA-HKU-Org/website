@@ -34,7 +34,29 @@ export default function Home() {
         ctaLabel="Learn More"
       />
       <WhoWeAre />
-      <WhatsHappening />
+      <WhatsHappening
+        events={[
+          {
+            title: "Event 1",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            image: "/file.svg",
+            href: "/upcoming-event",
+          },
+          {
+            title: "Event 2",
+            description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            image: "/globe.svg",
+            href: "/upcoming-event",
+          },
+          {
+            title: "Event 3",
+            description:
+              "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            image: "/window.svg",
+            href: "/upcoming-event",
+          },
+        ]}
+      />
     </>
   );
 }
