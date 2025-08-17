@@ -51,7 +51,6 @@ export function FeaturedProgram({
                     fill
                     className="object-contain"
                     sizes="(min-width: 768px) 50vw, 100vw"
-                    unoptimized
                   />
                 )}
               </div>

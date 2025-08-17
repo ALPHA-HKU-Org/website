@@ -24,7 +24,6 @@ export function PartnerCard({ partner, className }: PartnerCardProps) {
                 alt={`${partner.name} logo`}
                 fill
                 className="object-contain"
-                unoptimized
               />
             </div>
           )}

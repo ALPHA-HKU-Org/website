@@ -2,6 +2,8 @@ import { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/config";
 import { isInternalHref, flattenByChildren } from "@/lib/utils";
 
+// when using SSG (output: 'export'), this is required
+// https://github.com/vercel/next.js/issues/68667
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
