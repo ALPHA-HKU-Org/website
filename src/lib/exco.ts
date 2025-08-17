@@ -45,7 +45,6 @@ export const excoMembers: ExcoMember[] = [
   {
     name: "Cheng Ho Ming",
     position: "Chief Technician",
-    bio: "Eric is a year 3 student at HKU, majoring in BASc(AppliedAI).",
     links: [
       { type: "email", url: "eric310@connect.hku.hk" },
       { type: "github", url: "https://github.com/eric15342335" },
