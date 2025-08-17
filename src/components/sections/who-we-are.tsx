@@ -1,14 +1,15 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { siteConfig } from "@/lib/config";
 
 export function WhoWeAre() {
   return (
-    <section className="container mx-auto px-4 text-center">
+    <section className="mx-auto text-center">
       <h2 className="text-3xl font-bold mb-4">Who We Are</h2>
       <p className="max-w-3xl mx-auto text-muted-foreground mb-6">
         Carrying{" "}
         <a
-          href="https://www.alphaeducation.org"
+          href={siteConfig.parentOrg}
           target="_blank"
           rel="noopener"
           className="text-primary hover:text-primary/80 underline transition-colors"
