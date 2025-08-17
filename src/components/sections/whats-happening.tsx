@@ -6,6 +6,7 @@ type WhatsHappeningEvent = {
   description: string;
   image: string;
   href: string;
+  ctaLabel: string;
 };
 
 export function WhatsHappening({ events }: { events: WhatsHappeningEvent[] }) {
@@ -27,14 +28,14 @@ export function WhatsHappening({ events }: { events: WhatsHappeningEvent[] }) {
                   className="rounded-lg object-contain"
                 />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 flex flex-col flex-1">
                 <h3 className="text-2xl font-semibold">{event.title}</h3>
                 <p className="text-muted-foreground">{event.description}</p>
                 <a
                   href={event.href}
-                  className="text-primary hover:underline mt-2 inline-block"
+                  className="text-primary hover:underline mt-auto pt-2 inline-block"
                 >
-                  Read More
+                  {event.ctaLabel}
                 </a>
               </div>
             </Card>

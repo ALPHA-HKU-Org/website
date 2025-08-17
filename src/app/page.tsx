@@ -31,7 +31,7 @@ export default function Home() {
         mediaAlt="ALPHA HKU Icon"
         isVideo={false}
         ctaHref="/upcoming-event"
-        ctaLabel="Learn More"
+        ctaLabel="Learn More About This Program"
       />
       <WhoWeAre />
       <WhatsHappening
@@ -41,12 +41,14 @@ export default function Home() {
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             image: "/file.svg",
             href: "/upcoming-event",
+            ctaLabel: "Magis Cognoscere",
           },
           {
             title: "Event 2",
             description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             image: "/globe.svg",
             href: "/upcoming-event",
+            ctaLabel: "Plura Lege",
           },
           {
             title: "Event 3",
@@ -54,6 +56,7 @@ export default function Home() {
               "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             image: "/window.svg",
             href: "/upcoming-event",
+            ctaLabel: "Explorare Porro",
           },
         ]}
       />
