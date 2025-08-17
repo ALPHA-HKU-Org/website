@@ -1,9 +1,11 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Hero } from "@/components/sections/hero";
 import { FeaturedProgram } from "@/components/sections/featured-program";
-import { WhoWeAre } from "@/components/sections/who-we-are";
 import { WhatsHappening } from "@/components/sections/whats-happening";
-import { buildPageMetadata } from "@/lib/config";
+import { PageHeader } from "@/components/primitives/page-header";
+import { Button } from "@/components/ui/button";
+import { buildPageMetadata, siteConfig } from "@/lib/config";
 import { description } from "@/app/layout";
 
 export const metadata: Metadata = buildPageMetadata("/", { description, title: "Home - ALPHA HKU" });
@@ -33,7 +35,36 @@ export default function Home() {
         ctaHref="/upcoming-event"
         ctaLabel="Learn More About This Program"
       />
-      <WhoWeAre />
+      <section className="mx-auto text-center">
+        <PageHeader
+          as="h2"
+          title="Who We Are"
+          size="sm"
+          description={
+            <>
+              Carrying{" "}
+              <a
+                href={siteConfig.parentOrg}
+                target="_blank"
+                rel="noopener"
+                className="text-primary hover:text-primary/80 underline transition-colors"
+              >
+                ALPHA Education
+              </a>
+              {"'"}s mandate, we are an independent student organization, the largest student initiative in
+              HKU, formed by an installation size of 30 students to spread the message of peace and humanity.
+              <br />
+              <br />
+              This is an initiative with great potential leading to a Global Institute of Peace and Humanity
+              based in HK by 2027.
+            </>
+          }
+        >
+          <Button asChild>
+            <Link href="/about-us">Explore Our Story</Link>
+          </Button>
+        </PageHeader>
+      </section>
       <WhatsHappening
         events={[
           {
