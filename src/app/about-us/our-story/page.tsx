@@ -8,7 +8,7 @@ export const metadata: Metadata = buildPageMetadata("/about-us/our-story", { des
 
 export default function OurStory() {
   return (
-    <section className="py-16">
+    <section className="pt-12">
       <PageHeader
         title="Our Story"
         descriptionClassName="text-left"

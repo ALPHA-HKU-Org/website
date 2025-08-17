@@ -11,7 +11,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 type HeroSlide = {
   imageSrc: string;
-  text: string;
+  content: React.ReactNode;
 };
 
 type HeroProps = {
@@ -51,8 +51,8 @@ export function Hero({ slides, heightClassName }: HeroProps) {
                   style={{ backgroundImage: `url('${slide.imageSrc}')` }}
                 >
                   <div className="absolute inset-0 bg-black/40" />
-                  <span className="relative z-10 text-4xl font-semibold text-center text-white">
-                    {slide.text}
+                  <span className="relative z-10 text-2xl md:text-4xl font-semibold text-center text-white">
+                    {slide.content}
                   </span>
                 </div>
               </div>

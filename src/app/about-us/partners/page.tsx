@@ -10,7 +10,7 @@ export const metadata: Metadata = buildPageMetadata("/about-us/partners", { desc
 
 export default function Partners() {
   return (
-    <section className="flex min-h-[85vh] flex-col items-center justify-center gap-4 text-center m-auto w-fit">
+    <section className="flex flex-col items-center justify-center gap-4 text-center m-auto w-fit pt-8">
       <PageHeader
         title="Partners"
         descriptionClassName="max-w-2xl"

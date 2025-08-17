@@ -9,8 +9,8 @@ export const metadata: Metadata = buildPageMetadata("/about-us/exco", { descript
 
 export default function ExecutiveCommittee() {
   return (
-    <section>
-      <div className="container mx-auto p-4">
+    <section className="pt-8">
+      <div className="container mx-auto px-4">
         <PageHeader
           title="Executive Committee"
           description={`${description} Hover a card to learn more.`}

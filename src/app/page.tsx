@@ -17,11 +17,19 @@ export default function Home() {
         slides={[
           {
             imageSrc: "/home/Pond Lilies by the Law Faculty.webp",
-            text: "Next generation voices for peace.",
+            content: <i>Next generation voices for peace.</i>,
           },
           {
             imageSrc: "/home/Main Building 4.webp",
-            text: "ALPHA University Chapter at the University of Hong Kong.",
+            content: (
+              <>
+                The first and only global student initiative
+                <br />
+                based in Hong Kong
+                <br />
+                for constructive peace and humanity.
+              </>
+            ),
           },
         ]}
         heightClassName="h-[30rem]"
@@ -61,7 +69,7 @@ export default function Home() {
           }
         >
           <Button asChild>
-            <Link href="/about-us">Explore Our Story</Link>
+            <Link href="/about-us/our-story">Explore Our Story</Link>
           </Button>
         </PageHeader>
       </section>

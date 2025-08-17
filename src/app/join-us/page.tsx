@@ -10,7 +10,7 @@ export const metadata: Metadata = buildPageMetadata("/join-us", { description })
 
 export default function JoinUs() {
   return (
-    <section className="flex min-h-[85vh] flex-col items-center justify-center gap-4 text-center m-auto w-fit">
+    <section className="pt-8 flex flex-col items-center gap-4 text-center m-auto w-fit">
       <PageHeader
         title="Join The Team at ALPHA University Chapter at the University of Hong Kong, an initiative with great potential."
         description="We provide opportunities for:"
