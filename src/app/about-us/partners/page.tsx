@@ -3,6 +3,7 @@ import Image from "next/image";
 import { buildPageMetadata } from "@/lib/config";
 import { partners } from "@/lib/partners";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { PageHeader } from "@/components/primitives/page-header";
 
 const description =
   "We are collaborating with the following partners to share the message of peace and humanity.";
@@ -11,8 +12,11 @@ export const metadata: Metadata = buildPageMetadata("/about-us/partners", { desc
 export default function Partners() {
   return (
     <section className="flex min-h-[85vh] flex-col items-center justify-center gap-4 text-center m-auto w-fit">
-      <h1 className="text-4xl font-bold tracking-tight">Partners</h1>
-      <p className="text-lg text-muted-foreground max-w-2xl">{description}</p>
+      <PageHeader
+        title="Partners"
+        descriptionClassName="max-w-2xl"
+        description={description}
+      />
       <div className="mt-6 flex flex-col items-center gap-4 w-full">
         {partners.map((partner) => (
           <a

@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/config";
 import { AnimatedFillButton } from "@/components/primitives/animated-fill-button";
 import { siteConfig } from "@/lib/config";
+import { PageHeader } from "@/components/primitives/page-header";
 
 const description =
   "Join The Team at ALPHA University Chapter at the University of Hong Kong, an initiative with great potential.";
@@ -10,11 +11,12 @@ export const metadata: Metadata = buildPageMetadata("/join-us", { description })
 export default function JoinUs() {
   return (
     <section className="flex min-h-[85vh] flex-col items-center justify-center gap-4 text-center m-auto w-fit">
-      <h1 className="max-w-4xl text-2xl font-bold tracking-tight md:text-4xl">
-        Join The Team at ALPHA University Chapter at the University of Hong Kong, an initiative with great
-        potential.
-      </h1>
-      <p className="text-base text-muted-foreground md:text-lg">We provide opportunities for:</p>
+      <PageHeader
+        title="Join The Team at ALPHA University Chapter at the University of Hong Kong, an initiative with great potential."
+        description="We provide opportunities for:"
+        titleClassName="max-w-4xl mx-auto text-2xl md:text-4xl"
+        descriptionClassName="text-base md:text-lg"
+      />
       <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
         {[
           { label: "Full Membership", href: "" },
