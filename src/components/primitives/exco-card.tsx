@@ -37,10 +37,9 @@ type ExcoCardProps = {
 
 export function ExcoCard({ member, className }: ExcoCardProps) {
   const hasPhoto = !!member.photoSrc;
-  const containerHeightClass = hasPhoto ? "h-56" : "h-32";
-  const innerBase = "relative w-full transition-transform duration-500 [transform-style:preserve-3d]";
-  const innerHover = "group-hover:[transform:rotateY(180deg)]";
   const [isFlipped, setIsFlipped] = useState(false);
+
+  const containerHeightClass = hasPhoto ? "h-56" : "h-32";
   const flipActiveClass = isFlipped ? "[transform:rotateY(180deg)]" : "";
   return (
     <div
@@ -55,7 +54,14 @@ export function ExcoCard({ member, className }: ExcoCardProps) {
         }
       }}
     >
-      <div className={cn(innerBase, innerHover, flipActiveClass, containerHeightClass)}>
+      <div
+        className={cn(
+          "relative w-full transition-transform duration-500 [transform-style:preserve-3d]", // innerBase
+          "group-hover:[transform:rotateY(180deg)]", // innerHover
+          flipActiveClass,
+          containerHeightClass
+        )}
+      >
         <FrontFace member={member} />
         <BackFace member={member} />
       </div>
@@ -97,15 +103,14 @@ function BackFace({ member }: { member: ExcoMember }) {
         ) : (
           <>
             {hasBio ? (
-              <div className="w-full">
-                <CardHeader className="p-0">
-                  <CardTitle>About</CardTitle>
+              <div className="w-full pt-2">
+                <CardHeader>
                   <CardDescription>{member.bio}</CardDescription>
                 </CardHeader>
               </div>
             ) : null}
             {hasLinks ? (
-              <div className="flex items-center justify-center gap-3 pt-3">
+              <div className="flex items-center justify-center gap-3">
                 {member.links!.map((link) => (
                   <a
                     key={`${member.name}-${link.type}-${link.url}`}
