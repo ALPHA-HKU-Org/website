@@ -110,7 +110,7 @@ function BackFace({ member }: { member: ExcoMember }) {
               </div>
             ) : null}
             {hasLinks ? (
-              <div className="flex items-center justify-center gap-3">
+              <div className={cn("flex items-center justify-center gap-3", !hasBio && "m-auto")}>
                 {member.links!.map((link) => (
                   <a
                     key={`${member.name}-${link.type}-${link.url}`}
