@@ -8,7 +8,7 @@ export const metadata: Metadata = buildPageMetadata("/about-us/our-story", { des
 
 export default function OurStory() {
   return (
-    <section className="pt-12">
+    <section className="pt-8">
       <PageHeader
         title="Our Story"
         descriptionClassName="text-left"
