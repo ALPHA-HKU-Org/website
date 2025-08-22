@@ -10,11 +10,11 @@ const baseTextLinkClass = "text-sm hover:underline text-muted-foreground";
 
 export function Footer() {
   return (
-    <footer className="w-full py-12 bg-muted/60">
+    <footer className="bg-muted/60 w-full py-12">
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 text-left md:justify-items-center">
-            <div className="space-y-4 flex flex-col items-center md:items-start">
+        <div className="mx-auto max-w-4xl">
+          <div className="grid gap-8 text-left md:grid-cols-2 md:justify-items-center">
+            <div className="flex flex-col items-center space-y-4 md:items-start">
               <h3 className="font-semibold">Sitemap</h3>
               <ul className="grid grid-cols-2 gap-x-8 gap-y-2">
                 {sitemapLinks.map((link) => (
@@ -29,7 +29,7 @@ export function Footer() {
                 ))}
               </ul>
             </div>
-            <div className="space-y-4 flex flex-col items-center">
+            <div className="flex flex-col items-center space-y-4">
               <h3 className="font-semibold">Connect with us!</h3>
               <div className="flex flex-col items-start gap-3">
                 <a
@@ -69,7 +69,7 @@ export function Footer() {
               </div>
             </div>
           </div>
-          <div className="mt-8 pt-8 border-t border-border/40 text-center text-sm text-muted-foreground">
+          <div className="border-border/40 text-muted-foreground mt-8 border-t pt-8 text-center text-sm">
             © {new Date().getFullYear()} ALPHA University Chapter at the University of Hong Kong. All rights
             reserved.
             <br />

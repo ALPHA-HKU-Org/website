@@ -42,3 +42,6 @@ next-env.d.ts
 
 # image sources
 /public/sources/
+
+# semi-auto generated diff file
+commit.txt

@@ -47,11 +47,11 @@ export function Hero({ slides, heightClassName }: HeroProps) {
             <CarouselItem key={index}>
               <div className="p-1">
                 <div
-                  className={`relative flex ${heightClassName} items-center justify-center p-6 bg-cover bg-center bg-no-repeat`}
+                  className={`relative flex ${heightClassName} items-center justify-center bg-cover bg-center bg-no-repeat p-6`}
                   style={{ backgroundImage: `url('${slide.imageSrc}')` }}
                 >
                   <div className="absolute inset-0 bg-black/40" />
-                  <span className="relative z-10 text-2xl md:text-4xl font-semibold text-center text-white">
+                  <span className="relative z-10 text-center text-2xl font-semibold text-white md:text-4xl">
                     {slide.content}
                   </span>
                 </div>

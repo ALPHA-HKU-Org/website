@@ -25,8 +25,8 @@ export function FeaturedProgram({
   return (
     <section>
       <div className="container mx-auto px-4">
-        <Card className="p-8 border-primary/35 hover:border-primary transition-all">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+        <Card className="border-primary/35 hover:border-primary p-8 transition-all">
+          <div className="grid items-center gap-8 md:grid-cols-2">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold">{heading}</h2>
               <p className="text-muted-foreground">{description}</p>
@@ -37,7 +37,7 @@ export function FeaturedProgram({
               ) : null}
             </div>
             <div>
-              <div className="relative aspect-video bg-muted rounded-lg overflow-hidden">
+              <div className="bg-muted relative aspect-video overflow-hidden rounded-lg">
                 {isVideo ? (
                   <video
                     src={mediaSrc}

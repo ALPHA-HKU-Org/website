@@ -54,7 +54,7 @@ function DesktopMenuItem({ link, onTriggerClick }: { link: NavItem; onTriggerCli
   return (
     <>
       <NavigationMenuTrigger
-        className="p-2 font-normal bg-transparent"
+        className="bg-transparent p-2 font-normal"
         onClick={onTriggerClick}
       >
         {link.label}
@@ -110,7 +110,7 @@ export function Header() {
       onOpenChange={setIsOpen}
     >
       <div className="sticky top-0 z-[var(--z-header)]">
-        <header className="w-full border-b border-border/40 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <header className="border-border/40 bg-background/80 supports-[backdrop-filter]:bg-background/60 w-full border-b backdrop-blur">
           <div className="container flex h-16 max-w-full items-center justify-between px-4 lg:px-6">
             <div className="flex items-center gap-6">
               <Link
@@ -142,7 +142,7 @@ export function Header() {
             </div>
 
             <div className="flex items-center gap-4 text-sm">
-              <div className="hidden lg:flex items-center gap-4">
+              <div className="hidden items-center gap-4 lg:flex">
                 <a
                   href={siteConfig.github}
                   target="_blank"
@@ -199,10 +199,10 @@ export function Header() {
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="overflow-hidden absolute left-0 right-0"
+                className="absolute right-0 left-0 overflow-hidden"
               >
-                <div className="border-b border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-                  <div className="container px-4 lg:px-6 py-4">
+                <div className="bg-background/95 supports-[backdrop-filter]:bg-background/80 border-t border-b backdrop-blur">
+                  <div className="container px-4 py-4 lg:px-6">
                     <nav className="grid gap-4 text-sm">
                       {siteConfig.mainNav.map((link) => (
                         <div

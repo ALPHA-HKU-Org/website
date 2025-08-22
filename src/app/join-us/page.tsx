@@ -10,7 +10,7 @@ export const metadata: Metadata = buildPageMetadata("/join-us", { description })
 
 export default function JoinUs() {
   return (
-    <section className="pt-8 flex flex-col items-center gap-4 text-center m-auto w-fit">
+    <section className="m-auto flex w-fit flex-col items-center gap-4 pt-8 text-center">
       <PageHeader
         title="Join The Team at ALPHA University Chapter at the University of Hong Kong, an initiative with great potential."
         description="We provide opportunities for:"
@@ -31,7 +31,7 @@ export default function JoinUs() {
           </AnimatedFillButton>
         ))}
       </div>
-      <p className="text-sm text-muted-foreground md:text-base pt-3">
+      <p className="text-muted-foreground pt-3 text-sm md:text-base">
         For more information, contact us at{" "}
         <a
           href={`mailto:${siteConfig.email}`}

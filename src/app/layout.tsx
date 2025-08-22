@@ -96,7 +96,7 @@ export default function RootLayout({
           enableSystem
         >
           <Header />
-          <main className="flex-1 min-h-screen">{children}</main>
+          <main className="min-h-screen flex-1">{children}</main>
           <Footer />
         </ThemeProvider>
         <Analytics />

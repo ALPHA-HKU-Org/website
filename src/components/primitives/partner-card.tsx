@@ -18,7 +18,7 @@ export function PartnerCard({ partner, className }: PartnerCardProps) {
       <Card className={cn("h-full", className)}>
         <CardHeader className="text-center">
           {partner.logo && (
-            <div className="relative w-16 h-16 mx-auto">
+            <div className="relative mx-auto h-16 w-16">
               <Image
                 src={partner.logo}
                 alt={`${partner.name} logo`}
@@ -31,7 +31,7 @@ export function PartnerCard({ partner, className }: PartnerCardProps) {
           <CardDescription>{partner.description}</CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="text-sm text-muted-foreground">{partner.href}</p>
+          <p className="text-muted-foreground text-sm">{partner.href}</p>
         </CardContent>
       </Card>
     </a>

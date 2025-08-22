@@ -13,12 +13,12 @@ export function WhatsHappening({ events }: { events: WhatsHappeningEvent[] }) {
   return (
     <section>
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">What's Happening</h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <h2 className="mb-8 text-center text-3xl font-bold">What's Happening</h2>
+        <div className="grid gap-8 md:grid-cols-3">
           {events.map((event, index) => (
             <Card
               key={index}
-              className="p-6 flex flex-col items-center text-center gap-4 border-primary/35 hover:border-primary transition-all"
+              className="border-primary/35 hover:border-primary flex flex-col items-center gap-4 p-6 text-center transition-all"
             >
               <div className="relative h-24 w-24">
                 <Image
@@ -28,12 +28,12 @@ export function WhatsHappening({ events }: { events: WhatsHappeningEvent[] }) {
                   className="rounded-lg object-contain"
                 />
               </div>
-              <div className="space-y-2 flex flex-col flex-1">
+              <div className="flex flex-1 flex-col space-y-2">
                 <h3 className="text-2xl font-semibold">{event.title}</h3>
                 <p className="text-muted-foreground">{event.description}</p>
                 <a
                   href={event.href}
-                  className="text-primary hover:underline mt-auto pt-2 inline-block"
+                  className="text-primary mt-auto inline-block pt-2 hover:underline"
                 >
                   {event.ctaLabel}
                 </a>

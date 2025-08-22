@@ -10,13 +10,13 @@ export const metadata: Metadata = buildPageMetadata("/about-us/partners", { desc
 
 export default function Partners() {
   return (
-    <section className="flex flex-col items-center justify-center gap-4 text-center m-auto w-fit pt-8">
+    <section className="m-auto flex w-fit flex-col items-center justify-center gap-4 pt-8 text-center">
       <PageHeader
         title="Partners"
         descriptionClassName="max-w-2xl"
         description={description}
       />
-      <div className="mt-6 flex flex-col items-center gap-4 w-full">
+      <div className="mt-6 flex w-full flex-col items-center gap-4">
         {partners.map((partner) => (
           <PartnerCard
             key={partner.name}

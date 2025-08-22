@@ -104,7 +104,7 @@ export function ResourceIframe({
           style={{ height: containerHeight }}
         >
           {isLoading && (
-            <div className="absolute inset-0 flex items-center justify-center bg-muted">
+            <div className="bg-muted absolute inset-0 flex items-center justify-center">
               <p className="text-muted-foreground">Loading website...</p>
             </div>
           )}

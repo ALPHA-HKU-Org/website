@@ -19,7 +19,7 @@ export function ModeToggle() {
   };
 
   if (!mounted) {
-    return <div className="w-14 h-8" />;
+    return <div className="h-8 w-14" />;
   }
 
   const isDarkMode = (theme === "system" && resolvedTheme === "dark") || theme === "dark";
@@ -27,13 +27,12 @@ export function ModeToggle() {
   return (
     <div
       onClick={toggleTheme}
-      className={`w-14 h-8 flex items-center rounded-full p-1 cursor-pointer transition-colors relative
-      ${isDarkMode ? "bg-primary" : "bg-muted"}`}
+      className={`relative flex h-8 w-14 cursor-pointer items-center rounded-full p-1 transition-colors ${isDarkMode ? "bg-primary" : "bg-muted"}`}
     >
       <motion.div
         layout
         transition={{ type: "spring", stiffness: 700, damping: 30 }}
-        className="w-6 h-6 rounded-full bg-background flex items-center justify-center"
+        className="bg-background flex h-6 w-6 items-center justify-center rounded-full"
         style={{
           position: "absolute",
           left: isDarkMode ? "auto" : "2px",
