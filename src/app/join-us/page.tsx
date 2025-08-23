@@ -9,7 +9,7 @@ export const metadata: Metadata = buildPageMetadata("/join-us", { description })
 
 export default function JoinUs() {
   return (
-    <div className="m-auto flex w-fit flex-col items-center gap-4 pt-8 text-center">
+    <section className="m-auto flex w-fit flex-col items-center gap-4 text-center">
       <PageHeader
         title={description}
         description="We provide opportunities for:"
@@ -40,6 +40,6 @@ export default function JoinUs() {
         </a>
         .
       </p>
-    </div>
+    </section>
   );
 }

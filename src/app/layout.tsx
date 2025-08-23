@@ -96,7 +96,7 @@ export default function RootLayout({
           enableSystem
         >
           <Header />
-          <main className="min-h-screen flex-1">{children}</main>
+          <main className="min-h-[calc(100vh-var(--header-height))] flex-1">{children}</main>
           <Footer />
         </ThemeProvider>
         <Analytics />

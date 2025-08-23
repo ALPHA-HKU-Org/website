@@ -10,7 +10,7 @@ export const metadata: Metadata = buildPageMetadata("/about-us/partners", { desc
 
 export default function Partners() {
   return (
-    <div className="m-auto flex w-fit flex-col items-center justify-center gap-4 pt-8 text-center">
+    <section className="m-auto flex w-fit flex-col items-center justify-center gap-4 text-center">
       <PageHeader
         title="Partners"
         descriptionClassName="max-w-2xl"
@@ -24,6 +24,6 @@ export default function Partners() {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }

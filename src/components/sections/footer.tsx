@@ -10,7 +10,7 @@ const baseTextLinkClass = "text-sm hover:underline text-muted-foreground";
 
 export function Footer() {
   return (
-    <footer className="bg-muted/60 w-full py-12">
+    <footer className="bg-muted w-full py-12">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="mx-auto max-w-4xl">
           <div className="grid gap-8 text-left md:grid-cols-2 md:justify-items-center">

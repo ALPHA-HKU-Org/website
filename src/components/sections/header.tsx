@@ -111,18 +111,20 @@ export function Header() {
     >
       <div className="sticky top-0 z-[var(--z-header)]">
         <header className="border-border/40 bg-background/80 supports-[backdrop-filter]:bg-background/60 w-full border-b backdrop-blur">
-          <div className="container flex h-16 max-w-full items-center justify-between px-4 lg:px-6">
+          <div
+            className={`container flex h-[var(--header-height)] max-w-full items-center justify-between px-4 lg:px-6`}
+          >
             <div className="flex items-center gap-6">
               <Link
                 href="/"
                 className="flex items-center gap-2"
               >
                 <Image
-                  src="/next.svg"
+                  src="/favicon.ico"
                   alt="Logo"
                   width={60}
                   height={24}
-                  className="dark:invert"
+                  className="dark:invert h-6 aspect-auto w-auto"
                 />
               </Link>
               <nav className="hidden lg:flex">

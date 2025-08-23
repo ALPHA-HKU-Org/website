@@ -9,7 +9,7 @@ export const metadata: Metadata = buildPageMetadata("/about-us/exco", { descript
 
 export default function ExecutiveCommittee() {
   return (
-    <div className="container mx-auto px-4 pt-8">
+    <section className="container mx-auto px-4">
       <PageHeader
         title="Executive Committee"
         description={`${description} Hover a card to learn more.`}
@@ -23,6 +23,6 @@ export default function ExecutiveCommittee() {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
