@@ -1,8 +1,8 @@
-import { Metadata } from "next";
-import { buildPageMetadata } from "@/lib/config";
-import { partners } from "@/lib/partners";
 import { PageHeader } from "@/components/primitives/page-header";
 import { PartnerCard } from "@/components/primitives/partner-card";
+import { buildPageMetadata } from "@/lib/config";
+import { partners } from "@/lib/partners";
+import { Metadata } from "next";
 
 const description =
   "We are collaborating with the following partners to share the message of peace and humanity.";

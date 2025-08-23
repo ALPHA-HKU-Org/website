@@ -1,5 +1,5 @@
-import { Construction } from "lucide-react";
 import { PageHeader } from "@/components/primitives/page-header";
+import { Construction } from "lucide-react";
 
 export const comingSoonText = "We're working hard to bring you this page. Stay tuned for something amazing!";
 

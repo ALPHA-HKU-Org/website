@@ -1,8 +1,7 @@
-import { Metadata } from "next";
-import { buildPageMetadata } from "@/lib/config";
 import { AnimatedFillButton } from "@/components/primitives/animated-fill-button";
-import { siteConfig } from "@/lib/config";
 import { PageHeader } from "@/components/primitives/page-header";
+import { buildPageMetadata, siteConfig } from "@/lib/config";
+import { Metadata } from "next";
 
 const description =
   "Join The Team at ALPHA University Chapter at the University of Hong Kong, an initiative with great potential.";

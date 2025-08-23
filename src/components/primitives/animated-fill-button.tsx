@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
+import type { ReactNode } from "react";
 
 type AnimatedFillButtonProps = {
   href: string;

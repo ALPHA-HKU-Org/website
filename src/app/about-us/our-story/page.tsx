@@ -1,6 +1,6 @@
-import { Metadata } from "next";
-import { buildPageMetadata, siteConfig } from "@/lib/config";
 import { PageHeader } from "@/components/primitives/page-header";
+import { buildPageMetadata, siteConfig } from "@/lib/config";
+import { Metadata } from "next";
 
 const description =
   "The first and only global student initiative based in Hong Kong for constructive peace and humanity. First international student chapter of ALPHA Education.";

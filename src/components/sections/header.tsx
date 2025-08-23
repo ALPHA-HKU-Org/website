@@ -1,26 +1,26 @@
 "use client";
 
-import { siteConfig } from "@/lib/config";
-import { isInternalHref } from "@/lib/utils";
+import { ModeToggle } from "@/components/primitives/mode-toggle";
+import { Button } from "@/components/ui/button";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import {
   NavigationMenu,
+  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuContent,
 } from "@/components/ui/navigation-menu";
-import { ModeToggle } from "@/components/primitives/mode-toggle";
-import { Menu, Mail } from "lucide-react";
-import { FaLinkedin } from "react-icons/fa";
+import { siteConfig } from "@/lib/config";
+import { isInternalHref } from "@/lib/utils";
 import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
-import Link from "next/link";
-import Image from "next/image";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState, type ReactNode } from "react";
+import { Mail, Menu } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState, type ReactNode } from "react";
+import { FaLinkedin } from "react-icons/fa";
 
 function NavAnchor({ href, className, children }: { href: string; className?: string; children: ReactNode }) {
   return isInternalHref(href) ? (

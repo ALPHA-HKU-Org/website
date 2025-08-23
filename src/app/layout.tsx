@@ -1,10 +1,10 @@
 import { siteConfig } from "@/lib/config";
-import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
+import type { Metadata } from "next";
 import "./globals.css";
-import { ThemeProvider } from "@/providers/theme-provider";
-import { Header } from "@/components/sections/header";
 import { Footer } from "@/components/sections/footer";
+import { Header } from "@/components/sections/header";
+import { ThemeProvider } from "@/providers/theme-provider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 

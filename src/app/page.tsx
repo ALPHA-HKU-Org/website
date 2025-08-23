@@ -1,12 +1,12 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import { Hero } from "@/components/sections/hero";
-import { FeaturedProgram } from "@/components/sections/featured-program";
-import { WhatsHappening } from "@/components/sections/whats-happening";
+import { description } from "@/app/layout";
 import { PageHeader } from "@/components/primitives/page-header";
+import { FeaturedProgram } from "@/components/sections/featured-program";
+import { Hero } from "@/components/sections/hero";
+import { WhatsHappening } from "@/components/sections/whats-happening";
 import { Button } from "@/components/ui/button";
 import { buildPageMetadata, siteConfig } from "@/lib/config";
-import { description } from "@/app/layout";
+import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = buildPageMetadata("/", { description, title: "Home - ALPHA HKU" });
 

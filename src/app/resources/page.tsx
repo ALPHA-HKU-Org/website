@@ -1,6 +1,6 @@
-import { Metadata } from "next";
 import { ResourceIframe } from "@/components/sections/resource-iframe";
 import { buildPageMetadata } from "@/lib/config";
+import { Metadata } from "next";
 
 const description =
   "Find useful resources and materials from the ALPHA Chapter at the University of Hong Kong.";

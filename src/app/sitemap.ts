@@ -1,6 +1,6 @@
-import { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/config";
-import { isInternalHref, flattenByChildren } from "@/lib/utils";
+import { flattenByChildren, isInternalHref } from "@/lib/utils";
+import { MetadataRoute } from "next";
 
 // when using SSG (output: 'export'), this is required
 // https://github.com/vercel/next.js/issues/68667

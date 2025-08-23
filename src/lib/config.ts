@@ -1,5 +1,5 @@
+import { flattenByChildren, isInternalHref } from "@/lib/utils";
 import { MetadataRoute } from "next";
-import { isInternalHref, flattenByChildren } from "@/lib/utils";
 import type { Metadata } from "next";
 
 type NavItem = {

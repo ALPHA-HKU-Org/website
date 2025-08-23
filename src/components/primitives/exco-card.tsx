@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import type { ExcoMember, ExcoLink } from "@/lib/exco";
+import type { ExcoLink, ExcoMember } from "@/lib/exco";
 import { cn } from "@/lib/utils";
-import { Mail, Globe } from "lucide-react";
 import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
+import { Globe, Mail } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 

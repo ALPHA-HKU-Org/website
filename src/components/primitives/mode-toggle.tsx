@@ -1,9 +1,9 @@
 "use client";
 
-import * as React from "react";
-import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
-import { Sun, Moon } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import * as React from "react";
 
 export function ModeToggle() {
   const { theme, setTheme, resolvedTheme } = useTheme();

@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Partner } from "@/lib/partners";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 type PartnerCardProps = {
   partner: Partner;

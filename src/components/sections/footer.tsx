@@ -1,9 +1,9 @@
 import { siteConfig } from "@/lib/config";
-import { Mail } from "lucide-react";
-import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
-import { FaLinkedin } from "react-icons/fa";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
+import { Mail } from "lucide-react";
+import Link from "next/link";
+import { FaLinkedin } from "react-icons/fa";
 
 const sitemapLinks = [...siteConfig.mainNav, ...siteConfig.utilityNav];
 const baseTextLinkClass = "text-sm hover:underline text-muted-foreground";
