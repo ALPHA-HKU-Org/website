@@ -3,6 +3,7 @@ export type Resource = {
   title: string;
   websiteUrl: string;
   hideTopPx: number;
+  authorLine?: string;
 };
 
 export const resources: Resource[] = [
@@ -11,12 +12,14 @@ export const resources: Resource[] = [
     title: "Where She Stood - WWII",
     websiteUrl: "https://whereshestoodwwii.wixsite.com/where-she-stood",
     hideTopPx: 50,
+    authorLine: "Mr Richard Yan (ALPHA Summer Program 2025)",
   },
   {
     slug: "the-spine-of-the-nation",
     title: "The Spine of the Nation",
     websiteUrl: "https://thespineofthenation.wordpress.com",
     hideTopPx: 49,
+    authorLine: "Ms Febe Chan (ALPHA Summer Program 2025)",
   },
 ];
 

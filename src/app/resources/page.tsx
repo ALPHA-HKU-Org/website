@@ -24,6 +24,7 @@ export default function Resources() {
             websiteUrl={r.websiteUrl}
             hideTopPx={r.hideTopPx}
             fullPageHref={`/resources/${r.slug}`}
+            authorLine={r.authorLine}
           />
         ))}
       </div>

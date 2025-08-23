@@ -67,6 +67,8 @@ type ResourceIframeProps = {
   hideHeader?: boolean;
   /** If true, shows the iframe on mobile as well (not just md+). */
   showOnMobile?: boolean;
+  /** Optional small text line to display the author information. */
+  authorLine?: string;
 };
 
 export function ResourceIframe({
@@ -80,6 +82,7 @@ export function ResourceIframe({
   fullPageHref,
   hideHeader = false,
   showOnMobile = false,
+  authorLine,
 }: ResourceIframeProps) {
   const [isLoading, setIsLoading] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -98,6 +101,7 @@ export function ResourceIframe({
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex flex-col">
               <CardTitle>{title}</CardTitle>
+              {authorLine && <span className="mt-2 text-muted-foreground text-xs">by {authorLine}</span>}
               <a
                 href={websiteUrl}
                 target="_blank"
