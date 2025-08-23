@@ -2,7 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn, noReturnDebounce } from "@/lib/utils";
+import { cn, isInternalHref, noReturnDebounce } from "@/lib/utils";
+import Link from "next/link";
 import { CSSProperties, RefObject, useCallback, useEffect, useRef, useState } from "react";
 
 const IFRAME_DEFAULTS = {
@@ -91,8 +92,8 @@ export function ResourceIframe({
   const finalScale = forcedScale ?? calculatedScale;
   const scaleWrapperStyle = createScaleTransformStyle(finalScale, hideTopPx);
   const linkHref = fullPageHref ?? websiteUrl;
-  const isExternal = !fullPageHref;
-  const buttonLabel = isExternal ? "Open Original Site →" : "Open Full Page →";
+  const isInternalLink = isInternalHref(linkHref);
+  const buttonLabel = isInternalLink ? "Open Full Page →" : "Open Original Site →";
 
   return (
     <Card className={cn("w-full gap-0 md:gap-6", hideHeader && "rounded-none border-0 p-0", className)}>
@@ -102,26 +103,39 @@ export function ResourceIframe({
             <div className="flex flex-col">
               <CardTitle>{title}</CardTitle>
               {authorLine && <span className="mt-2 text-muted-foreground text-xs">by {authorLine}</span>}
-              <a
-                href={websiteUrl}
-                target="_blank"
-                rel="noopener"
-                className="text-muted-foreground text-xs underline underline-offset-4"
-              >
-                {websiteUrl}
-              </a>
+              {isInternalHref(websiteUrl) ? (
+                <Link
+                  href={websiteUrl}
+                  className="text-muted-foreground text-xs underline underline-offset-4"
+                >
+                  {websiteUrl}
+                </Link>
+              ) : (
+                <a
+                  href={websiteUrl}
+                  target="_blank"
+                  rel="noopener"
+                  className="text-muted-foreground text-xs underline underline-offset-4"
+                >
+                  {websiteUrl}
+                </a>
+              )}
             </div>
             <Button
               asChild
               variant="outline"
             >
-              <a
-                href={linkHref}
-                target={isExternal ? "_blank" : undefined}
-                rel="noopener"
-              >
-                {buttonLabel}
-              </a>
+              {isInternalLink ? (
+                <Link href={linkHref}>{buttonLabel}</Link>
+              ) : (
+                <a
+                  href={linkHref}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  {buttonLabel}
+                </a>
+              )}
             </Button>
           </div>
         </CardHeader>
