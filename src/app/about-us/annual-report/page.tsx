@@ -6,5 +6,5 @@ const description = comingSoonText;
 export const metadata: Metadata = buildPageMetadata("/about-us/annual-report", { description });
 
 export default function AnnualReport() {
-  return <ComingSoon />;
+  return <ComingSoon title="Annual Report" />;
 }

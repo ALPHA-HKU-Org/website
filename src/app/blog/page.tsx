@@ -8,7 +8,7 @@ export const metadata: Metadata = buildPageMetadata("/blog", { description });
 export default function Blog() {
   return (
     <>
-      <ComingSoon />
+      <ComingSoon title="Blog" />
     </>
   );
 }

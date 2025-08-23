@@ -8,7 +8,7 @@ export const metadata: Metadata = buildPageMetadata("/upcoming-event", { descrip
 export default function Events() {
   return (
     <>
-      <ComingSoon />
+      <ComingSoon title="Upcoming Event" />
     </>
   );
 }
