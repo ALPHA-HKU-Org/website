@@ -1,4 +1,5 @@
 import { PageHeader } from "@/components/primitives/page-header";
+import { Hero } from "@/components/sections/hero";
 import { buildPageMetadata, siteConfig } from "@/lib/config";
 import { Metadata } from "next";
 
@@ -31,6 +32,16 @@ export default function OurStory() {
             based in HK by 2027.
           </>
         }
+        className="mb-8"
+      />
+      <Hero
+        slides={[
+          {
+            imageSrc: "/about-us/our-story/white-doves.jpg",
+            content: null,
+          },
+        ]}
+        heightClassName="h-[15rem] md:h-[20rem]"
       />
     </section>
   );

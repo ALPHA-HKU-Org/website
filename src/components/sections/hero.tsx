@@ -27,40 +27,49 @@ export function Hero({ slides, heightClassName }: HeroProps) {
   if (!heightClassName) {
     throw new Error("Hero: 'heightClassName' is required.");
   }
+  const hasMultipleSlides = slides.length > 1;
   return (
     <div className="relative w-full">
       <Carousel
         className="w-full"
         opts={{
-          loop: true,
+          loop: hasMultipleSlides,
         }}
-        plugins={[
-          Autoplay({
-            delay: 5000,
-            stopOnInteraction: true,
-          }),
-        ]}
-        useDots
+        plugins={
+          hasMultipleSlides
+            ? [
+                Autoplay({
+                  delay: 5000,
+                  stopOnInteraction: true,
+                }),
+              ]
+            : []
+        }
+        useDots={hasMultipleSlides}
       >
         <CarouselContent>
           {slides.map((slide, index) => (
             <CarouselItem key={index}>
-              <div className="p-1">
-                <div
-                  className={`relative flex ${heightClassName} items-center justify-center bg-cover bg-center bg-no-repeat p-6`}
-                  style={{ backgroundImage: `url('${slide.imageSrc}')` }}
-                >
-                  <div className="absolute inset-0 bg-black/40" />
+              <div
+                className={`relative flex ${heightClassName} items-center justify-center bg-cover bg-center bg-no-repeat`}
+                style={{ backgroundImage: `url('${slide.imageSrc}')` }}
+              >
+                {slide.content ? <div className="absolute inset-0 bg-black/40" /> : null}
+                {slide.content ? (
                   <span className="relative z-10 text-center text-2xl font-semibold text-white md:text-4xl">
                     {slide.content}
                   </span>
-                </div>
+                ) : null}
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        {hasMultipleSlides ? (
+          <>
+            <CarouselPrevious />
+            <CarouselNext />
+          </>
+        ) : null}
       </Carousel>
     </div>
   );
