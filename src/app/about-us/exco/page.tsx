@@ -9,22 +9,20 @@ export const metadata: Metadata = buildPageMetadata("/about-us/exco", { descript
 
 export default function ExecutiveCommittee() {
   return (
-    <section className="pt-8">
-      <div className="container mx-auto px-4">
-        <PageHeader
-          title="Executive Committee"
-          description={`${description} Hover a card to learn more.`}
-          className="mb-8"
-        />
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {excoMembers.map((member) => (
-            <ExcoCard
-              key={`${member.name}-${member.position}`}
-              member={member}
-            />
-          ))}
-        </div>
+    <div className="container mx-auto px-4 pt-8">
+      <PageHeader
+        title="Executive Committee"
+        description={`${description} Hover a card to learn more.`}
+        className="mb-8"
+      />
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {excoMembers.map((member) => (
+          <ExcoCard
+            key={`${member.name}-${member.position}`}
+            member={member}
+          />
+        ))}
       </div>
-    </section>
+    </div>
   );
 }
