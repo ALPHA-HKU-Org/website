@@ -12,7 +12,7 @@ type WhatsHappeningEvent = {
 export function WhatsHappening({ events }: { events: WhatsHappeningEvent[] }) {
   return (
     <section>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <h2 className="mb-8 text-center text-3xl font-bold">What's Happening</h2>
         <div className="grid gap-8 md:grid-cols-3">
           {events.map((event, index) => (
