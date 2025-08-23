@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn, noReturnDebounce } from "@/lib/utils";
-import { RefObject, useCallback, useEffect, useRef, useState } from "react";
+import { CSSProperties, RefObject, useCallback, useEffect, useRef, useState } from "react";
 
 const IFRAME_DEFAULTS = {
   WIDTH: 1440,
@@ -51,16 +51,23 @@ function useResponsiveScale(targetRef: RefObject<HTMLElement | null>, sourceWidt
   return scale;
 }
 
-interface ResourceIframeProps {
+type ResourceIframeProps = {
   websiteUrl: string;
   title: string;
   className?: string;
   scale?: number;
   desktopWidth?: number;
-  containerHeight?: number;
+  /** Can be a number (px) or CSS height string (e.g. "100dvh"). */
+  containerHeight?: number | CSSProperties["height"];
   /** Number of pixels to hide from the top of the iframe content (pre-scale units). */
   hideTopPx?: number;
-}
+  /** Internal link to a full-page view. If provided, the header button links here instead of external site. */
+  fullPageHref?: string;
+  /** If true, omits the header (useful for full-page variant). */
+  hideHeader?: boolean;
+  /** If true, shows the iframe on mobile as well (not just md+). */
+  showOnMobile?: boolean;
+};
 
 export function ResourceIframe({
   websiteUrl,
@@ -70,6 +77,9 @@ export function ResourceIframe({
   desktopWidth = IFRAME_DEFAULTS.WIDTH,
   containerHeight = IFRAME_DEFAULTS.HEIGHT,
   hideTopPx = 0,
+  fullPageHref,
+  hideHeader = false,
+  showOnMobile = false,
 }: ResourceIframeProps) {
   const [isLoading, setIsLoading] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -77,30 +87,49 @@ export function ResourceIframe({
 
   const finalScale = forcedScale ?? calculatedScale;
   const scaleWrapperStyle = createScaleTransformStyle(finalScale, hideTopPx);
+  const linkHref = fullPageHref ?? websiteUrl;
+  const isExternal = !fullPageHref;
+  const buttonLabel = isExternal ? "Open Original Site →" : "Open Full Page →";
 
   return (
-    <Card className={cn("w-full gap-0 md:gap-6", className)}>
-      <CardHeader>
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <CardTitle>{title}</CardTitle>
-          <Button
-            asChild
-            variant="outline"
-          >
-            <a
-              href={websiteUrl}
-              target="_blank"
-              rel="noopener"
+    <Card className={cn("w-full gap-0 md:gap-6", hideHeader && "rounded-none border-0 p-0", className)}>
+      {!hideHeader && (
+        <CardHeader>
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex flex-col">
+              <CardTitle>{title}</CardTitle>
+              <a
+                href={websiteUrl}
+                target="_blank"
+                rel="noopener"
+                className="text-muted-foreground text-xs underline underline-offset-4"
+              >
+                {websiteUrl}
+              </a>
+            </div>
+            <Button
+              asChild
+              variant="outline"
             >
-              Visit Full Website →
-            </a>
-          </Button>
-        </div>
-      </CardHeader>
-      <CardContent>
+              <a
+                href={linkHref}
+                target={isExternal ? "_blank" : undefined}
+                rel="noopener"
+              >
+                {buttonLabel}
+              </a>
+            </Button>
+          </div>
+        </CardHeader>
+      )}
+      <CardContent className={cn(hideHeader && "p-0")}>
         <div
           ref={containerRef}
-          className="relative hidden w-full overflow-hidden rounded-lg border md:block"
+          className={cn(
+            "relative overflow-hidden",
+            !showOnMobile && "hidden md:block",
+            hideHeader ? "rounded-none border-0" : "rounded-lg border"
+          )}
           style={{ height: containerHeight }}
         >
           {isLoading && (

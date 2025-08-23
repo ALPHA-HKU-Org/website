@@ -1,5 +1,6 @@
 import { ResourceIframe } from "@/components/sections/resource-iframe";
 import { buildPageMetadata } from "@/lib/config";
+import { resources } from "@/lib/resources";
 import { Metadata } from "next";
 
 const description =
@@ -16,16 +17,15 @@ export default function Resources() {
         </p>
       </div>
       <div className="space-y-8">
-        <ResourceIframe
-          title="Where She Stood - WWII"
-          websiteUrl="https://whereshestoodwwii.wixsite.com/where-she-stood"
-          hideTopPx={50}
-        />
-        <ResourceIframe
-          title="The Spine of the Nation"
-          websiteUrl="https://thespineofthenation.wordpress.com"
-          hideTopPx={49}
-        />
+        {resources.map((r) => (
+          <ResourceIframe
+            key={r.slug}
+            title={r.title}
+            websiteUrl={r.websiteUrl}
+            hideTopPx={r.hideTopPx}
+            fullPageHref={`/resources/${r.slug}`}
+          />
+        ))}
       </div>
     </div>
   );

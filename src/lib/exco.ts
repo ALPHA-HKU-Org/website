@@ -36,11 +36,11 @@ export const excoMembers: ExcoMember[] = [
   },
   {
     name: "SeoJin Moon",
-    position: "co-Directory of Publicity",
+    position: "Directory of Publicity",
   },
   {
     name: "Razzaq Kinza",
-    position: "co-Directory of Publicity",
+    position: "Directory of Publicity",
   },
   {
     name: "Cheng Ho Ming",
