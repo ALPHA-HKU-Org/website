@@ -29,9 +29,8 @@ export function Hero({ slides, heightClassName }: HeroProps) {
   }
   const hasMultipleSlides = slides.length > 1;
   return (
-    <div className="relative w-full">
+    <>
       <Carousel
-        className="w-full"
         opts={{
           loop: hasMultipleSlides,
         }}
@@ -54,9 +53,9 @@ export function Hero({ slides, heightClassName }: HeroProps) {
                 className={`relative flex ${heightClassName} items-center justify-center bg-cover bg-center bg-no-repeat`}
                 style={{ backgroundImage: `url('${slide.imageSrc}')` }}
               >
-                {slide.content ? <div className="absolute inset-0 bg-black/40" /> : null}
+                {slide.content ? <div className="absolute inset-0 bg-black/55" /> : null}
                 {slide.content ? (
-                  <span className="relative z-10 text-center text-2xl font-semibold text-white md:text-4xl">
+                  <span className="z-10 text-center text-2xl font-semibold text-white md:text-4xl">
                     {slide.content}
                   </span>
                 ) : null}
@@ -71,6 +70,6 @@ export function Hero({ slides, heightClassName }: HeroProps) {
           </>
         ) : null}
       </Carousel>
-    </div>
+    </>
   );
 }
