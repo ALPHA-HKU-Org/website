@@ -120,11 +120,12 @@ export function Header() {
                 className="flex items-center gap-2"
               >
                 <Image
-                  src="/favicon.ico"
+                  src="/navigation-bar.webp"
                   alt="Logo"
                   width={60}
-                  height={24}
-                  className="dark:invert h-6 aspect-auto w-auto"
+                  height={40}
+                  unoptimized
+                  className="dark:invert h-10 aspect-auto w-auto"
                 />
               </Link>
               <nav className="hidden lg:flex">

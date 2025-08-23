@@ -65,8 +65,8 @@ export function Hero({ slides, heightClassName }: HeroProps) {
         </CarouselContent>
         {hasMultipleSlides ? (
           <>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="text-white bg-transparent border-input/30" />
+            <CarouselNext className="text-white bg-transparent border-input/30" />
           </>
         ) : null}
       </Carousel>

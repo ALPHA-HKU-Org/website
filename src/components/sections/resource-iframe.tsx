@@ -163,6 +163,7 @@ export function ResourceIframe({
               src={websiteUrl}
               title={title}
               allowFullScreen
+              loading="lazy"
               className="h-full w-full border-0"
               onLoad={() => setIsLoading(false)}
             />
