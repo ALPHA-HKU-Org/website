@@ -115,7 +115,7 @@ export function ResourceIframe({
                   href={websiteUrl}
                   target="_blank"
                   rel="noopener"
-                  className="text-muted-foreground text-xs underline underline-offset-4"
+                  className="text-muted-foreground text-xs underline underline-offset-4 break-all"
                 >
                   {websiteUrl}
                 </a>
