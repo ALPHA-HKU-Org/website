@@ -12,14 +12,14 @@ export const resources: Resource[] = [
     title: "Where She Stood - WWII",
     websiteUrl: "https://whereshestoodwwii.wixsite.com/where-she-stood",
     hideTopPx: 50,
-    authorLine: "Mr Richard Yan (ALPHA Summer Program 2025)",
+    authorLine: "Ms Febe Chan (ALPHA Summer Program 2025)",
   },
   {
     slug: "the-spine-of-the-nation",
     title: "The Spine of the Nation",
-    websiteUrl: "https://thespineofthenation.wordpress.com",
+    websiteUrl: "https://thespineofthenation.wordpress.com/2025/07/22/the-spine-of-the-nation/",
     hideTopPx: 49,
-    authorLine: "Ms Febe Chan (ALPHA Summer Program 2025)",
+    authorLine: "Mr Richard Yan (ALPHA Summer Program 2025)",
   },
 ];
 
