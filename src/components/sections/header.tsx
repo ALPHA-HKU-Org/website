@@ -122,10 +122,10 @@ export function Header() {
                 <Image
                   src="/navigation-bar.webp"
                   alt="Logo"
-                  width={60}
-                  height={40}
+                  width={173}
+                  height={44}
                   unoptimized
-                  className="dark:invert h-10 aspect-auto w-auto"
+                  className="dark:invert h-11 aspect-auto w-auto"
                 />
               </Link>
               <nav className="hidden lg:flex">
