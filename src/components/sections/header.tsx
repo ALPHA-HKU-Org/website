@@ -102,9 +102,7 @@ export function Header() {
     >
       <div className="sticky top-0 z-[var(--z-header)]">
         <header className="border-border/40 bg-background/80 supports-[backdrop-filter]:bg-background/60 w-full border-b backdrop-blur">
-          <div
-            className={`container flex h-[var(--header-height)] max-w-full items-center justify-between px-4 lg:px-6`}
-          >
+          <div className="container flex h-[var(--header-height)] max-w-full items-center justify-between px-4 lg:px-6">
             <div className="flex items-center gap-6">
               <SmartLink
                 href="/"
@@ -178,10 +176,7 @@ export function Header() {
         </header>
         <AnimatePresence>
           {isOpen && (
-            <CollapsibleContent
-              asChild
-              forceMount
-            >
+            <CollapsibleContent asChild>
               <motion.div
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
@@ -189,23 +184,19 @@ export function Header() {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="absolute right-0 left-0 overflow-hidden"
               >
-                <div className="bg-background/95 supports-[backdrop-filter]:bg-background/80 border-t border-b backdrop-blur">
-                  <div className="container px-4 py-4 lg:px-6">
-                    <nav className="grid gap-4 text-sm">
-                      {siteConfig.mainNav.map((link) => (
-                        <div
-                          key={link.href}
-                          className="grid gap-4"
-                        >
-                          <MobileMenuGroup
-                            link={link}
-                            onLinkClick={handleCloseMenu}
-                          />
-                        </div>
-                      ))}
-                    </nav>
-                  </div>
-                </div>
+                <nav className="px-4 py-4 lg:px-6 bg-background/95 supports-[backdrop-filter]:bg-background/80 border-b border-b-border/40 backdrop-blur grid gap-4 text-sm">
+                  {siteConfig.mainNav.map((link) => (
+                    <div
+                      key={link.href}
+                      className="grid gap-4"
+                    >
+                      <MobileMenuGroup
+                        link={link}
+                        onLinkClick={handleCloseMenu}
+                      />
+                    </div>
+                  ))}
+                </nav>
               </motion.div>
             </CollapsibleContent>
           )}
