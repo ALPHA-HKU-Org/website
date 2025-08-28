@@ -26,7 +26,12 @@ export default function AboutUs() {
           >
             <div className="flex items-center justify-between gap-4">
               <span className="font-medium">{link.label}</span>
-              <AnimatedFillButton href={link.href}>Visit</AnimatedFillButton>
+              <AnimatedFillButton
+                href={link.href}
+                size="lg"
+              >
+                Visit
+              </AnimatedFillButton>
             </div>
           </li>
         ))}

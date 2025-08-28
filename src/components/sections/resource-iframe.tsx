@@ -1,7 +1,7 @@
 "use client";
 
+import { AnimatedFillButton } from "@/components/primitives/animated-fill-button";
 import { SmartLink } from "@/components/primitives/smart-link";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn, isInternalHref, noReturnDebounce } from "@/lib/utils";
 import { CSSProperties, RefObject, useCallback, useEffect, useRef, useState } from "react";
@@ -96,7 +96,7 @@ export function ResourceIframe({
   const buttonLabel = isInternalLink ? "Open Full Page →" : "Open Original Site →";
 
   return (
-    <Card className={cn("w-full gap-0 md:gap-6", hideHeader && "rounded-none border-0 p-0", className)}>
+    <Card className={cn("w-full gap-0 md:gap-4", hideHeader && "rounded-none border-0 p-0", className)}>
       {!hideHeader && (
         <CardHeader>
           <div className="flex flex-wrap items-center justify-between gap-4">
@@ -110,12 +110,12 @@ export function ResourceIframe({
                 {websiteUrl}
               </SmartLink>
             </div>
-            <Button
-              asChild
-              variant="outline"
+            <AnimatedFillButton
+              href={linkHref}
+              size="lg"
             >
-              <SmartLink href={linkHref}>{buttonLabel}</SmartLink>
-            </Button>
+              {buttonLabel}
+            </AnimatedFillButton>
           </div>
         </CardHeader>
       )}

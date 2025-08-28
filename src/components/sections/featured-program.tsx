@@ -1,5 +1,4 @@
-import { SmartLink } from "@/components/primitives/smart-link";
-import { Button } from "@/components/ui/button";
+import { AnimatedFillButton } from "@/components/primitives/animated-fill-button";
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
 
@@ -31,9 +30,7 @@ export function FeaturedProgram({
               <h2 className="text-3xl font-bold">{heading}</h2>
               <p className="text-muted-foreground">{description}</p>
               {ctaHref && ctaLabel ? (
-                <Button asChild>
-                  <SmartLink href={ctaHref}>{ctaLabel}</SmartLink>
-                </Button>
+                <AnimatedFillButton href={ctaHref}>{ctaLabel}</AnimatedFillButton>
               ) : null}
             </div>
             <div>

@@ -1,10 +1,10 @@
 import { description } from "@/app/layout";
+import { AnimatedFillButton } from "@/components/primitives/animated-fill-button";
 import { PageHeader } from "@/components/primitives/page-header";
 import { SmartLink } from "@/components/primitives/smart-link";
 import { FeaturedProgram } from "@/components/sections/featured-program";
 import { Hero } from "@/components/sections/hero";
 import { WhatsHappening } from "@/components/sections/whats-happening";
-import { Button } from "@/components/ui/button";
 import { buildPageMetadata, siteConfig } from "@/lib/config";
 import { Metadata } from "next";
 
@@ -66,9 +66,12 @@ export default function Home() {
             </>
           }
         >
-          <Button asChild>
-            <SmartLink href="/about-us/our-story">Explore Our Story</SmartLink>
-          </Button>
+          <AnimatedFillButton
+            href="/about-us/our-story"
+            size="lg"
+          >
+            Explore Our Story
+          </AnimatedFillButton>
         </PageHeader>
       </section>
       <WhatsHappening

@@ -25,6 +25,7 @@ export default function JoinUs() {
         ].map((item) => (
           <AnimatedFillButton
             href={item.href}
+            size="lg"
             key={item.label}
           >
             {item.label}
