@@ -31,6 +31,17 @@ export default function OurStory() {
             />
           ),
         },
+        {
+          imageSrc: "/about-us/our-story/student-gathering.jpg",
+          content: (
+            <PageHeader
+              as="h2"
+              title="Our Mission"
+              descriptionClassName="text-left text-white"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            />
+          ),
+        },
       ]}
       heightClassName="h-[calc(100vh-var(--header-height))]"
     />
