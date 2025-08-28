@@ -30,14 +30,10 @@ export function ModeToggle() {
       className={`relative flex h-8 w-14 cursor-pointer items-center rounded-full p-1 transition-colors ${isDarkMode ? "bg-primary" : "bg-muted"}`}
     >
       <motion.div
-        layout
+        initial={false}
+        animate={{ x: isDarkMode ? 24 : 0 }}
         transition={{ type: "spring", stiffness: 700, damping: 30 }}
         className="bg-background flex h-6 w-6 items-center justify-center rounded-full"
-        style={{
-          position: "absolute",
-          left: isDarkMode ? "auto" : "2px",
-          right: isDarkMode ? "2px" : "auto",
-        }}
       >
         {isDarkMode ? (
           <Moon
