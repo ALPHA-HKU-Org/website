@@ -1,8 +1,8 @@
+import { SmartLink } from "@/components/primitives/smart-link";
 import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
 import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
 import { Mail } from "lucide-react";
-import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa";
 
 const sitemapLinks = [...siteConfig.mainNav, ...siteConfig.utilityNav];
@@ -19,12 +19,12 @@ export function Footer() {
               <ul className="grid grid-cols-2 gap-x-8 gap-y-2">
                 {sitemapLinks.map((link) => (
                   <li key={link.href}>
-                    <Link
+                    <SmartLink
                       href={link.href}
                       className={baseTextLinkClass}
                     >
                       {link.label}
-                    </Link>
+                    </SmartLink>
                   </li>
                 ))}
               </ul>
@@ -32,40 +32,34 @@ export function Footer() {
             <div className="flex flex-col items-center space-y-4">
               <h3 className="font-semibold">Connect with us!</h3>
               <div className="flex flex-col items-start gap-3">
-                <a
+                <SmartLink
                   href={`mailto:${siteConfig.email}`}
                   className={cn(baseTextLinkClass, "inline-flex items-center gap-2")}
                 >
                   <Mail size={18} />
                   {siteConfig.email}
-                </a>
-                <a
+                </SmartLink>
+                <SmartLink
                   href={siteConfig.instagram}
-                  target="_blank"
-                  rel="noopener"
                   className={cn(baseTextLinkClass, "inline-flex items-center gap-2")}
                 >
                   <SiInstagram size={18} />
                   Instagram
-                </a>
-                <a
+                </SmartLink>
+                <SmartLink
                   href={siteConfig.github}
-                  target="_blank"
-                  rel="noopener"
                   className={cn(baseTextLinkClass, "inline-flex items-center gap-2")}
                 >
                   <SiGithub size={18} />
                   GitHub
-                </a>
-                <a
+                </SmartLink>
+                <SmartLink
                   href={siteConfig.linkedin}
-                  target="_blank"
-                  rel="noopener"
                   className={cn(baseTextLinkClass, "inline-flex items-center gap-2")}
                 >
                   <FaLinkedin size={18} />
                   LinkedIn
-                </a>
+                </SmartLink>
               </div>
             </div>
           </div>
@@ -73,14 +67,12 @@ export function Footer() {
             © {new Date().getFullYear()} ALPHA University Chapter at the University of Hong Kong. All rights
             reserved.
             <br />
-            <a
+            <SmartLink
               href={siteConfig.parentOrg}
-              target="_blank"
-              rel="noopener"
               className={cn(baseTextLinkClass, "inline-flex items-center gap-2 underline")}
             >
               {siteConfig.parentOrg.replace("https://", "")}
-            </a>
+            </SmartLink>
           </div>
         </div>
       </div>

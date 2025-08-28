@@ -1,5 +1,6 @@
 import { AnimatedFillButton } from "@/components/primitives/animated-fill-button";
 import { PageHeader } from "@/components/primitives/page-header";
+import { SmartLink } from "@/components/primitives/smart-link";
 import { buildPageMetadata, siteConfig } from "@/lib/config";
 import { Metadata } from "next";
 
@@ -32,12 +33,12 @@ export default function JoinUs() {
       </div>
       <p className="text-muted-foreground pt-3 text-sm md:text-base">
         For more information, contact us at{" "}
-        <a
+        <SmartLink
           href={`mailto:${siteConfig.email}`}
           className="text-primary hover:underline"
         >
           {siteConfig.email}
-        </a>
+        </SmartLink>
         .
       </p>
     </section>

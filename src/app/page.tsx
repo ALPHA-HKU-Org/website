@@ -1,12 +1,12 @@
 import { description } from "@/app/layout";
 import { PageHeader } from "@/components/primitives/page-header";
+import { SmartLink } from "@/components/primitives/smart-link";
 import { FeaturedProgram } from "@/components/sections/featured-program";
 import { Hero } from "@/components/sections/hero";
 import { WhatsHappening } from "@/components/sections/whats-happening";
 import { Button } from "@/components/ui/button";
 import { buildPageMetadata, siteConfig } from "@/lib/config";
 import { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = buildPageMetadata("/", { description, title: "Home - ALPHA HKU" });
 
@@ -51,14 +51,12 @@ export default function Home() {
           description={
             <>
               Carrying{" "}
-              <a
+              <SmartLink
                 href={siteConfig.parentOrg}
-                target="_blank"
-                rel="noopener"
                 className="text-primary hover:text-primary/80 underline transition-colors"
               >
                 ALPHA Education
-              </a>
+              </SmartLink>
               {"'"}s mandate, we are an independent student organization, the largest student initiative in
               HKU, formed by an installation size of 30 students to spread the message of peace and humanity.
               <br />
@@ -69,7 +67,7 @@ export default function Home() {
           }
         >
           <Button asChild>
-            <Link href="/about-us/our-story">Explore Our Story</Link>
+            <SmartLink href="/about-us/our-story">Explore Our Story</SmartLink>
           </Button>
         </PageHeader>
       </section>

@@ -1,3 +1,4 @@
+import { SmartLink } from "@/components/primitives/smart-link";
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
 
@@ -31,12 +32,12 @@ export function WhatsHappening({ events }: { events: WhatsHappeningEvent[] }) {
               <div className="flex flex-1 flex-col space-y-2">
                 <h3 className="text-2xl font-semibold">{event.title}</h3>
                 <p className="text-muted-foreground">{event.description}</p>
-                <a
+                <SmartLink
                   href={event.href}
                   className="text-primary mt-auto inline-block pt-2 hover:underline"
                 >
                   {event.ctaLabel}
-                </a>
+                </SmartLink>
               </div>
             </Card>
           ))}

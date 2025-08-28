@@ -1,3 +1,4 @@
+import { SmartLink } from "@/components/primitives/smart-link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Partner } from "@/lib/partners";
 import { cn } from "@/lib/utils";
@@ -10,11 +11,7 @@ type PartnerCardProps = {
 
 export function PartnerCard({ partner, className }: PartnerCardProps) {
   return (
-    <a
-      href={partner.href}
-      target="_blank"
-      rel="noopener"
-    >
+    <SmartLink href={partner.href}>
       <Card className={cn("h-full", className)}>
         <CardHeader className="text-center">
           {partner.logo && (
@@ -34,6 +31,6 @@ export function PartnerCard({ partner, className }: PartnerCardProps) {
           <p className="text-muted-foreground text-sm">{partner.href}</p>
         </CardContent>
       </Card>
-    </a>
+    </SmartLink>
   );
 }

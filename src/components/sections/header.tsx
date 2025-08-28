@@ -1,6 +1,7 @@
 "use client";
 
 import { ModeToggle } from "@/components/primitives/mode-toggle";
+import { SmartLink } from "@/components/primitives/smart-link";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import {
@@ -12,33 +13,13 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { siteConfig } from "@/lib/config";
-import { isInternalHref } from "@/lib/utils";
 import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
 import { AnimatePresence, motion } from "framer-motion";
 import { Mail, Menu } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 import { FaLinkedin } from "react-icons/fa";
-
-function NavAnchor({ href, className, children }: { href: string; className?: string; children: ReactNode }) {
-  return isInternalHref(href) ? (
-    <Link
-      href={href}
-      className={className}
-    >
-      {children}
-    </Link>
-  ) : (
-    <a
-      href={href}
-      className={className}
-    >
-      {children}
-    </a>
-  );
-}
 
 type NavItem = (typeof siteConfig.mainNav)[number];
 
@@ -47,7 +28,7 @@ function DesktopMenuItem({ link, onTriggerClick }: { link: NavItem; onTriggerCli
   if (!hasChildren) {
     return (
       <NavigationMenuLink asChild>
-        <NavAnchor href={link.href}>{link.label}</NavAnchor>
+        <SmartLink href={link.href}>{link.label}</SmartLink>
       </NavigationMenuLink>
     );
   }
@@ -66,7 +47,7 @@ function DesktopMenuItem({ link, onTriggerClick }: { link: NavItem; onTriggerCli
               key={child.href}
               asChild
             >
-              <NavAnchor href={child.href}>{child.label}</NavAnchor>
+              <SmartLink href={child.href}>{child.label}</SmartLink>
             </NavigationMenuLink>
           ))}
         </div>
@@ -78,22 +59,22 @@ function DesktopMenuItem({ link, onTriggerClick }: { link: NavItem; onTriggerCli
 function MobileMenuGroup({ link }: { link: NavItem }) {
   return (
     <>
-      <NavAnchor
+      <SmartLink
         href={link.href}
         className="hover:text-foreground/80"
       >
         {link.label}
-      </NavAnchor>
+      </SmartLink>
       {link.children && link.children.length > 0 && (
         <div className="ml-4 grid gap-2">
           {link.children.map((child) => (
-            <NavAnchor
+            <SmartLink
               key={child.href}
               href={child.href}
               className="hover:text-foreground/80"
             >
               {child.label}
-            </NavAnchor>
+            </SmartLink>
           ))}
         </div>
       )}
@@ -115,7 +96,7 @@ export function Header() {
             className={`container flex h-[var(--header-height)] max-w-full items-center justify-between px-4 lg:px-6`}
           >
             <div className="flex items-center gap-6">
-              <Link
+              <SmartLink
                 href="/"
                 className="flex items-center gap-2"
               >
@@ -127,7 +108,7 @@ export function Header() {
                   unoptimized
                   className="dark:invert h-11 aspect-auto w-auto"
                 />
-              </Link>
+              </SmartLink>
               <nav className="hidden lg:flex">
                 <NavigationMenu viewport={false}>
                   <NavigationMenuList className="gap-0">
@@ -146,36 +127,30 @@ export function Header() {
 
             <div className="flex items-center gap-4 text-sm">
               <div className="hidden items-center gap-4 lg:flex">
-                <a
+                <SmartLink
                   href={siteConfig.github}
-                  target="_blank"
-                  rel="noopener"
                   aria-label="GitHub"
                 >
                   <SiGithub size={18} />
-                </a>
-                <a
+                </SmartLink>
+                <SmartLink
                   href={siteConfig.instagram}
-                  target="_blank"
-                  rel="noopener"
                   aria-label="Instagram"
                 >
                   <SiInstagram size={18} />
-                </a>
-                <a
+                </SmartLink>
+                <SmartLink
                   href={siteConfig.linkedin}
-                  target="_blank"
-                  rel="noopener"
                   aria-label="LinkedIn"
                 >
                   <FaLinkedin size={18} />
-                </a>
-                <a
+                </SmartLink>
+                <SmartLink
                   href={`mailto:${siteConfig.email}`}
                   aria-label="Email"
                 >
                   <Mail size={18} />
-                </a>
+                </SmartLink>
               </div>
               <ModeToggle />
               <CollapsibleTrigger asChild>

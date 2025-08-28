@@ -1,9 +1,9 @@
 "use client";
 
+import { SmartLink } from "@/components/primitives/smart-link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn, isInternalHref, noReturnDebounce } from "@/lib/utils";
-import Link from "next/link";
 import { CSSProperties, RefObject, useCallback, useEffect, useRef, useState } from "react";
 
 const IFRAME_DEFAULTS = {
@@ -103,39 +103,18 @@ export function ResourceIframe({
             <div className="flex flex-col">
               <CardTitle>{title}</CardTitle>
               {authorLine && <span className="mt-2 text-muted-foreground text-xs">by {authorLine}</span>}
-              {isInternalHref(websiteUrl) ? (
-                <Link
-                  href={websiteUrl}
-                  className="text-muted-foreground text-xs underline underline-offset-4"
-                >
-                  {websiteUrl}
-                </Link>
-              ) : (
-                <a
-                  href={websiteUrl}
-                  target="_blank"
-                  rel="noopener"
-                  className="text-muted-foreground text-xs underline underline-offset-4 break-all"
-                >
-                  {websiteUrl}
-                </a>
-              )}
+              <SmartLink
+                href={websiteUrl}
+                className="text-muted-foreground text-xs underline underline-offset-4 break-all"
+              >
+                {websiteUrl}
+              </SmartLink>
             </div>
             <Button
               asChild
               variant="outline"
             >
-              {isInternalLink ? (
-                <Link href={linkHref}>{buttonLabel}</Link>
-              ) : (
-                <a
-                  href={linkHref}
-                  target="_blank"
-                  rel="noopener"
-                >
-                  {buttonLabel}
-                </a>
-              )}
+              <SmartLink href={linkHref}>{buttonLabel}</SmartLink>
             </Button>
           </div>
         </CardHeader>

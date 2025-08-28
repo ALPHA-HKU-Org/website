@@ -1,5 +1,6 @@
 "use client";
 
+import { SmartLink } from "@/components/primitives/smart-link";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import type { ExcoLink, ExcoMember } from "@/lib/exco";
 import { cn } from "@/lib/utils";
@@ -112,7 +113,7 @@ function BackFace({ member }: { member: ExcoMember }) {
             {hasLinks ? (
               <div className={cn("flex items-center justify-center gap-3", !hasBio && "m-auto")}>
                 {member.links!.map((link) => (
-                  <a
+                  <SmartLink
                     key={`${member.name}-${link.type}-${link.url}`}
                     href={link.type === "email" ? `mailto:${link.url}` : link.url}
                     target={link.type === "email" ? undefined : "_blank"}
@@ -123,7 +124,7 @@ function BackFace({ member }: { member: ExcoMember }) {
                     onTouchStart={(e) => e.stopPropagation()}
                   >
                     <SocialIcon link={link} />
-                  </a>
+                  </SmartLink>
                 ))}
               </div>
             ) : null}

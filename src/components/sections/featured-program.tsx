@@ -1,7 +1,7 @@
+import { SmartLink } from "@/components/primitives/smart-link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
-import Link from "next/link";
 
 type FeaturedProgramProps = {
   heading: string;
@@ -32,7 +32,7 @@ export function FeaturedProgram({
               <p className="text-muted-foreground">{description}</p>
               {ctaHref && ctaLabel ? (
                 <Button asChild>
-                  <Link href={ctaHref}>{ctaLabel}</Link>
+                  <SmartLink href={ctaHref}>{ctaLabel}</SmartLink>
                 </Button>
               ) : null}
             </div>
