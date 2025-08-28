@@ -56,12 +56,19 @@ function DesktopMenuItem({ link, onTriggerClick }: { link: NavItem; onTriggerCli
   );
 }
 
-function MobileMenuGroup({ link }: { link: NavItem }) {
+/**
+ * Mobile-only group that renders a top-level link and optional children.
+ *
+ * @param link Top-level nav item to render.
+ * @param onLinkClick Invoked when any link is clicked;
+ */
+function MobileMenuGroup({ link, onLinkClick }: { link: NavItem; onLinkClick: () => void }) {
   return (
     <>
       <SmartLink
         href={link.href}
         className="hover:text-foreground/80"
+        onClick={onLinkClick}
       >
         {link.label}
       </SmartLink>
@@ -72,6 +79,7 @@ function MobileMenuGroup({ link }: { link: NavItem }) {
               key={child.href}
               href={child.href}
               className="hover:text-foreground/80"
+              onClick={onLinkClick}
             >
               {child.label}
             </SmartLink>
@@ -82,12 +90,14 @@ function MobileMenuGroup({ link }: { link: NavItem }) {
   );
 }
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
+  const handleCloseMenu = () => setIsOpen(false);
 
   return (
     <Collapsible
       asChild
+      open={isOpen}
       onOpenChange={setIsOpen}
     >
       <div className="sticky top-0 z-[var(--z-header)]">
@@ -187,7 +197,10 @@ export function Header() {
                           key={link.href}
                           className="grid gap-4"
                         >
-                          <MobileMenuGroup link={link} />
+                          <MobileMenuGroup
+                            link={link}
+                            onLinkClick={handleCloseMenu}
+                          />
                         </div>
                       ))}
                     </nav>
