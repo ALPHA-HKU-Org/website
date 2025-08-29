@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { siteConfig } from "@/lib/config";
 import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Mail, Menu } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -174,33 +174,31 @@ export function Header() {
             </div>
           </div>
         </header>
-        <AnimatePresence>
-          {isOpen && (
-            <CollapsibleContent asChild>
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="absolute right-0 left-0 overflow-hidden"
-              >
-                <nav className="px-4 py-4 lg:px-6 bg-background/95 supports-[backdrop-filter]:bg-background/80 border-b border-b-border/40 backdrop-blur grid gap-4 text-sm">
-                  {siteConfig.mainNav.map((link) => (
-                    <div
-                      key={link.href}
-                      className="grid gap-4"
-                    >
-                      <MobileMenuGroup
-                        link={link}
-                        onLinkClick={handleCloseMenu}
-                      />
-                    </div>
-                  ))}
-                </nav>
-              </motion.div>
-            </CollapsibleContent>
-          )}
-        </AnimatePresence>
+        <CollapsibleContent
+          asChild
+          forceMount
+        >
+          <motion.div
+            initial={false}
+            animate={isOpen ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="absolute right-0 left-0 overflow-hidden"
+          >
+            <nav className="px-4 py-4 lg:px-6 bg-background/95 supports-[backdrop-filter]:bg-background/80 border-b border-b-border/40 backdrop-blur grid gap-4 text-sm">
+              {siteConfig.mainNav.map((link) => (
+                <div
+                  key={link.href}
+                  className="grid gap-4"
+                >
+                  <MobileMenuGroup
+                    link={link}
+                    onLinkClick={handleCloseMenu}
+                  />
+                </div>
+              ))}
+            </nav>
+          </motion.div>
+        </CollapsibleContent>
       </div>
     </Collapsible>
   );
