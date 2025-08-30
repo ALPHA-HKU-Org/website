@@ -1,5 +1,6 @@
 "use client";
 
+// Will be imported by client components
 import { isInternalHref } from "@/lib/utils";
 import Link from "next/link";
 import { forwardRef, type AnchorHTMLAttributes, type ReactNode } from "react";
@@ -29,6 +30,7 @@ export const SmartLink = forwardRef<HTMLAnchorElement, SmartLinkProps>(function 
   }
 
   const computedTarget = target ?? "_blank";
+  // I like referrers; +rep for marketing people
   const computedRel = rel ?? (computedTarget === "_blank" ? "noopener" : undefined);
 
   return (

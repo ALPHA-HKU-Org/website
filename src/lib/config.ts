@@ -74,7 +74,7 @@ export function buildPageMetadata(
     title: label,
     description,
     alternates: {
-      canonical: path === "/" ? "/" : path.replace(/\/$/, ""),
+      canonical: path === "/" ? "/" : path.replace(/\/$/, ""), // Google Search Console; prevents {www.}alphahku.page subdomain issues
     },
     openGraph: {
       title: label,

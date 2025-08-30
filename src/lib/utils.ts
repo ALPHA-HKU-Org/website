@@ -19,6 +19,7 @@ export function noReturnDebounce<T extends unknown[]>(
   };
 }
 
+// For SPA route detection
 export function isInternalHref(href: string): boolean {
   if (!href) return false;
   if (!href.startsWith("/")) return false;

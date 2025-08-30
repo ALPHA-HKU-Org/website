@@ -180,7 +180,7 @@ export function Header() {
         >
           <motion.div
             initial={false}
-            animate={isOpen ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
+            animate={isOpen ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }} // Closing must be animated to reduce SPA page navigation flash
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="absolute right-0 left-0 overflow-hidden"
           >
