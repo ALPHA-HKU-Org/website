@@ -1,3 +1,4 @@
+// Will be imported by client components
 "use client";
 
 import { isInternalHref } from "@/lib/utils";
@@ -29,6 +30,7 @@ export const SmartLink = forwardRef<HTMLAnchorElement, SmartLinkProps>(function 
   }
 
   const computedTarget = target ?? "_blank";
+  // Let other server owners see traffic coming from us!
   const computedRel = rel ?? (computedTarget === "_blank" ? "noopener" : undefined);
 
   return (

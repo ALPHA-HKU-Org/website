@@ -7,7 +7,7 @@ import { cn, isInternalHref, noReturnDebounce } from "@/lib/utils";
 import { CSSProperties, RefObject, useCallback, useEffect, useRef, useState } from "react";
 
 const IFRAME_DEFAULTS = {
-  WIDTH: 1440,
+  WIDTH: 1440, // Magic! Experiment with this for different iframed websites
   HEIGHT: 600,
 } as const;
 
@@ -31,7 +31,7 @@ function createScaleTransformStyle(scale: number, hideTopPx: number = 0) {
 }
 
 /**
- * A hook to calculate the responsive scale of an element based on its container's width.
+ * Resize the iframe zoom level to fit the container width to make it look normal
  */
 function useResponsiveScale(targetRef: RefObject<HTMLElement | null>, sourceWidth: number): number {
   const [scale, setScale] = useState(1);
@@ -58,17 +58,14 @@ type ResourceIframeProps = {
   className?: string;
   scale?: number;
   desktopWidth?: number;
-  /** Can be a number (px) or CSS height string (e.g. "100dvh"). */
   containerHeight?: number | CSSProperties["height"];
-  /** Number of pixels to hide from the top of the iframe content (pre-scale units). */
+  /** Adjust this to hide Wix/WordPress ad headers */
   hideTopPx?: number;
-  /** Internal link to a full-page view. If provided, the header button links here instead of external site. */
+  /** We host the iframe fullscreen ourselves, so we can link to it */
   fullPageHref?: string;
-  /** If true, omits the header (useful for full-page variant). */
+  /** Useful for the full-page variant, which is just the iframe */
   hideHeader?: boolean;
-  /** If true, shows the iframe on mobile as well (not just md+). */
   showOnMobile?: boolean;
-  /** Optional small text line to display the author information. */
   authorLine?: string;
 };
 

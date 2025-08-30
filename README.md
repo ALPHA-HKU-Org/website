@@ -60,14 +60,14 @@ This guide is for developers maintaining or contributing to this project.
 ```bash
 .
 ├── src/
-│   ├── app/             # Next.js App Router pages and layouts.
+│   ├── app/             # Next.js App Router pages and layouts
 │   ├── components/
-│   │   ├── sections/    # Reusable large components.
-│   │   ├── primitives/  # Reusable small components.
-│   │   └── ui/          # Unmodified shadcn/ui components.
-│   ├── lib/             # Utilities and site configuration.
-│   └── providers/       # App-wide context and state providers.
-├── public/              # Static assets (images, icons).
+│   │   ├── primitives/  # Small components that take little space on the screen
+│   │   ├── sections/    # Large components that can take up the entire screen
+│   │   └── ui/          # Only put shadcn/ui components here for clarity
+│   ├── lib/             # frequently reused functions and data
+│   └── providers/       # App-wide context and state providers
+├── public/              # non-code assets
 ```
 
 ## Working with `shadcn/ui`
