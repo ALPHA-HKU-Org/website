@@ -10,7 +10,7 @@ export const metadata: Metadata = buildPageMetadata("/resources", { description 
 
 export default function Resources() {
   return (
-    <div className="max-w-8xl mx-auto w-full px-4 py-12 sm:px-6 lg:px-8">
+    <section className="max-w-8xl mx-auto px-4">
       <PageHeader
         title="Resource"
         description="Here are some recommended websites. They offer more details and different perspectives on our chapter's topics."
@@ -28,6 +28,6 @@ export default function Resources() {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }

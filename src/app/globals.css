@@ -127,6 +127,6 @@
     @apply w-full px-4 sm:px-6 lg:px-8 py-7 md:py-14;
   }
   :root {
-    --header-height: 4rem;
+    --header-height: 3.5rem;
   }
 }
