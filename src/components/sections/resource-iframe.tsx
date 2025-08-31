@@ -6,40 +6,63 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn, isInternalHref, noReturnDebounce } from "@/lib/utils";
 import { CSSProperties, RefObject, useCallback, useEffect, useRef, useState } from "react";
 
-const IFRAME_DEFAULTS = {
-  WIDTH: 1440, // Magic! Experiment with this for different iframed websites
-  HEIGHT: 600,
+const IFRAME_SIZE = {
+  /**
+   * For Wix, mobile UA serves:
+   * <div id="SITE_CONTAINER">
+   * body.device-mobile-optimized:not(.responsive) #SITE_CONTAINER
+   * width: 320px;
+   * Hence MOBILE_WIDTH = 320.
+   */
+  MOBILE_WIDTH: 320,
+  DESKTOP_WIDTH: 1440,
+  /** DEFAULT_WIDTH = DESKTOP_WIDTH */
+  DEFAULT_WIDTH: 1440,
+  /** Non-fullscreen view iframe height in /resource page */
+  HEIGHT: 400,
 } as const;
 
-function calculateResponsiveScale(containerWidth: number, sourceWidth: number): number {
-  if (!containerWidth || !sourceWidth) return 1;
-  return Math.min(containerWidth / sourceWidth, 1);
-}
+/** Prefer UA detection when available; fallback to viewport width <= 640px. */
+function getIsMobileNow(): boolean {
+  if (typeof window === "undefined" || typeof navigator === "undefined") return false;
+  // Wix uses UserAgent to detect mobile, so its better for us to stay consistent.
+  const nav = navigator as Navigator & { userAgentData?: { mobile?: boolean }; maxTouchPoints?: number };
+  if (typeof nav.userAgentData?.mobile === "boolean") {
+    if (nav.userAgentData.mobile) return true;
+  }
 
-function createScaleTransformStyle(scale: number, hideTopPx: number = 0) {
-  const computedTopOffset = Math.max(0, hideTopPx) * scale;
-  const height = hideTopPx > 0 ? `calc(${100 / scale}% + ${hideTopPx}px)` : `${100 / scale}%`;
-
-  return {
-    transform: `scale(${scale})`,
-    transformOrigin: "top left",
-    width: `${100 / scale}%`,
-    height,
-    position: "relative" as const,
-    top: hideTopPx > 0 ? `-${computedTopOffset}px` : undefined,
-  };
+  const ua = navigator.userAgent || "";
+  const isIpadOs =
+    /iPad/i.test(ua) && (navigator as Navigator & { maxTouchPoints?: number }).maxTouchPoints! > 1;
+  const isMobileUa = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Mobi/i.test(ua) && !isIpadOs;
+  if (isMobileUa) return true;
+  return window.innerWidth <= 640;
 }
 
 /**
- * Resize the iframe zoom level to fit the container width to make it look normal
+ * Determine whether the client is mobile and update on user rotating/resize their screen.
  */
+function useIsMobile(): boolean {
+  const [isMobile, setIsMobile] = useState<boolean>(() => getIsMobileNow());
+
+  useEffect(() => {
+    const recompute = noReturnDebounce(() => {
+      setIsMobile(getIsMobileNow());
+    });
+    window.addEventListener("resize", recompute);
+    return () => window.removeEventListener("resize", recompute);
+  }, []);
+
+  return isMobile;
+}
+
+/** Resize the iframe zoom level to fit the container width to make it look normal */
 function useResponsiveScale(targetRef: RefObject<HTMLElement | null>, sourceWidth: number): number {
   const [scale, setScale] = useState(1);
 
   const updateScale = useCallback(() => {
     if (!targetRef.current) return;
-    const newScale = calculateResponsiveScale(targetRef.current.clientWidth, sourceWidth);
-    setScale(newScale);
+    setScale(targetRef.current.clientWidth && sourceWidth ? targetRef.current.clientWidth / sourceWidth : 1);
   }, [targetRef, sourceWidth]);
 
   useEffect(() => {
@@ -74,8 +97,8 @@ export function ResourceIframe({
   title,
   className,
   scale: forcedScale,
-  desktopWidth = IFRAME_DEFAULTS.WIDTH,
-  containerHeight = IFRAME_DEFAULTS.HEIGHT,
+  desktopWidth = IFRAME_SIZE.DEFAULT_WIDTH,
+  containerHeight = IFRAME_SIZE.HEIGHT,
   hideTopPx = 0,
   fullPageHref,
   hideHeader = false,
@@ -84,10 +107,11 @@ export function ResourceIframe({
 }: ResourceIframeProps) {
   const [isLoading, setIsLoading] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
-  const calculatedScale = useResponsiveScale(containerRef, desktopWidth);
+  const isMobileClient = useIsMobile();
+  const effectiveSourceWidth = isMobileClient ? IFRAME_SIZE.MOBILE_WIDTH : desktopWidth;
+  const calculatedScale = useResponsiveScale(containerRef, effectiveSourceWidth);
 
   const finalScale = forcedScale ?? calculatedScale;
-  const scaleWrapperStyle = createScaleTransformStyle(finalScale, hideTopPx);
   const linkHref = fullPageHref ?? websiteUrl;
   const isInternalLink = isInternalHref(linkHref);
   const buttonLabel = isInternalLink ? "Open Full Page →" : "Open Original Site →";
@@ -131,19 +155,22 @@ export function ResourceIframe({
               <p className="text-muted-foreground">Loading website...</p>
             </div>
           )}
-          <div
-            className="h-full w-full"
-            style={scaleWrapperStyle}
-          >
-            <iframe
-              src={websiteUrl}
-              title={title}
-              allowFullScreen
-              loading="lazy"
-              className="h-full w-full border-0"
-              onLoad={() => setIsLoading(false)}
-            />
-          </div>
+          <iframe
+            src={websiteUrl}
+            title={title}
+            allowFullScreen
+            loading="lazy"
+            className="border-0"
+            style={{
+              transform: `scale(${finalScale})`,
+              transformOrigin: "top left",
+              width: `${100 / finalScale}%`,
+              height: hideTopPx > 0 ? `calc(${100 / finalScale}% + ${hideTopPx}px)` : `${100 / finalScale}%`,
+              position: "relative" as const,
+              top: hideTopPx > 0 ? `-${Math.max(0, hideTopPx) * finalScale}px` : undefined,
+            }}
+            onLoad={() => setIsLoading(false)}
+          />
         </div>
       </CardContent>
     </Card>
