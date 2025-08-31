@@ -8,6 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
 
 type HeroSlide = {
   imageSrc: string;
@@ -49,10 +50,15 @@ export function Hero({ slides, heightClassName }: HeroProps) {
         <CarouselContent>
           {slides.map((slide, index) => (
             <CarouselItem key={index}>
-              <div
-                className={`relative flex ${heightClassName} items-center justify-center bg-cover bg-center bg-no-repeat`}
-                style={{ backgroundImage: `url('${slide.imageSrc}')` }}
-              >
+              <div className={`relative flex ${heightClassName} items-center justify-center`}>
+                <Image
+                  src={slide.imageSrc}
+                  alt="Carousel Image"
+                  fill
+                  priority={index === 0}
+                  sizes="100vw"
+                  className="object-cover"
+                />
                 {slide.content ? <div className="absolute inset-0 bg-black/55" /> : null}
                 {slide.content ? (
                   <span className="z-10 text-center text-2xl font-semibold text-white md:text-4xl">
