@@ -45,3 +45,6 @@ next-env.d.ts
 
 # semi-auto generated diff file
 commit.txt
+
+# folder for storing testing files
+.testing

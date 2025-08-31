@@ -6,6 +6,24 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn, isInternalHref, noReturnDebounce } from "@/lib/utils";
 import { CSSProperties, RefObject, useCallback, useEffect, useRef, useState } from "react";
 
+/**
+ * @todo Explain why we need this sophisticated iframe size calculation/CSS transform trickery.
+ *
+ * The reason is that the Wix website we are using is not truly responsive for iframe
+ * scenarios. While the usual way to handle this is with CSS media queries, Wix uses a
+ * User-Agent detection approach.
+ *
+ * So, when we embed it in an iframe (where the width is unknown and depends on the
+ * margin/padding of its container, i.e., resource-iframe.tsx), the iframe's inner
+ * content is not responsive when the frame is smaller than a certain pixel value.
+ * e.g. DESKTOP screen + 500px width iframe -> broken
+ *
+ * For mobile screens, due to the hacky way Wix implements its layout (using absolute
+ * pixel positioning like `left: 274px` instead of percentages), embedding it in an
+ * iframe always results in gaps on the left and right. In other words, the elements
+ * are not auto-scaled to fit the full iframe width.
+ * e.g. MOBILE screen + full width iframe -> broken
+ */
 const IFRAME_SIZE = {
   /**
    * For Wix, mobile UA serves:
@@ -15,9 +33,9 @@ const IFRAME_SIZE = {
    * Hence MOBILE_WIDTH = 320.
    */
   MOBILE_WIDTH: 320,
-  DESKTOP_WIDTH: 1440,
+  DESKTOP_WIDTH: 1338,
   /** DEFAULT_WIDTH = DESKTOP_WIDTH */
-  DEFAULT_WIDTH: 1440,
+  DEFAULT_WIDTH: 1338,
   /** Non-fullscreen view iframe height in /resource page */
   HEIGHT: 400,
 } as const;
@@ -160,7 +178,7 @@ export function ResourceIframe({
             title={title}
             allowFullScreen
             loading="lazy"
-            className="border-0"
+            className="border-0 w-full"
             style={{
               transform: `scale(${finalScale})`,
               transformOrigin: "top left",

@@ -28,6 +28,7 @@ export default async function ResourceEmbedPage({ params }: { params: Promise<{ 
       title={resource.title}
       websiteUrl={resource.websiteUrl}
       hideTopPx={resource.hideTopPx}
+      scale={resource.scale}
       hideHeader
       showOnMobile
       containerHeight="100dvh"
