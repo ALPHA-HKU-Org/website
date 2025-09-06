@@ -35,12 +35,12 @@ function DesktopMenuItem({ link, onTriggerClick }: { link: NavItem; onTriggerCli
   return (
     <>
       <NavigationMenuTrigger
-        className="bg-transparent p-2 font-normal"
+        className="bg-transparent p-2 font-normal" // shadcn trigger overrides defaults to font-medium, inconsistent with page wide default font-normal
         onClick={onTriggerClick}
       >
         {link.label}
       </NavigationMenuTrigger>
-      <NavigationMenuContent>
+      <NavigationMenuContent className="!border-none shadow shadow-muted-foreground">
         <div className="w-28">
           {link.children!.map((child) => (
             <NavigationMenuLink
