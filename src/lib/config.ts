@@ -2,6 +2,9 @@ import { flattenByChildren, isInternalHref } from "@/lib/utils";
 import { MetadataRoute } from "next";
 import type { Metadata } from "next";
 
+/**
+ * For sitemap XML tags.
+ */
 type NavItem = {
   href: string;
   label: string;
@@ -32,6 +35,11 @@ const mainNav: NavItem[] = [
   { href: "/resources", label: "Resource" },
 ];
 
+/**
+ * Originally used for aligning some links in navbar to the right.
+ * Now its legacy.
+ * @todo Remove this.
+ */
 const utilityNav: NavItem[] = [];
 
 export const siteConfig = {
@@ -45,7 +53,7 @@ export const siteConfig = {
   donate: donateLink,
   parentOrg: "https://www.alphaeducation.org",
   seoImage: "/ALPHA-HKU.png",
-  seoImageWidth: 882,
+  seoImageWidth: 882, // open paint.exe and check seoImage
   seoImageHeight: 802,
   mainNav,
   utilityNav,
@@ -61,6 +69,9 @@ export function getNavLabel(path: string): string | undefined {
   return flattenByChildren(siteConfig.mainNav).find((i) => i.href === normalized)?.label;
 }
 
+/**
+ * Consolidate SEO metadata building logic here.
+ */
 export function buildPageMetadata(
   path: string,
   options?: { description?: string; title?: string }

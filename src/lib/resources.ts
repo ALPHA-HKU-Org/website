@@ -1,10 +1,10 @@
 export type Resource = {
-  slug: string;
+  slug: string; // url
   title: string;
   websiteUrl: string;
   hideTopPx: number;
   authorLine?: string;
-  scale?: number;
+  scale?: number; // override auto scaling for websites that ARE responsive
 };
 
 export const resources: Resource[] = [

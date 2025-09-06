@@ -32,6 +32,7 @@ function DesktopMenuItem({ link, onTriggerClick }: { link: NavItem; onTriggerCli
       </NavigationMenuLink>
     );
   }
+  // Pop up submenu on hover, which shows subpages
   return (
     <>
       <NavigationMenuTrigger
@@ -49,6 +50,8 @@ function DesktopMenuItem({ link, onTriggerClick }: { link: NavItem; onTriggerCli
          */
       >
         <div className="w-28">
+          {" "}
+          {/* Magic value that breaks some words in the submenu */}
           {link.children!.map((child) => (
             <NavigationMenuLink
               key={child.href}
@@ -141,6 +144,7 @@ export function Header() {
               </nav>
             </div>
 
+            {/* Social media icons and theme toggle on the right side of the header */}
             <div className="flex items-center gap-4 text-sm">
               <div className="hidden items-center gap-4 lg:flex">
                 <SmartLink
@@ -182,6 +186,8 @@ export function Header() {
             </div>
           </div>
         </header>
+
+        {/* This component is only visible on mobile */}
         <CollapsibleContent
           asChild
           forceMount

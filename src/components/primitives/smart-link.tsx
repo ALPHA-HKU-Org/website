@@ -1,6 +1,3 @@
-// Will be imported by client components
-"use client";
-
 import { isInternalHref } from "@/lib/utils";
 import Link from "next/link";
 import { forwardRef, type AnchorHTMLAttributes, type ReactNode } from "react";
@@ -10,6 +7,12 @@ type SmartLinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & {
   children: ReactNode;
 };
 
+/**
+ * In next.js, <Link> is used for internal links (SPA).
+ * <a> is used for external links.
+ * Using <Link> for external links will add an redundant JS event handler.
+ * Puristist wise, we should use <a> for external links.
+ */
 export const SmartLink = forwardRef<HTMLAnchorElement, SmartLinkProps>(function SmartLink(
   { href, children, className, target, rel, ...rest },
   ref

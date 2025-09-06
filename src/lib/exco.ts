@@ -8,8 +8,8 @@ export type ExcoLink = {
 export type ExcoMember = {
   name: string;
   position: string;
-  photoSrc?: string;
-  bio?: string;
+  photoSrc?: string; // profile picture
+  bio?: string; // very short text description
   links?: ExcoLink[];
 };
 
