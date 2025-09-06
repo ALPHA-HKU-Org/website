@@ -94,11 +94,16 @@ export default async function JoinUsJobPage({ params }: { params: Promise<{ slug
 
   return (
     <section className="mx-auto max-w-3xl space-y-6">
-      <PageHeader
-        title={"Join Us as " + job.name}
-        descriptionClassName="text-left"
-        description={job.suitableFor}
-      />
+      <PageHeader title={job.name + " Opportunity"}>
+        <PageHeader
+          as="h2"
+          title="Suitable for"
+          titleClassName="text-xl font-semibold"
+          className="text-left"
+          descriptionClassName="text-left"
+          description={job.suitableFor}
+        />
+      </PageHeader>
       <BenefitsSection benefits={job.benefits} />
       <PageHeader
         as="h2"
