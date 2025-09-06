@@ -16,8 +16,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((route) => isInternalHref(route.href))
     .map((route) => ({
       url: `${siteUrl}${route.href === "/" ? "/" : route.href}`,
-      lastModified: new Date(),
-      ...(route.changeFrequency && { changeFrequency: route.changeFrequency }),
-      ...(route.priority && { priority: route.priority }),
     }));
 }

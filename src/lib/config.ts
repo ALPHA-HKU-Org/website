@@ -1,5 +1,6 @@
+import { jobs } from "@/lib/jobs";
+import { resources } from "@/lib/resources";
 import { flattenByChildren, isInternalHref } from "@/lib/utils";
-import { MetadataRoute } from "next";
 import type { Metadata } from "next";
 
 /**
@@ -8,8 +9,6 @@ import type { Metadata } from "next";
 type NavItem = {
   href: string;
   label: string;
-  priority?: MetadataRoute.Sitemap[0]["priority"];
-  changeFrequency?: MetadataRoute.Sitemap[0]["changeFrequency"];
   children?: NavItem[];
 };
 
@@ -30,9 +29,17 @@ const mainNav: NavItem[] = [
   { href: "/upcoming-event", label: "Upcoming Event" },
   { href: "/our-work", label: "Our Work" },
   { href: "/blog", label: "Blog" },
-  { href: "/join-us", label: "Join Us" },
+  {
+    href: "/join-us",
+    label: "Join Us",
+    children: jobs.map((j) => ({ href: `/join-us/${j.slug}`, label: j.name })),
+  },
   { href: donateLink, label: "Donate" },
-  { href: "/resources", label: "Resource" },
+  {
+    href: "/resources",
+    label: "Resource",
+    children: resources.map((r) => ({ href: `/resources/${r.slug}`, label: r.title })),
+  },
 ];
 
 /**

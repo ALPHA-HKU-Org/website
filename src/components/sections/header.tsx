@@ -49,9 +49,7 @@ function DesktopMenuItem({ link, onTriggerClick }: { link: NavItem; onTriggerCli
          * we could use that.
          */
       >
-        <div className="w-28">
-          {" "}
-          {/* Magic value that breaks some words in the submenu */}
+        <div className="w-max">
           {link.children!.map((child) => (
             <NavigationMenuLink
               key={child.href}

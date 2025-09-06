@@ -60,25 +60,25 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "ALPHA University Chapter at the University of Hong Kong",
+  url: siteUrl,
+  logo: `${siteUrl}${siteConfig.seoImage}`,
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "general inquiries",
+    email: siteConfig.email,
+  },
+  sameAs: [siteConfig.instagram, siteConfig.github, siteConfig.linkedin],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "ALPHA University Chapter at the University of Hong Kong",
-    url: siteUrl,
-    logo: `${siteUrl}${siteConfig.seoImage}`,
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "general inquiries",
-      email: siteConfig.email,
-    },
-    sameAs: [siteConfig.instagram, siteConfig.github, siteConfig.linkedin],
-  };
-
   return (
     <html
       lang="en"
