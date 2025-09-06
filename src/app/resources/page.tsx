@@ -5,7 +5,7 @@ import { resources } from "@/lib/resources";
 import { Metadata } from "next";
 
 const description =
-  "Find useful resources and materials from the ALPHA Chapter at the University of Hong Kong.";
+  "Following are the collections of websites donated by experts and students who have published their research through online media, which share unique yet often overlooked perspectives of WW2 in Asia.";
 export const metadata: Metadata = buildPageMetadata("/resources", { description });
 
 export default function Resources() {
@@ -13,7 +13,16 @@ export default function Resources() {
     <section className="mx-auto px-4">
       <PageHeader
         title="Resource"
-        description="Here are some recommended websites. They offer more details and different perspectives on our chapter's topics."
+        descriptionClassName="text-left"
+        description={
+          <>
+            {description}
+            <br />
+            <br />
+            ALPHA-HKU hereby extends our heartfelt gratitude for the author's generosity and we invite all of
+            you to browse through the websites for new insights of the human stories during WW2 in Asia.
+          </>
+        }
         className="mb-8"
       />
       <div className="space-y-8">

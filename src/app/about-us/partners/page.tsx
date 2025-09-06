@@ -5,7 +5,7 @@ import { partners } from "@/lib/partners";
 import { Metadata } from "next";
 
 const description =
-  "We are collaborating with the following partners to share the message of peace and humanity.";
+  "We extend our wholehearted gratitude to ALPHA Education for their inspiration and support in all aspects!";
 export const metadata: Metadata = buildPageMetadata("/about-us/partners", { description });
 
 export default function Partners() {

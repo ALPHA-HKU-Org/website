@@ -27,8 +27,8 @@ export function PageHeader({
   const HeadingTag = as;
   const sizeStyles = {
     sm: { title: "text-3xl", description: "text-base" },
-    md: { title: "text-4xl", description: "text-lg" },
-    lg: { title: "text-5xl", description: "text-xl" },
+    md: { title: "text-4xl", description: "text-base" },
+    lg: { title: "text-5xl", description: "text-lg" },
   } as const;
   return (
     <div className={cn("text-center", className)}>
