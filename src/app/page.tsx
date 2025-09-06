@@ -35,13 +35,13 @@ export default function Home() {
         heightClassName="h-[30rem]"
       />
       <FeaturedProgram
-        heading="Featured Program"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        heading={'Restage of "Rape of Nanking"'}
+        description="Commemoration Evening of Nanjing Massacre cum the 80th anniversary of Japanese Surrender."
         mediaSrc="/favicon/android-chrome-512x512.png"
         mediaAlt="ALPHA HKU Icon"
         isVideo={false}
         ctaHref="/upcoming-event"
-        ctaLabel="Learn More About This Program"
+        ctaLabel="Join us on 13th December, 2025"
       />
       <section className="mx-auto text-center">
         <PageHeader
@@ -77,26 +77,19 @@ export default function Home() {
       <WhatsHappening
         events={[
           {
-            title: "Event 1",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            image: "/file.svg",
-            href: "/upcoming-event",
-            ctaLabel: "Magis Cognoscere",
-          },
-          {
-            title: "Event 2",
-            description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            title: 'Restage of "Rape of Nanking"',
+            description:
+              "Commemoration Evening of Nanjing Massacre cum the 80th anniversary of Japanese Surrender.",
             image: "/globe.svg",
             href: "/upcoming-event",
-            ctaLabel: "Plura Lege",
+            ctaLabel: "Join us on 13th December, 2025",
           },
           {
-            title: "Event 3",
-            description:
-              "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            image: "/window.svg",
+            title: "International Peace Conference for Youth",
+            description: "First Quarter of 2026.",
+            image: "/globe.svg",
             href: "/upcoming-event",
-            ctaLabel: "Explorare Porro",
+            ctaLabel: "More Details Coming Soon",
           },
         ]}
       />

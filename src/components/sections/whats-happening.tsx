@@ -1,5 +1,6 @@
 import { AnimatedFillButton } from "@/components/primitives/animated-fill-button";
 import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 type WhatsHappeningEvent = {
@@ -15,7 +16,7 @@ export function WhatsHappening({ events }: { events: WhatsHappeningEvent[] }) {
     <section>
       <div className="container mx-auto">
         <h2 className="mb-8 text-center text-3xl font-bold">What's Happening</h2>
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className={cn("grid gap-8", "md:grid-cols-" + Math.min(events.length, 3))}>
           {events.map((event, index) => (
             <Card
               key={index}
