@@ -34,6 +34,7 @@ export function Hero({ slides, heightClassName }: HeroProps) {
       <Carousel
         opts={{
           loop: hasMultipleSlides,
+          watchDrag: false,
         }}
         plugins={
           hasMultipleSlides
