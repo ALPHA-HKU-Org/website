@@ -2,6 +2,7 @@ import { AnimatedFillButton } from "@/components/primitives/animated-fill-button
 import { PageHeader } from "@/components/primitives/page-header";
 import { SmartLink } from "@/components/primitives/smart-link";
 import { buildPageMetadata, siteConfig } from "@/lib/config";
+import { jobs } from "@/lib/jobs";
 import { Metadata } from "next";
 
 const description =
@@ -10,7 +11,7 @@ export const metadata: Metadata = buildPageMetadata("/join-us", { description })
 
 export default function JoinUs() {
   return (
-    <section className="m-auto flex w-fit flex-col items-center gap-4 text-center">
+    <section className="m-auto flex flex-col gap-4 text-center">
       <PageHeader
         title={description}
         description="We provide opportunities for:"
@@ -18,17 +19,13 @@ export default function JoinUs() {
         descriptionClassName="text-base md:text-lg"
       />
       <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-        {[
-          { label: "Full Membership", href: "" },
-          { label: "Research Fellowship", href: "" },
-          { label: "Officers", href: "" },
-        ].map((item) => (
+        {jobs.map((job) => (
           <AnimatedFillButton
-            href={item.href}
+            href={`/join-us/${job.slug}`}
             size="lg"
-            key={item.label}
+            key={job.slug}
           >
-            {item.label}
+            {job.name}
           </AnimatedFillButton>
         ))}
       </div>

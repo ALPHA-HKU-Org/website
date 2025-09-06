@@ -36,7 +36,7 @@ export function PageHeader({
       {description ? (
         <p
           className={cn(
-            "text-muted-foreground mx-auto mt-4 max-w-3xl pr-4 pl-4",
+            "text-muted-foreground mx-auto mt-4 max-w-3xl",
             sizeStyles[size].description,
             descriptionClassName
           )}

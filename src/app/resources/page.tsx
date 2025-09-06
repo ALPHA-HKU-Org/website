@@ -10,7 +10,7 @@ export const metadata: Metadata = buildPageMetadata("/resources", { description 
 
 export default function Resources() {
   return (
-    <section className="mx-auto px-4">
+    <section>
       <PageHeader
         title="Resource"
         descriptionClassName="text-left"
