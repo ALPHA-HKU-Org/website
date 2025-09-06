@@ -89,6 +89,7 @@ function MobileMenuGroup({ link, onLinkClick }: { link: NavItem; onLinkClick: ()
     </>
   );
 }
+
 export function Header() {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);

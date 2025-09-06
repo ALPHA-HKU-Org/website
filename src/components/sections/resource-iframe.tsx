@@ -37,7 +37,7 @@ const IFRAME_SIZE = {
   /** DEFAULT_WIDTH = DESKTOP_WIDTH */
   DEFAULT_WIDTH: 1338,
   /** Non-fullscreen view iframe height in /resource page */
-  HEIGHT: 400,
+  HEIGHT: 600,
 } as const;
 
 /** Prefer UA detection when available; fallback to viewport width <= 640px. */
