@@ -16,7 +16,7 @@ export default function OurStory() {
           content: (
             <PageHeader
               title="Our Story"
-              descriptionClassName="text-left text-white"
+              descriptionClassName="text-left text-white pl-4 pr-4"
               description={
                 <>
                   Inspired by an internship in ALPHA Education in the summer of 2025, the Founding Committee
@@ -46,7 +46,7 @@ export default function OurStory() {
             <PageHeader
               as="h2"
               title="Our Mission"
-              descriptionClassName="text-left text-white"
+              descriptionClassName="text-left text-white pl-4 pr-4"
               description={
                 <>
                   We vow to strive tirelessly and continuously for excellence, to promote the unsound history

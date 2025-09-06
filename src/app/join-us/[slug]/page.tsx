@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 function BenefitsSection({ benefits }: { benefits: Job["benefits"] }) {
   return (
-    <div>
+    <>
       <h2 className="text-xl font-semibold">Benefits</h2>
       <ul className="mt-3 list-disc pl-6 space-y-2">
         {benefits.map((benefit, index) => (
@@ -39,7 +39,7 @@ function BenefitsSection({ benefits }: { benefits: Job["benefits"] }) {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 }
 
