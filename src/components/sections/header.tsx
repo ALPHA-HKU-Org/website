@@ -40,7 +40,14 @@ function DesktopMenuItem({ link, onTriggerClick }: { link: NavItem; onTriggerCli
       >
         {link.label}
       </NavigationMenuTrigger>
-      <NavigationMenuContent className="!border-none shadow shadow-muted-foreground">
+      <NavigationMenuContent
+        className="!border-none shadow shadow-muted-foreground dark:shadow-popover"
+        /**
+         * In dark mode, light shadow looks weird with great contrast from background
+         * since shadcn uses popover for background, which global.css defined differently as background,
+         * we could use that.
+         */
+      >
         <div className="w-28">
           {link.children!.map((child) => (
             <NavigationMenuLink
