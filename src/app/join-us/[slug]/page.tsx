@@ -25,12 +25,12 @@ function BenefitsSection({ benefits }: { benefits: Job["benefits"] }) {
   return (
     <>
       <h2 className="text-xl font-semibold">Benefits</h2>
-      <ul className="mt-3 list-disc pl-6 space-y-2">
+      <ul className="mt-3 list-disc space-y-2 pl-6">
         {benefits.map((benefit, index) => (
           <li key={`${benefit.text}-${index}`}>
             <p>{benefit.text}</p>
             {benefit.subPoints && benefit.subPoints.length > 0 ? (
-              <ul className="mt-2 list-[circle] pl-6 space-y-1">
+              <ul className="mt-2 list-[circle] space-y-1 pl-6">
                 {benefit.subPoints.map((point, index) => (
                   <li key={`${point}-${index}`}>{point}</li>
                 ))}
@@ -73,7 +73,7 @@ function FootnotesSection({ footnotes }: { footnotes?: Job["footnotes"] }) {
     return null;
   }
   return (
-    <div className="border-t pt-4 text-sm text-muted-foreground">
+    <div className="text-muted-foreground border-t pt-4 text-sm">
       <h3 className="mb-2 font-medium">Notes</h3>
       <ul className="space-y-1">
         {footnotes.map((note, index) => (

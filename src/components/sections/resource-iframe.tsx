@@ -141,10 +141,10 @@ export function ResourceIframe({
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex flex-col">
               <CardTitle>{title}</CardTitle>
-              {authorLine && <span className="mt-2 text-muted-foreground text-xs">by {authorLine}</span>}
+              {authorLine && <span className="text-muted-foreground mt-2 text-xs">by {authorLine}</span>}
               <SmartLink
                 href={websiteUrl}
-                className="text-muted-foreground text-xs underline underline-offset-4 break-all"
+                className="text-muted-foreground text-xs break-all underline underline-offset-4"
               >
                 {websiteUrl}
               </SmartLink>
@@ -178,7 +178,7 @@ export function ResourceIframe({
             title={title}
             allowFullScreen
             loading="lazy"
-            className="border-0 w-full"
+            className="w-full border-0"
             style={{
               transform: `scale(${finalScale})`,
               transformOrigin: "top left",

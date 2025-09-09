@@ -12,7 +12,7 @@ export default function AboutUs() {
   const links = aboutSection?.children ?? [];
 
   return (
-    <section className="max-w-4xl mx-auto">
+    <section className="mx-auto max-w-4xl">
       <PageHeader
         title="Learn more about us"
         description="An index of key pages in this section."

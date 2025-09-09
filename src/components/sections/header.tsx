@@ -42,7 +42,7 @@ function DesktopMenuItem({ link, onTriggerClick }: { link: NavItem; onTriggerCli
         {link.label}
       </NavigationMenuTrigger>
       <NavigationMenuContent
-        className="!border-none shadow shadow-muted-foreground dark:shadow-popover"
+        className="shadow-muted-foreground dark:shadow-popover !border-none shadow"
         /**
          * In dark mode, light shadow looks weird with great contrast from background
          * since shadcn uses popover for background, which global.css defined differently as background,
@@ -123,7 +123,7 @@ export function Header() {
                   width={173}
                   height={44}
                   unoptimized
-                  className="dark:invert h-11 aspect-auto w-auto"
+                  className="aspect-auto h-11 w-auto dark:invert"
                 />
               </SmartLink>
               <nav className="hidden lg:flex">
@@ -196,7 +196,7 @@ export function Header() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="absolute right-0 left-0 overflow-hidden"
           >
-            <nav className="px-4 py-4 lg:px-6 bg-background/95 supports-[backdrop-filter]:bg-background/80 border-b border-b-border/40 backdrop-blur grid gap-4 text-sm">
+            <nav className="bg-background/95 supports-[backdrop-filter]:bg-background/80 border-b-border/40 grid gap-4 border-b px-4 py-4 text-sm backdrop-blur lg:px-6">
               {siteConfig.mainNav.map((link) => (
                 <div
                   key={link.href}
