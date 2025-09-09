@@ -33,8 +33,8 @@ export default function ExecutiveCommittee() {
         <Image
           src="/about-us/exco/organization-structure.svg"
           alt="Organization Structure Chart"
-          width={5813}
-          height={3826}
+          width={4953}
+          height={3993}
           className="dark:invert"
         />
       </PageHeader>
