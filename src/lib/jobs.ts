@@ -39,7 +39,8 @@ export const jobs: Job[] = [
     ],
     howToJoin:
       "Full-time undergrad or postgrad HKU students - pay HKD$150 per annum by each September to secure your membership!",
-    applyUrl: "",
+    applyUrl:
+      "https://docs.google.com/forms/d/e/1FAIpQLSd3KW8gkHzVffqupn1qAywQHQBoiFHBcSjXJ1qIMzovqevr9g/viewform?usp=header",
   },
   {
     slug: "officers",
@@ -65,7 +66,8 @@ export const jobs: Job[] = [
     ],
     howToJoin:
       "Full-time undergrad HKU students (preferrably NOT in your final year of study). Submit your CV with other relevant information on request, and pass the 2-stage interview.",
-    applyUrl: "",
+    applyUrl:
+      "https://docs.google.com/forms/d/e/1FAIpQLSfc1i4WHhnTjYT6GyhhrlQjaDwC74Qy9WdBW0BOQeytU0YqeQ/viewform?usp=header",
   },
   {
     slug: "research-fellowship",
@@ -101,7 +103,8 @@ export const jobs: Job[] = [
     ],
     howToJoin:
       "Full-time undergrad or postgrad students in Hong Kong, submit your CV with other relevant information on request and pass the interview.",
-    applyUrl: "",
+    applyUrl:
+      "https://docs.google.com/forms/d/e/1FAIpQLScUaIazk_aO7QU77izuS9EDt8nGq89mEzV1G5J8BjIHocjB0w/viewform?usp=header",
     footnotes: [
       {
         marker: "*",
