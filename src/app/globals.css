@@ -124,7 +124,7 @@
     @apply bg-background text-foreground flex flex-col min-h-screen text-base transition-colors duration-300;
   }
   section {
-    @apply w-full px-4 sm:px-6 lg:px-8 py-7 md:py-14;
+    @apply px-4 sm:px-7 md:px-10 py-4 md:py-7;
   }
   :root {
     --header-height: 3.5rem;
