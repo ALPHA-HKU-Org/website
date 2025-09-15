@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -27,12 +28,15 @@ export function ModeToggle() {
   return (
     <div
       onClick={toggleTheme}
-      className={`relative flex h-8 w-14 cursor-pointer items-center rounded-full p-1 transition-colors ${isDarkMode ? "bg-primary" : "bg-muted"}`}
+      className={cn("relative flex h-8 w-14 cursor-pointer items-center rounded-full p-1 transition-colors", {
+        "bg-primary": isDarkMode,
+        "bg-muted": !isDarkMode,
+      })}
     >
       <motion.div
         initial={false}
         animate={{ x: isDarkMode ? 24 : 0 }}
-        transition={{ type: "spring", stiffness: 700, damping: 30 }}
+        transition={{ type: "spring", stiffness: 500, damping: 35 }}
         className="bg-background flex h-6 w-6 items-center justify-center rounded-full"
       >
         {isDarkMode ? (
