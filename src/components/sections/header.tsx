@@ -122,7 +122,9 @@ export function Header() {
                   alt="Logo"
                   width={173}
                   height={44}
-                  unoptimized
+                  quality={100}
+                  priority
+                  loading="eager"
                   className="aspect-auto h-11 w-auto dark:invert"
                 />
               </SmartLink>
