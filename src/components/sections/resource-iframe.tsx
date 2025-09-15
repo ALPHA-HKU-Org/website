@@ -135,7 +135,7 @@ export function ResourceIframe({
   const buttonLabel = isInternalLink ? "Open Full Page →" : "Open Original Site →";
 
   return (
-    <Card className={cn("w-full gap-0 md:gap-4", hideHeader && "rounded-none border-0 p-0", className)}>
+    <Card className={cn("w-full gap-0 md:gap-4", { "rounded-none border-0 p-0": hideHeader }, className)}>
       {!hideHeader && (
         <CardHeader>
           <div className="flex flex-wrap items-center justify-between gap-4">
@@ -158,14 +158,18 @@ export function ResourceIframe({
           </div>
         </CardHeader>
       )}
-      <CardContent className={cn(hideHeader && "p-0")}>
+      <CardContent
+        className={cn({
+          "p-0": hideHeader,
+        })}
+      >
         <div
           ref={containerRef}
-          className={cn(
-            "relative overflow-hidden",
-            !showOnMobile && "hidden md:block",
-            hideHeader ? "rounded-none border-0" : "rounded-lg border"
-          )}
+          className={cn("relative overflow-hidden", {
+            "hidden md:block": !showOnMobile,
+            "rounded-none border-0": hideHeader,
+            "rounded-lg border": !hideHeader,
+          })}
           style={{ height: containerHeight }}
         >
           {isLoading && (
@@ -184,7 +188,7 @@ export function ResourceIframe({
               transformOrigin: "top left",
               width: `${100 / finalScale}%`,
               height: hideTopPx > 0 ? `calc(${100 / finalScale}% + ${hideTopPx}px)` : `${100 / finalScale}%`,
-              position: "relative" as const,
+              position: "relative",
               top: hideTopPx > 0 ? `-${Math.max(0, hideTopPx) * finalScale}px` : undefined,
             }}
             onLoad={() => setIsLoading(false)}

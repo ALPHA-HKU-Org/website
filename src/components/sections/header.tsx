@@ -124,7 +124,7 @@ export function Header() {
                   height={44}
                   quality={100}
                   priority
-                  loading="eager"
+                  fetchPriority="high"
                   className="aspect-auto h-11 w-auto dark:invert"
                 />
               </SmartLink>

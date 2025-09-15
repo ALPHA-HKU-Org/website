@@ -7,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -54,13 +55,12 @@ export function Hero({ slides, heightClassName }: HeroProps) {
       <CarouselContent>
         {slides.map((slide, index) => (
           <CarouselItem key={index}>
-            <div className={`relative flex ${heightClassName} items-center justify-center`}>
+            <div className={cn("relative flex items-center justify-center", heightClassName)}>
               <Image
                 src={slide.imageSrc}
-                alt="Carousel Image"
+                alt={`Hero slide ${index + 1} image: ${slide.imageSrc}`}
                 fill
                 priority={index === 0}
-                sizes="100vw"
                 className="object-cover"
               />
               {slide.content ? <div className="absolute inset-0 bg-black/55" /> : null}

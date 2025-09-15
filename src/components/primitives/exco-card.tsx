@@ -111,7 +111,7 @@ function BackFace({ member }: { member: ExcoMember }) {
               </div>
             ) : null}
             {hasLinks ? (
-              <div className={cn("flex items-center justify-center gap-3", !hasBio && "m-auto")}>
+              <div className={cn("flex items-center justify-center gap-3", { "m-auto": !hasBio })}>
                 {member.links!.map((link) => (
                   <SmartLink
                     key={`${member.name}-${link.type}-${link.url}`}
