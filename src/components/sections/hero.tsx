@@ -61,6 +61,7 @@ export function Hero({ slides, heightClassName }: HeroProps) {
                 alt={`Hero slide ${index + 1} image: ${slide.imageSrc}`}
                 fill
                 priority={index === 0}
+                fetchPriority={index === 0 ? "high" : "auto"}
                 className="object-cover"
               />
               {slide.content ? <div className="absolute inset-0 bg-black/55" /> : null}
