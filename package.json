@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "format": "prettier --write '**/**/*.{ts,tsx}'",
+    "format": "prettier --write '**/**/*.{ts,tsx,js,mjs}'",
     "diff": "git --no-pager diff --staged --function-context > commit.txt"
   },
   "dependencies": {
@@ -44,6 +44,7 @@
     "@types/react-dom": "^19.1.9",
     "eslint": "^9.35.0",
     "eslint-config-next": "^15.5.3",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react-hooks": "^5.2.0",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
