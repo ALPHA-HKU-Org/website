@@ -36,9 +36,9 @@ export default function Home() {
       />
       <FeaturedProgram
         heading={'Restage of "Rape of Nanking"'}
-        description="Commemoration Evening of Nanjing Massacre cum the 80th anniversary of Japanese Surrender."
-        mediaSrc="/favicon/android-chrome-512x512.png"
-        mediaAlt="ALPHA HKU Icon"
+        description="Commemoration evening of Nanjing Massacre cum the 80th anniversary of Japanese surrender."
+        mediaSrc="/home/Nanjing Massacre Memorial Day Poster.png"
+        mediaAlt="Nanjing Massacre Memorial Day Poster"
         isVideo={false}
         ctaHref="/upcoming-event"
         ctaLabel="Join us on 13th December, 2025"
