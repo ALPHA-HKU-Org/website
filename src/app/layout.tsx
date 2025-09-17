@@ -10,7 +10,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const siteUrl = process.env.SITE_URL;
 
-const title = "ALPHA HKU";
+const title = "ALPHA University Chapter at the University of Hong Kong";
 export const description =
   "The first and only global student initiative based in Hong Kong for constructive peace and humanity. First international student chapter of ALPHA Education.";
 
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "ALPHA University Chapter at the University of Hong Kong",
+  name: title,
   url: siteUrl,
   logo: `${siteUrl}${siteConfig.seoImage}`,
   contactPoint: {

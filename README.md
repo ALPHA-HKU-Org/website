@@ -1,6 +1,6 @@
 # ALPHA HKU Website
 
-![ALPHA HKU Logo](./public/ALPHA-HKU.png)
+![ALPHA HKU Logo](./public/favicon/android-chrome-512x512.png)
 > The official website for the ALPHA University Chapter at the University of Hong Kong.
 
 This guide is for developers maintaining or contributing to this project.

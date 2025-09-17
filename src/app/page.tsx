@@ -8,7 +8,10 @@ import { WhatsHappening } from "@/components/sections/whats-happening";
 import { buildPageMetadata, siteConfig } from "@/lib/config";
 import { Metadata } from "next";
 
-export const metadata: Metadata = buildPageMetadata("/", { description, title: "Home - ALPHA HKU" });
+export const metadata: Metadata = buildPageMetadata("/", {
+  description,
+  title: "ALPHA University Chapter at the University of Hong Kong",
+});
 
 export default function Home() {
   return (
