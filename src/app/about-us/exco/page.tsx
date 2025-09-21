@@ -3,7 +3,7 @@ import { PageHeader } from "@/components/primitives/page-header";
 import { buildPageMetadata } from "@/lib/config";
 import { excoMembers } from "@/lib/exco";
 import { Metadata } from "next";
-import Image from "next/image";
+// import Image from "next/image";
 
 const description = "Meet the team leading ALPHA HKU.";
 export const metadata: Metadata = buildPageMetadata("/about-us/exco", { description });
@@ -24,7 +24,7 @@ export default function ExecutiveCommittee() {
           />
         ))}
       </div>
-      <PageHeader
+      {/*<PageHeader
         title="Organization Structure"
         as="h2"
         size="sm"
@@ -37,7 +37,7 @@ export default function ExecutiveCommittee() {
           height={3993}
           className="dark:invert"
         />
-      </PageHeader>
+      </PageHeader>*/}
     </section>
   );
 }
