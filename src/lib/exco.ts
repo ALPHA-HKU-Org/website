@@ -41,6 +41,10 @@ export const excoMembers: ExcoMember[] = [
   {
     name: "Razzaq Kinza",
     position: "Directory of Publicity",
+    links: [
+      { type: "linkedin", url: "https://www.linkedin.com/in/kinza-razzaq-a2a7462a8" },
+      { type: "instagram", url: "https://www.instagram.com/iamkinza2/" },
+    ]
   },
   {
     name: "Cheng Ho Ming",
