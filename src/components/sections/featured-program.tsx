@@ -44,6 +44,7 @@ export function FeaturedProgram({
                 fill
                 quality={25}
                 className="object-contain"
+                sizes="20vw"
               />
             )}
           </div>
