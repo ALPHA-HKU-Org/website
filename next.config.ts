@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   // output: 'export',
   images: {
-    qualities: [50, 100],
+    qualities: [25, 75],
   },
 };
 

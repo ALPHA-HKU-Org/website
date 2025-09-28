@@ -42,6 +42,7 @@ export function FeaturedProgram({
                 src={mediaSrc}
                 alt={mediaAlt ?? heading}
                 fill
+                quality={25}
                 className="object-contain"
               />
             )}

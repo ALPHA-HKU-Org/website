@@ -122,7 +122,6 @@ export function Header() {
                   alt="Logo"
                   width={173}
                   height={44}
-                  quality={100}
                   priority
                   fetchPriority="high"
                   className="aspect-auto h-11 w-auto dark:invert"
