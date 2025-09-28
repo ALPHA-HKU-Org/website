@@ -37,17 +37,14 @@ const mainNav: NavItem[] = [
   { href: donateLink, label: "Donate" },
   {
     href: "/resources",
-    label: "Resource",
-    children: resources.map((r) => ({ href: `/resources/${r.slug}`, label: r.title })),
+    label: "Resources",
   },
 ];
 
 /**
- * Originally used for aligning some links in navbar to the right.
- * Now its legacy.
- * @todo Remove this.
+ * Routes that should be included in the sitemap but hidden from the header navigation.
  */
-const utilityNav: NavItem[] = [];
+const sitemapOnlyNav: NavItem[] = resources.map((r) => ({ href: `/resources/${r.slug}`, label: r.title }));
 
 export const siteConfig = {
   title: "ALPHA HKU",
@@ -63,7 +60,7 @@ export const siteConfig = {
   seoImageWidth: 882, // open paint.exe and check seoImage
   seoImageHeight: 802,
   mainNav,
-  utilityNav,
+  sitemapOnlyNav,
   staticRoutes: flattenByChildren(mainNav)
     .filter((item) => isInternalHref(item.href))
     .map((item) => (item.href === "/" ? "" : item.href)),

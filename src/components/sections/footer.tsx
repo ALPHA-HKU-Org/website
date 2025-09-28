@@ -5,7 +5,6 @@ import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
 import { Mail } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa";
 
-const sitemapLinks = [...siteConfig.mainNav, ...siteConfig.utilityNav];
 const baseTextLinkClass = "text-sm hover:underline text-muted-foreground";
 
 export function Footer() {
@@ -17,7 +16,7 @@ export function Footer() {
             <div className="flex flex-col items-center space-y-4 md:items-start">
               <h3 className="font-semibold">Sitemap</h3>
               <ul className="grid grid-cols-2 gap-x-8 gap-y-2">
-                {sitemapLinks.map((link) => (
+                {siteConfig.mainNav.map((link) => (
                   <li key={link.href}>
                     <SmartLink
                       href={link.href}
