@@ -8,6 +8,7 @@
     <html lang="en">
       <head>
         <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title>ALPHA HKU Sitemap</title>
         <style>
           body {
@@ -15,6 +16,12 @@
             max-width: 60vw;
             margin-left: auto;
             margin-right: auto;
+          }
+          @media (max-width: 600px) {
+            body {
+              max-width: 100vw;
+              margin: 1rem;
+            }
           }
           header { 
             display: flex; 
