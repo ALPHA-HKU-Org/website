@@ -10,7 +10,6 @@ This guide is for developers maintaining or contributing to this project.
 - Framework: [Next.js](https://nextjs.org/) (App Router)
 - Language: [TypeScript](https://www.typescriptlang.org/)
 - UI: [shadcn/ui](https://ui.shadcn.com/)
-- Animations: [Framer Motion](https://www.framer.com/motion/)
 - Styling: [Tailwind CSS](https://tailwindcss.com/)
 - Code Quality: [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/)
 - Package Manager: [pnpm](https://pnpm.io/)

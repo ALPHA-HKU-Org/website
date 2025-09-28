@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/navigation-menu";
 import { siteConfig } from "@/lib/config";
 import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
-import { motion } from "framer-motion";
 import { Mail, Menu } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -189,28 +188,21 @@ export function Header() {
         {/* This component is only visible on mobile */}
         <CollapsibleContent
           asChild
-          forceMount
+          className="data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down absolute right-0 left-0 overflow-hidden"
         >
-          <motion.div
-            initial={false}
-            animate={isOpen ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }} // Closing must be animated to reduce SPA page navigation flash
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="absolute right-0 left-0 overflow-hidden"
-          >
-            <nav className="bg-background/95 supports-[backdrop-filter]:bg-background/80 border-b-border/40 grid gap-4 border-b px-4 py-4 text-sm backdrop-blur lg:px-6">
-              {siteConfig.mainNav.map((link) => (
-                <div
-                  key={link.href}
-                  className="grid gap-4"
-                >
-                  <MobileMenuGroup
-                    link={link}
-                    onLinkClick={handleCloseMenu}
-                  />
-                </div>
-              ))}
-            </nav>
-          </motion.div>
+          <nav className="bg-background/95 supports-[backdrop-filter]:bg-background/80 border-b-border/40 grid gap-4 border-b px-4 py-4 text-sm backdrop-blur lg:px-6">
+            {siteConfig.mainNav.map((link) => (
+              <div
+                key={link.href}
+                className="grid gap-4"
+              >
+                <MobileMenuGroup
+                  link={link}
+                  onLinkClick={handleCloseMenu}
+                />
+              </div>
+            ))}
+          </nav>
         </CollapsibleContent>
       </div>
     </Collapsible>

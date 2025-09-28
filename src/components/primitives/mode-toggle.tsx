@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -33,11 +32,13 @@ export function ModeToggle() {
         "bg-muted": !isDarkMode,
       })}
     >
-      <motion.div
-        initial={false}
-        animate={{ x: isDarkMode ? 24 : 0 }}
-        transition={{ type: "spring", stiffness: 500, damping: 35 }}
-        className="bg-background flex h-6 w-6 items-center justify-center rounded-full"
+      <div
+        className={cn(
+          "bg-background flex h-6 w-6 items-center justify-center rounded-full transition-transform duration-300",
+          {
+            "translate-x-6": isDarkMode,
+          }
+        )}
       >
         {isDarkMode ? (
           <Moon
@@ -50,7 +51,7 @@ export function ModeToggle() {
             className="text-primary"
           />
         )}
-      </motion.div>
+      </div>
     </div>
   );
 }
