@@ -102,9 +102,9 @@ function BackFace({ member }: { member: ExcoMember }) {
         {!hasBio && !hasLinks ? (
           <p className="text-muted-foreground m-auto">More info coming soon</p>
         ) : (
-          <>
+          <div className="flex w-full flex-1 flex-col items-center justify-center gap-2">
             {hasBio ? (
-              <div className="w-full pt-2">
+              <div className="w-full">
                 <CardHeader>
                   <CardDescription>{member.bio}</CardDescription>
                 </CardHeader>
@@ -128,7 +128,7 @@ function BackFace({ member }: { member: ExcoMember }) {
                 ))}
               </div>
             ) : null}
-          </>
+          </div>
         )}
       </div>
     </Card>

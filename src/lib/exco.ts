@@ -29,6 +29,13 @@ export const excoMembers: ExcoMember[] = [
   {
     name: "Fatima-Tul-Zahra",
     position: "General Secretary",
+    links: [
+      { type: "linkedin", url: "https://linkedin.com/in/fatima-tul-zahra-977404322" },
+      { type: "instagram", url: "https://www.instagram.com/_https.fatima_/" },
+      { type: "github", url: "https://github.com/https-fatima" },
+      { type: "email", url: "fatimatulzahra1330@gmail.com" },
+    ],
+    bio: "Year 3 Decision Analytics Student at HKU-trying to find my path into the CyberWorld",
   },
   {
     name: "Pak Wing Ching",
@@ -44,7 +51,7 @@ export const excoMembers: ExcoMember[] = [
     links: [
       { type: "linkedin", url: "https://www.linkedin.com/in/kinza-razzaq-a2a7462a8" },
       { type: "instagram", url: "https://www.instagram.com/iamkinza2/" },
-    ]
+    ],
   },
   {
     name: "Cheng Ho Ming",
@@ -57,5 +64,6 @@ export const excoMembers: ExcoMember[] = [
       { type: "x", url: "https://x.com/eric15342335/" },
       { type: "website", url: "https://eric15342335.github.io/" },
     ],
+    bio: "Applied AI & Computer Science at HKU",
   },
 ];
