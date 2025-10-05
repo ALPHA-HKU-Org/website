@@ -11,7 +11,7 @@
     "diff": "git --no-pager diff --staged --function-context > commit.txt"
   },
   "dependencies": {
-    "@icons-pack/react-simple-icons": "^13.7.0",
+    "@icons-pack/react-simple-icons": "^13.8.0",
     "@radix-ui/react-collapsible": "^1.1.12",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-dropdown-menu": "^2.1.16",
