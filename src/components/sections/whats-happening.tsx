@@ -15,7 +15,13 @@ export function WhatsHappening({ events }: { events: WhatsHappeningEvent[] }) {
   return (
     <section className="container mx-auto">
       <h2 className="mb-8 text-center text-3xl font-bold">What's Happening</h2>
-      <div className={cn("grid gap-8", "md:grid-cols-" + Math.min(events.length, 3))}>
+      <div
+        className={cn(
+          "mx-auto grid gap-8",
+          ["md:grid-cols-1", "md:grid-cols-2", "md:grid-cols-3"][Math.min(events.length, 3) - 1],
+          ["max-w-2xl", "max-w-4xl", "max-w-6xl"][Math.min(events.length, 3) - 1]
+        )}
+      >
         {events.map((event, index) => (
           <Card
             key={index}
