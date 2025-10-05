@@ -39,12 +39,12 @@ export default function Home() {
       />
       <FeaturedProgram
         heading={'Restage of "Rape of Nanking"'}
-        description="Commemoration evening of Nanjing Massacre cum the 80th anniversary of Japanese surrender."
+        description=""
         mediaSrc="/home/Nanjing Massacre Memorial Day Poster.png"
         mediaAlt="Nanjing Massacre Memorial Day Poster"
         isVideo={false}
         ctaHref="/upcoming-event"
-        ctaLabel="Join us on 13th December, 2025"
+        ctaLabel="More Details Coming Soon"
       />
       <section className="mx-auto text-center">
         <PageHeader
@@ -79,14 +79,6 @@ export default function Home() {
       </section>
       <WhatsHappening
         events={[
-          {
-            title: 'Restage of "Rape of Nanking"',
-            description:
-              "Commemoration Evening of Nanjing Massacre cum the 80th anniversary of Japanese Surrender.",
-            image: "/globe.svg",
-            href: "/upcoming-event",
-            ctaLabel: "Join us on 13th December, 2025",
-          },
           {
             title: "International Peace Conference for Youth",
             description: "First Quarter of 2026.",
