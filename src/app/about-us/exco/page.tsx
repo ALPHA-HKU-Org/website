@@ -25,20 +25,6 @@ export default function ExecutiveCommittee() {
           />
         ))}
       </div>
-      {/*<PageHeader
-        title="Organization Structure"
-        as="h2"
-        size="sm"
-        className="mt-10"
-      >
-        <Image
-          src="/about-us/exco/organization-structure.svg"
-          alt="Organization Structure Chart"
-          width={4953}
-          height={3993}
-          className="dark:invert"
-        />
-      </PageHeader>*/}
     </section>
   );
 }

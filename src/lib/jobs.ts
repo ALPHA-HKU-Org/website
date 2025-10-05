@@ -20,29 +20,6 @@ export type Job = {
 
 export const jobs: Job[] = [
   {
-    slug: "full-membership",
-    name: "Full Membership",
-    suitableFor:
-      "HKU students who have extremely tight schedules but wish to support our cause for global peace and join our EXCLUSIVE and FRUITFUL international opportunities.",
-    benefits: [
-      { text: "Discounts in book fairs" },
-      {
-        text: "Priority and discounts in joining our exclusive",
-        subPoints: [
-          "Study tours, seminars",
-          "Guest lectures from prestigious scholars",
-          "International youth conference",
-          "Summer opportunities at ALPHA Education",
-          "And many more!",
-        ],
-      },
-    ],
-    howToJoin:
-      "Full-time undergrad or postgrad HKU students - pay HKD$150 per annum by each September to secure your membership!",
-    applyUrl:
-      "https://docs.google.com/forms/d/e/1FAIpQLSd3KW8gkHzVffqupn1qAywQHQBoiFHBcSjXJ1qIMzovqevr9g/viewform?usp=header",
-  },
-  {
     slug: "officers",
     name: "Officers",
     suitableFor:
