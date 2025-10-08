@@ -2,11 +2,14 @@ import { siteConfig } from "@/lib/config";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import "./globals.css";
+import { SmartLink } from "@/components/primitives/smart-link";
 import { Footer } from "@/components/sections/footer";
 import { Header } from "@/components/sections/header";
+import { NewsBanner } from "@/components/sections/news-banner";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { ExternalLink } from "lucide-react";
 
 const siteUrl = process.env.SITE_URL;
 
@@ -95,6 +98,16 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
         >
+          <NewsBanner>
+            ALPHA-HKU is awaiting registration with{" "}
+            <SmartLink
+              href="https://www.ccso.hku.hk/"
+              className="hover:underline"
+            >
+              HKU CCSO
+              <ExternalLink className="inline h-2.5 w-2.5 align-super" />
+            </SmartLink>
+          </NewsBanner>
           <Header />
           <main className="min-h-[calc(100vh-var(--header-height))] flex-1">{children}</main>
           <Footer />
