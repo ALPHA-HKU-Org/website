@@ -40,8 +40,8 @@ export default function Home() {
       <FeaturedProgram
         heading={'Restage of "Rape of Nanking"'}
         description=""
-        mediaSrc="/home/Nanjing Massacre Memorial Day Poster.png"
-        mediaAlt="Nanjing Massacre Memorial Day Poster"
+        mediaSrc="/ALPHA-HKU.png"
+        mediaAlt="ALPHA HKU Logo"
         isVideo={false}
         ctaHref="/upcoming-event"
         ctaLabel="More Details Coming Soon"
