@@ -2,6 +2,7 @@
 
 import { ModeToggle } from "@/components/primitives/mode-toggle";
 import { SmartLink } from "@/components/primitives/smart-link";
+import { SocialLinks } from "@/components/primitives/social-links";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import {
@@ -13,12 +14,10 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { siteConfig } from "@/lib/config";
-import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
-import { Mail, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { FaLinkedin } from "react-icons/fa";
 
 type NavItem = (typeof siteConfig.mainNav)[number];
 
@@ -144,32 +143,10 @@ export function Header() {
 
             {/* Social media icons and theme toggle on the right side of the header */}
             <div className="flex items-center gap-4 text-sm">
-              <div className="hidden items-center gap-4 lg:flex">
-                <SmartLink
-                  href={siteConfig.github}
-                  aria-label="GitHub"
-                >
-                  <SiGithub size={18} />
-                </SmartLink>
-                <SmartLink
-                  href={siteConfig.instagram}
-                  aria-label="Instagram"
-                >
-                  <SiInstagram size={18} />
-                </SmartLink>
-                <SmartLink
-                  href={siteConfig.linkedin}
-                  aria-label="LinkedIn"
-                >
-                  <FaLinkedin size={18} />
-                </SmartLink>
-                <SmartLink
-                  href={`mailto:${siteConfig.email}`}
-                  aria-label="Email"
-                >
-                  <Mail size={18} />
-                </SmartLink>
-              </div>
+              <SocialLinks
+                variant="header"
+                className="hidden items-center gap-4 lg:flex"
+              />
               <ModeToggle />
               <CollapsibleTrigger asChild>
                 <Button

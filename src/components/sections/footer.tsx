@@ -1,9 +1,7 @@
 import { SmartLink } from "@/components/primitives/smart-link";
+import { SocialLinks } from "@/components/primitives/social-links";
 import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
-import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
-import { Mail } from "lucide-react";
-import { FaLinkedin } from "react-icons/fa";
 
 const baseTextLinkClass = "text-sm hover:underline text-muted-foreground";
 
@@ -30,36 +28,11 @@ export function Footer() {
             </div>
             <div className="flex flex-col items-center space-y-4">
               <h3 className="font-semibold">Connect with us!</h3>
-              <div className="flex flex-col items-start gap-3">
-                <SmartLink
-                  href={`mailto:${siteConfig.email}`}
-                  className={cn(baseTextLinkClass, "inline-flex items-center gap-2")}
-                >
-                  <Mail size={18} />
-                  {siteConfig.email}
-                </SmartLink>
-                <SmartLink
-                  href={siteConfig.instagram}
-                  className={cn(baseTextLinkClass, "inline-flex items-center gap-2")}
-                >
-                  <SiInstagram size={18} />
-                  Instagram
-                </SmartLink>
-                <SmartLink
-                  href={siteConfig.github}
-                  className={cn(baseTextLinkClass, "inline-flex items-center gap-2")}
-                >
-                  <SiGithub size={18} />
-                  GitHub
-                </SmartLink>
-                <SmartLink
-                  href={siteConfig.linkedin}
-                  className={cn(baseTextLinkClass, "inline-flex items-center gap-2")}
-                >
-                  <FaLinkedin size={18} />
-                  LinkedIn
-                </SmartLink>
-              </div>
+              <SocialLinks
+                variant="footer"
+                className="flex flex-col items-start gap-3"
+                linkClassName={cn(baseTextLinkClass, "inline-flex items-center gap-2")}
+              />
             </div>
           </div>
           <div className="border-border/40 text-muted-foreground mt-8 border-t pt-8 text-center text-sm">
