@@ -23,7 +23,7 @@ export function FeaturedProgram({
 }: FeaturedProgramProps) {
   return (
     <section className="container mx-auto">
-      <Card className="border-primary/35 hover:border-primary pr-8 pl-8 transition-all">
+      <Card className="border-primary/35 pr-8 pl-8 transition-all hover:border-primary">
         <div className="grid items-center gap-8 md:grid-cols-5 md:gap-0">
           <div className="space-y-4 md:col-span-3">
             <h2 className="text-3xl font-bold">{heading}</h2>

@@ -25,7 +25,7 @@ export function WhatsHappening({ events }: { events: WhatsHappeningEvent[] }) {
         {events.map((event, index) => (
           <Card
             key={index}
-            className="border-primary/35 hover:border-primary flex flex-col items-center gap-4 p-6 text-center transition-all"
+            className="flex flex-col items-center gap-4 border-primary/35 p-6 text-center transition-all hover:border-primary"
           >
             <div className="relative h-24 w-24">
               <Image

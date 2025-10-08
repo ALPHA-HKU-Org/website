@@ -44,9 +44,9 @@ export function MobileNav({ onLinkClick }: { onLinkClick: () => void }) {
   return (
     <CollapsibleContent
       asChild
-      className="data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down absolute right-0 left-0 overflow-hidden"
+      className="absolute right-0 left-0 overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down"
     >
-      <nav className="bg-background/95 supports-[backdrop-filter]:bg-background/80 border-b-border/40 grid gap-4 border-b px-4 py-4 text-sm backdrop-blur lg:px-6">
+      <nav className="grid gap-4 border-b border-b-border/40 bg-background/95 px-4 py-4 text-sm backdrop-blur supports-[backdrop-filter]:bg-background/80 lg:px-6">
         {siteConfig.mainNav.map((link) => (
           <div
             key={link.href}

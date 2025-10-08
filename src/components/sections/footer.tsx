@@ -7,7 +7,7 @@ const baseTextLinkClass = "text-sm hover:underline text-muted-foreground";
 
 export function Footer() {
   return (
-    <footer className="bg-muted w-full py-12">
+    <footer className="w-full bg-muted py-12">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="mx-auto max-w-4xl">
           <div className="grid gap-8 text-left md:grid-cols-2 md:justify-items-center">
@@ -35,7 +35,7 @@ export function Footer() {
               />
             </div>
           </div>
-          <div className="border-border/40 text-muted-foreground mt-8 border-t pt-8 text-center text-sm">
+          <div className="mt-8 border-t border-border/40 pt-8 text-center text-sm text-muted-foreground">
             © {new Date().getFullYear()} ALPHA University Chapter at the University of Hong Kong. All rights
             reserved.
             <br />

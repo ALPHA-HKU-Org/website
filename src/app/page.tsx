@@ -56,7 +56,7 @@ export default function Home() {
               Carrying{" "}
               <SmartLink
                 href={siteConfig.parentOrg}
-                className="text-primary hover:text-primary/80 underline transition-colors"
+                className="text-primary underline transition-colors hover:text-primary/80"
               >
                 ALPHA Education
               </SmartLink>

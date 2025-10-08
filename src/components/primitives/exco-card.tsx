@@ -76,7 +76,7 @@ function FrontFace({ member }: { member: ExcoMember }) {
     <Card className="absolute inset-0 [backface-visibility:hidden]">
       <div className="flex h-full w-full flex-col items-center justify-center p-4 text-center">
         {hasPhoto ? (
-          <div className="ring-border relative mx-auto h-16 w-16 overflow-hidden rounded-full ring-1">
+          <div className="relative mx-auto h-16 w-16 overflow-hidden rounded-full ring-1 ring-border">
             <Image
               src={member.photoSrc as string}
               alt={`${member.name} photo`}
@@ -100,7 +100,7 @@ function BackFace({ member }: { member: ExcoMember }) {
     <Card className="absolute inset-0 [transform:rotateY(180deg)] [backface-visibility:hidden]">
       <div className="mr-1 ml-1 flex h-full flex-col items-center text-center">
         {!hasBio && !hasLinks ? (
-          <p className="text-muted-foreground m-auto">More info coming soon</p>
+          <p className="m-auto text-muted-foreground">More info coming soon</p>
         ) : (
           <div className="flex w-full flex-1 flex-col items-center justify-center gap-2">
             {hasBio ? (

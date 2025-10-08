@@ -141,10 +141,10 @@ export function ResourceIframe({
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex flex-col">
               <CardTitle>{title}</CardTitle>
-              {authorLine && <span className="text-muted-foreground mt-2 text-xs">by {authorLine}</span>}
+              {authorLine && <span className="mt-2 text-xs text-muted-foreground">by {authorLine}</span>}
               <SmartLink
                 href={websiteUrl}
-                className="text-muted-foreground text-xs break-all underline underline-offset-4"
+                className="text-xs break-all text-muted-foreground underline underline-offset-4"
               >
                 {websiteUrl}
               </SmartLink>
@@ -173,7 +173,7 @@ export function ResourceIframe({
           style={{ height: containerHeight }}
         >
           {isLoading && (
-            <div className="bg-muted absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center bg-muted">
               <p className="text-muted-foreground">Loading website...</p>
             </div>
           )}

@@ -73,7 +73,7 @@ function FootnotesSection({ footnotes }: { footnotes?: Job["footnotes"] }) {
     return null;
   }
   return (
-    <div className="text-muted-foreground border-t pt-4 text-sm">
+    <div className="border-t pt-4 text-sm text-muted-foreground">
       <h3 className="mb-2 font-medium">Notes</h3>
       <ul className="space-y-1">
         {footnotes.map((note, index) => (

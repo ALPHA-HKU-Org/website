@@ -29,7 +29,7 @@ export default function JoinUs() {
           </AnimatedFillButton>
         ))}
       </div>
-      <p className="text-muted-foreground pt-3 text-sm md:text-base">
+      <p className="pt-3 text-sm text-muted-foreground md:text-base">
         For more information, contact us at{" "}
         <SmartLink
           href={`mailto:${siteConfig.email}`}

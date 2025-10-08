@@ -34,7 +34,7 @@ export function ModeToggle() {
     >
       <div
         className={cn(
-          "bg-background flex h-6 w-6 items-center justify-center rounded-full transition-transform duration-300",
+          "flex h-6 w-6 items-center justify-center rounded-full bg-background transition-transform duration-300",
           {
             "translate-x-6": isDarkMode,
           }

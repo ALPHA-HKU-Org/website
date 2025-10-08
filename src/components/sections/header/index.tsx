@@ -20,7 +20,7 @@ export function Header() {
       onOpenChange={setIsOpen}
     >
       <div className="sticky top-0 z-[var(--z-header)]">
-        <header className="border-border/40 bg-background/80 supports-[backdrop-filter]:bg-background/60 w-full border-b backdrop-blur">
+        <header className="w-full border-b border-border/40 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <div className="container flex h-[var(--header-height)] max-w-full items-center justify-between px-4 lg:px-6">
             <DesktopNav />
 
