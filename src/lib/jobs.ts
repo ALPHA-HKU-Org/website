@@ -18,25 +18,27 @@ export type Job = {
   footnotes?: JobFootnote[];
 };
 
+const COMMON_BENEFITS: JobBenefitItem[] = [
+  { text: "Discounts in book fairs" },
+  {
+    text: "Priority and discounts in joining our exclusive",
+    subPoints: [
+      "Study tours, seminars",
+      "Guest lectures from prestigious scholars",
+      "International youth conference",
+      "Summer opportunities at ALPHA Education",
+      "And many more!",
+    ],
+  },
+];
+
 export const jobs: Job[] = [
   {
     slug: "full-membership",
     name: "Full Membership",
     suitableFor:
       "HKU students who have extremely tight schedules but wish to support our cause for global peace and join our EXCLUSIVE and FRUITFUL international opportunities.",
-    benefits: [
-      { text: "Discounts in book fairs" },
-      {
-        text: "Priority and discounts in joining our exclusive",
-        subPoints: [
-          "Study tours, seminars",
-          "Guest lectures from prestigious scholars",
-          "International youth conference",
-          "Summer opportunities at ALPHA Education",
-          "And many more!",
-        ],
-      },
-    ],
+    benefits: [...COMMON_BENEFITS],
     howToJoin:
       "Full-time undergrad or postgrad HKU students - pay HKD$150 per annum by each September to secure your membership!",
     applyUrl: undefined,
@@ -51,17 +53,7 @@ export const jobs: Job[] = [
       {
         text: "Valuable and unique experience in running an international student initiative for peace based in HK",
       },
-      { text: "Discounts in book fairs" },
-      {
-        text: "Priority and discounts in joining our exclusive",
-        subPoints: [
-          "Study tours, seminars",
-          "Guest lectures from prestigious scholars",
-          "International youth conference",
-          "Summer opportunities at ALPHA Education",
-          "And many more!",
-        ],
-      },
+      ...COMMON_BENEFITS,
     ],
     howToJoin:
       "Full-time undergrad HKU students (preferrably NOT in your final year of study). Submit your CV with other relevant information on request, and pass the 2-stage interview.",
@@ -88,17 +80,7 @@ export const jobs: Job[] = [
           "And so on.",
         ],
       },
-      { text: "Discounts in book fairs" },
-      {
-        text: "Priority and discounts in joining our exclusive*",
-        subPoints: [
-          "Study tours, seminars",
-          "Guest lectures from prestigious scholars",
-          "International youth conference",
-          "Summer opportunities at ALPHA Education",
-          "And many more!",
-        ],
-      },
+      ...COMMON_BENEFITS,
     ],
     howToJoin:
       "Full-time undergrad or postgrad HKU students. Submit your CV with other relevant information on request and pass the interview.",
