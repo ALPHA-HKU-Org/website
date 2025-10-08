@@ -72,7 +72,7 @@ export const jobs: Job[] = [
     slug: "research-fellowship",
     name: "Research Fellowship",
     suitableFor:
-      "Dedicated university students from ANY accredited universities in Hong Kong who have knowledge of WW2 in Asia, war crimes, international humanitarian law, international tribunal of atrocities and any related field, and are interested in writing academic publications and/or hosting workshops for primary/secondary local/international schools in Hong Kong.",
+      "Dedicated HKU students who have knowledge of WW2 in Asia, war crimes, international humanitarian law, international tribunal of atrocities and any related field, and are interested in writing academic publications and/or hosting workshops for primary/secondary local/international schools in Hong Kong.",
     benefits: [
       { text: "Free admission and membership fee" },
       {
@@ -101,15 +101,9 @@ export const jobs: Job[] = [
       },
     ],
     howToJoin:
-      "Full-time undergrad or postgrad students in Hong Kong, submit your CV with other relevant information on request and pass the interview.",
+      "Full-time undergrad or postgrad HKU students. Submit your CV with other relevant information on request and pass the interview.",
     applyUrl:
       "https://docs.google.com/forms/d/e/1FAIpQLScUaIazk_aO7QU77izuS9EDt8nGq89mEzV1G5J8BjIHocjB0w/viewform?usp=header",
-    footnotes: [
-      {
-        marker: "*",
-        text: "HKU students will be prioritized due to university policy, but all researchers from other institutions will also enjoy priority over non-members.",
-      },
-    ],
   },
 ];
 
