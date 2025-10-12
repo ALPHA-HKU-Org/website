@@ -12,8 +12,6 @@ type NavItem = {
   children?: NavItem[];
 };
 
-const donateLink = "mailto:alphahku1213@gmail.com?subject=Donation%20Inquiry";
-
 const mainNav: NavItem[] = [
   { href: "/", label: "Home" },
   {
@@ -31,7 +29,6 @@ const mainNav: NavItem[] = [
     label: "Join Us",
     children: jobs.map((j) => ({ href: `/join-us/${j.slug}`, label: j.name })),
   },
-  { href: donateLink, label: "Donate" },
   {
     href: "/resources",
     label: "Resources",
@@ -56,7 +53,6 @@ export const siteConfig = {
   instagram: "https://www.instagram.com/alpha.hku",
   github: "https://github.com/ALPHA-HKU",
   linkedin: "https://www.linkedin.com/company/alpha-hku/",
-  donate: donateLink,
   parentOrg: "https://www.alphaeducation.org",
   seoImage: "/ALPHA-HKU.png",
   seoImageWidth: 882, // open paint.exe and check seoImage
