@@ -24,6 +24,7 @@ const mainNav: NavItem[] = [
       { href: "/about-us/partners", label: "Partners" },
     ],
   },
+  { href: "/upcoming-event", label: "Upcoming Event" },
   {
     href: "/join-us",
     label: "Join Us",
@@ -39,7 +40,6 @@ const mainNav: NavItem[] = [
  * Routes that should be included in the sitemap but hidden from the header navigation.
  */
 const sitemapOnlyNav: NavItem[] = [
-  { href: "/upcoming-event", label: "Upcoming Event" },
   { href: "/our-work", label: "Our Work" },
   { href: "/blog", label: "Blog" },
   ...resources.map((r) => ({ href: `/resources/${r.slug}`, label: r.title })),
