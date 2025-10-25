@@ -46,7 +46,7 @@ export function MobileNav({ onLinkClick }: { onLinkClick: () => void }) {
       asChild
       className="absolute right-0 left-0 overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down"
     >
-      <nav className="grid gap-4 border-b border-b-border/40 bg-background/95 px-4 py-4 text-sm backdrop-blur supports-[backdrop-filter]:bg-background/80 lg:px-6">
+      <nav className="grid gap-4 border-b border-b-border/40 bg-background/95 px-4 py-4 text-sm backdrop-blur supports-backdrop-filter:bg-background/80 lg:px-6">
         {siteConfig.mainNav.map((link) => (
           <div
             key={link.href}

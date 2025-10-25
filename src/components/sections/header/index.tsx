@@ -19,9 +19,9 @@ export function Header() {
       open={isOpen}
       onOpenChange={setIsOpen}
     >
-      <div className="sticky top-0 z-[var(--z-header)]">
-        <header className="w-full border-b border-border/40 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-          <div className="container flex h-[var(--header-height)] max-w-full items-center justify-between px-4 lg:px-6">
+      <div className="sticky top-0 z-(--z-header)">
+        <header className="w-full border-b border-border/40 bg-background/80 backdrop-blur supports-backdrop-filter:bg-background/60">
+          <div className="container flex h-(--header-height) max-w-full items-center justify-between px-4 lg:px-6">
             <DesktopNav />
 
             {/* Social media icons and theme toggle on the right side of the header */}
