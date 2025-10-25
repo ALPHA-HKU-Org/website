@@ -42,14 +42,12 @@ export function Hero({ slides, heightClassName }: HeroProps) {
         hasMultipleSlides && !isMobile
           ? [
               Autoplay({
-                delay: 5000,
-                stopOnInteraction: true,
-                stopOnMouseEnter: true,
-                stopOnFocusIn: true,
+                delay: 10000,
               }),
             ]
           : []
       }
+      // note: do not update carousel.tsx, newer version removed useDots prop
       useDots={hasMultipleSlides}
     >
       <CarouselContent>
@@ -61,8 +59,8 @@ export function Hero({ slides, heightClassName }: HeroProps) {
                 alt={`Hero slide ${index + 1} image: ${slide.imageSrc}`}
                 fill
                 quality={25}
-                priority={index === 0}
-                fetchPriority={index === 0 ? "high" : "auto"}
+                priority
+                fetchPriority="high"
                 className="object-cover"
               />
               {slide.content ? <div className="absolute inset-0 bg-black/55" /> : null}
