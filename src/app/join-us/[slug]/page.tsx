@@ -2,18 +2,17 @@ import { AnimatedFillButton } from "@/components/primitives/animated-fill-button
 import { PageHeader } from "@/components/primitives/page-header";
 import SmartLink from "@/components/primitives/smart-link";
 import { buildPageMetadata, siteConfig } from "@/lib/config";
-import { findJobBySlug, jobs } from "@/lib/jobs";
-import type { Job } from "@/lib/jobs";
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { jobs } from "@/lib/jobs";
+import type { MDXComponents } from "mdx/types";
+import { type Metadata } from "next";
 
 export async function generateStaticParams() {
-  return jobs.map((j) => ({ slug: j.slug }));
+  return jobs;
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const job = findJobBySlug(slug);
+  const job = jobs.find((j) => j.slug === slug);
   if (!job) return buildPageMetadata("/join-us");
   return buildPageMetadata(`/join-us/${job.slug}`, {
     title: job.name,
@@ -21,29 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   });
 }
 
-function BenefitsSection({ benefits }: { benefits: Job["benefits"] }) {
-  return (
-    <>
-      <h2 className="text-xl font-semibold">Benefits</h2>
-      <ul className="mt-3 list-disc space-y-2 pl-6">
-        {benefits.map((benefit, index) => (
-          <li key={`${benefit.text}-${index}`}>
-            <p>{benefit.text}</p>
-            {benefit.subPoints && benefit.subPoints.length > 0 ? (
-              <ul className="mt-2 list-[circle] space-y-1 pl-6">
-                {benefit.subPoints.map((point, index) => (
-                  <li key={`${point}-${index}`}>{point}</li>
-                ))}
-              </ul>
-            ) : null}
-          </li>
-        ))}
-      </ul>
-    </>
-  );
-}
-
-function ApplyCta({ applyUrl }: { applyUrl: Job["applyUrl"] }) {
+function ApplyCta({ applyUrl }: { applyUrl: string | undefined }) {
   if (!applyUrl) {
     return (
       <p className="text-muted-foreground">
@@ -68,53 +45,43 @@ function ApplyCta({ applyUrl }: { applyUrl: Job["applyUrl"] }) {
   );
 }
 
-function FootnotesSection({ footnotes }: { footnotes?: Job["footnotes"] }) {
-  if (!footnotes || footnotes.length === 0) {
-    return null;
-  }
-  return (
-    <div className="border-t pt-4 text-sm text-muted-foreground">
-      <h3 className="mb-2 font-medium">Notes</h3>
-      <ul className="space-y-1">
-        {footnotes.map((note, index) => (
-          <li key={`${note.marker}-${index}`}>
-            <span className="mr-1">{note.marker}</span>
-            <span>{note.text}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+const mdxOverrides: MDXComponents = {
+  h1: ({ children }) => <PageHeader title={children} />,
+  h2: ({ children }) => (
+    <PageHeader
+      title={children}
+      as="h2"
+      className="text-left"
+      titleClassName="text-xl font-semibold"
+    />
+  ),
+  ul: (props) => (
+    <ul
+      {...props}
+      className="mt-3 list-disc space-y-2 pl-6"
+    />
+  ),
+  a: ({ href = "", children, ...rest }) => (
+    <SmartLink
+      href={href}
+      {...rest}
+      className="text-primary hover:underline"
+    >
+      {children}
+    </SmartLink>
+  ),
+};
 
 export default async function JoinUsJobPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const job = findJobBySlug(slug);
-  if (!job) return notFound();
-
+  const { default: Post, frontmatter } = await import(`@/content/join-us/${slug}.mdx`);
   return (
     <section className="mx-auto max-w-3xl space-y-6">
-      <PageHeader title={job.name + " Opportunity"}>
-        <PageHeader
-          as="h2"
-          title="Suitable for"
-          titleClassName="text-xl font-semibold"
-          className="text-left"
-          descriptionClassName="text-left"
-          description={job.suitableFor}
-        />
-      </PageHeader>
-      <BenefitsSection benefits={job.benefits} />
-      <PageHeader
-        as="h2"
-        title="How to Join"
-        titleClassName="text-xl font-semibold"
-        className="text-left"
-        description={job.howToJoin}
-        size="sm"
-      />
-      <ApplyCta applyUrl={job.applyUrl} />
-      <FootnotesSection footnotes={job.footnotes} />
+      <PageHeader title={`${frontmatter.name} Opportunity`} />
+      <Post components={mdxOverrides} />
+      <ApplyCta applyUrl={frontmatter.applyUrl} />
     </section>
   );
 }
+
+export const dynamicParams = false;
