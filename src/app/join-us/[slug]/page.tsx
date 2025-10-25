@@ -2,16 +2,18 @@ import { AnimatedFillButton } from "@/components/primitives/animated-fill-button
 import { PageHeader } from "@/components/primitives/page-header";
 import SmartLink from "@/components/primitives/smart-link";
 import { buildPageMetadata, siteConfig } from "@/lib/config";
-import { jobs } from "@/lib/jobs";
+import { getJobs } from "@/lib/jobs.server";
 import type { MDXComponents } from "mdx/types";
 import { type Metadata } from "next";
 
 export async function generateStaticParams() {
-  return jobs;
+  const jobs = await getJobs();
+  return jobs.map((job) => ({ slug: job.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  const jobs = await getJobs();
   const job = jobs.find((j) => j.slug === slug);
   if (!job) return buildPageMetadata("/join-us");
   return buildPageMetadata(`/join-us/${job.slug}`, {

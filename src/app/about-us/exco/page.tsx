@@ -1,7 +1,7 @@
 import { ExcoCard } from "@/components/primitives/exco-card";
 import { PageHeader } from "@/components/primitives/page-header";
 import { buildPageMetadata } from "@/lib/config";
-import { excoMembers } from "@/lib/exco";
+import { excoMembers } from "@/lib/data/exco";
 import { Metadata } from "next";
 
 // import Image from "next/image";

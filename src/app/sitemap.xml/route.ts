@@ -1,4 +1,4 @@
-import { siteConfig } from "@/lib/config";
+import { getMainNav, getSitemapOnlyNav } from "@/lib/config.server";
 import { flattenByChildren, isInternalHref } from "@/lib/utils";
 
 // when using SSG (output: 'export'), this is required
@@ -11,11 +11,12 @@ const xmlStart = `<?xml version="1.0" encoding="UTF-8"?>
 `;
 const xmlEnd = `</urlset>`;
 
-export async function GET() {
+export async function GET(): Promise<Response> {
   const rawSiteUrl = process.env.SITE_URL || "";
   const siteUrl = rawSiteUrl.replace(/\/$/, "");
 
-  const allNavs = [...flattenByChildren(siteConfig.mainNav), ...flattenByChildren(siteConfig.sitemapOnlyNav)];
+  const [mainNav, sitemapOnlyNav] = await Promise.all([getMainNav(), getSitemapOnlyNav()]);
+  const allNavs = [...flattenByChildren(mainNav), ...flattenByChildren(sitemapOnlyNav)];
 
   const urlEntries = allNavs
     /* Remove external links */

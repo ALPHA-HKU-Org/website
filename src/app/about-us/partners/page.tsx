@@ -1,7 +1,7 @@
 import { PageHeader } from "@/components/primitives/page-header";
 import { PartnerCard } from "@/components/primitives/partner-card";
 import { buildPageMetadata } from "@/lib/config";
-import { partners } from "@/lib/partners";
+import { partners } from "@/lib/data/partners";
 import { Metadata } from "next";
 
 const description =

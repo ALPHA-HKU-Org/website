@@ -1,6 +1,6 @@
 import { ResourceIframe } from "@/components/sections/resource-iframe";
 import { buildPageMetadata } from "@/lib/config";
-import { findResourceBySlug, resources } from "@/lib/resources";
+import { findResourceBySlug, resources } from "@/lib/data/resources";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 

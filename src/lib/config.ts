@@ -1,18 +1,16 @@
-import { jobs } from "@/lib/jobs";
-import { resources } from "@/lib/resources";
 import { flattenByChildren, isInternalHref } from "@/lib/utils";
 import type { Metadata } from "next";
 
 /**
  * For sitemap XML tags.
  */
-type NavItem = {
+export type NavItem = {
   href: string;
   label: string;
   children?: NavItem[];
 };
 
-const mainNav: NavItem[] = [
+const staticMainNav: NavItem[] = [
   { href: "/", label: "Home" },
   {
     href: "/about-us",
@@ -28,7 +26,7 @@ const mainNav: NavItem[] = [
   {
     href: "/join-us",
     label: "Join Us",
-    children: jobs.map((j) => ({ href: `/join-us/${j.slug}`, label: j.name })),
+    children: [],
   },
   {
     href: "/resources",
@@ -36,13 +34,9 @@ const mainNav: NavItem[] = [
   },
 ];
 
-/**
- * Routes that should be included in the sitemap but hidden from the header navigation.
- */
-const sitemapOnlyNav: NavItem[] = [
+const staticSitemapOnlyNav: NavItem[] = [
   { href: "/our-work", label: "Our Work" },
   { href: "/blog", label: "Blog" },
-  ...resources.map((r) => ({ href: `/resources/${r.slug}`, label: r.title })),
 ];
 
 export const siteConfig = {
@@ -57,9 +51,9 @@ export const siteConfig = {
   seoImage: "/ALPHA-HKU.png",
   seoImageWidth: 882, // open paint.exe and check seoImage
   seoImageHeight: 802,
-  mainNav,
-  sitemapOnlyNav,
-  staticRoutes: flattenByChildren(mainNav)
+  mainNav: staticMainNav,
+  sitemapOnlyNav: staticSitemapOnlyNav,
+  staticRoutes: flattenByChildren(staticMainNav)
     .filter((item) => isInternalHref(item.href))
     .map((item) => (item.href === "/" ? "" : item.href)),
   siteUrl: process.env.SITE_URL?.replace(/\/$/, ""),

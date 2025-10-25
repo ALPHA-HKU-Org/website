@@ -9,11 +9,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { siteConfig } from "@/lib/config";
+import type { NavItem } from "@/lib/config";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-
-type NavItem = (typeof siteConfig.mainNav)[number];
 
 function DesktopMenuItem({ link, onTriggerClick }: { link: NavItem; onTriggerClick: () => void }) {
   const hasChildren = !!link.children?.length;
@@ -56,7 +54,7 @@ function DesktopMenuItem({ link, onTriggerClick }: { link: NavItem; onTriggerCli
   );
 }
 
-export function DesktopNav() {
+export function DesktopNav({ mainNav }: { mainNav: NavItem[] }) {
   const router = useRouter();
 
   return (
@@ -78,7 +76,7 @@ export function DesktopNav() {
       <nav className="hidden lg:flex">
         <NavigationMenu viewport={false}>
           <NavigationMenuList className="gap-0">
-            {siteConfig.mainNav.map((link) => (
+            {mainNav.map((link) => (
               <NavigationMenuItem key={link.href}>
                 <DesktopMenuItem
                   link={link}

@@ -1,7 +1,7 @@
 import { PageHeader } from "@/components/primitives/page-header";
 import { ResourceIframe } from "@/components/sections/resource-iframe";
 import { buildPageMetadata } from "@/lib/config";
-import { resources } from "@/lib/resources";
+import { resources } from "@/lib/data/resources";
 import { Metadata } from "next";
 
 const description =

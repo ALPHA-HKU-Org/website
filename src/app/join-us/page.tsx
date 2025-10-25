@@ -2,14 +2,15 @@ import { AnimatedFillButton } from "@/components/primitives/animated-fill-button
 import { PageHeader } from "@/components/primitives/page-header";
 import { SmartLink } from "@/components/primitives/smart-link";
 import { buildPageMetadata, siteConfig } from "@/lib/config";
-import { jobs } from "@/lib/jobs";
+import { getJobs } from "@/lib/jobs.server";
 import { Metadata } from "next";
 
 const description =
   "Join The Team at ALPHA University Chapter at the University of Hong Kong, an initiative with great potential.";
 export const metadata: Metadata = buildPageMetadata("/join-us", { description });
 
-export default function JoinUs() {
+export default async function JoinUs() {
+  const jobs = await getJobs();
   return (
     <section className="m-auto flex flex-col gap-4 text-center">
       <PageHeader

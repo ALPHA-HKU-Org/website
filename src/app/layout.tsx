@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/primitives/theme-provider";
 import { Footer } from "@/components/sections/footer";
 import { Header } from "@/components/sections/header";
+import { getMainNav } from "@/lib/config.server";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -74,11 +75,13 @@ const jsonLd = {
   sameAs: [siteConfig.instagram, siteConfig.github, siteConfig.linkedin],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const mainNav = await getMainNav();
+
   return (
     <html
       lang="en"
@@ -95,7 +98,7 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
         >
-          <Header />
+          <Header mainNav={mainNav} />
           <main className="min-h-[calc(100vh-var(--header-height))] flex-1">{children}</main>
           <Footer />
         </ThemeProvider>

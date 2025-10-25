@@ -1,6 +1,6 @@
 import { SmartLink } from "@/components/primitives/smart-link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import type { Partner } from "@/lib/partners";
+import type { Partner } from "@/lib/data/partners";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 

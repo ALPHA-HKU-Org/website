@@ -2,7 +2,7 @@
 
 import { SmartLink } from "@/components/primitives/smart-link";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import type { ExcoLink, ExcoMember } from "@/lib/exco";
+import type { ExcoLink, ExcoMember } from "@/lib/data/exco";
 import { cn } from "@/lib/utils";
 import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
 import { Globe, Mail } from "lucide-react";
