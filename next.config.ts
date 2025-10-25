@@ -1,12 +1,19 @@
+import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
+let nextConfig: NextConfig = {
   /* config options here */
   // output: 'export',
   images: {
     qualities: [25, 75],
   },
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
 };
+
+const withMDX = createMDX({
+  // Add markdown plugins here, as desired
+});
+nextConfig = withMDX(nextConfig);
 
 async function initializeConfig() {
   if (process.env.ANALYZE === "true") {
