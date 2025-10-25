@@ -77,8 +77,20 @@ export function Hero({ slides, heightClassName }: HeroProps) {
       </CarouselContent>
       {hasMultipleSlides ? (
         <>
-          <CarouselPrevious className="border-primary/35 bg-transparent text-white" />
-          <CarouselNext className="border-primary/35 bg-transparent text-white" />
+          <CarouselPrevious
+            className={cn(
+              // color styling
+              "border-white/30 bg-foreground/80 text-white backdrop-blur-sm",
+              // move position to bottom for mobile, avoid blocking over text
+              "top-auto bottom-0 md:top-1/2 md:bottom-auto"
+            )}
+          />
+          <CarouselNext
+            className={cn(
+              "border-white/30 bg-foreground/80 text-white backdrop-blur-sm",
+              "top-auto bottom-0 md:top-1/2 md:bottom-auto"
+            )}
+          />
         </>
       ) : null}
     </Carousel>
