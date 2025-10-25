@@ -44,7 +44,7 @@ export function ExcoCard({ member, className }: ExcoCardProps) {
   const flipActiveClass = isFlipped ? "[transform:rotateY(180deg)]" : "";
   return (
     <div
-      className={cn("group cursor-pointer select-none", "[perspective:1000px]", className)}
+      className={cn("group cursor-pointer select-none", "perspective-[1000px]", className)}
       role="button"
       tabIndex={0}
       onClick={() => setIsFlipped((v) => !v)}
@@ -57,8 +57,8 @@ export function ExcoCard({ member, className }: ExcoCardProps) {
     >
       <div
         className={cn(
-          "relative w-full transition-transform duration-500 [transform-style:preserve-3d]", // innerBase
-          "group-hover:[transform:rotateY(180deg)]", // innerHover
+          "relative w-full transition-transform duration-500 transform-3d", // innerBase
+          "group-hover:transform-[rotateY(180deg)]", // innerHover
           flipActiveClass,
           containerHeightClass
         )}
@@ -73,7 +73,7 @@ export function ExcoCard({ member, className }: ExcoCardProps) {
 function FrontFace({ member }: { member: ExcoMember }) {
   const hasPhoto = !!member.photoSrc;
   return (
-    <Card className="absolute inset-0 [backface-visibility:hidden]">
+    <Card className="absolute inset-0 backface-hidden">
       <div className="flex h-full w-full flex-col items-center justify-center p-4 text-center">
         {hasPhoto ? (
           <div className="relative mx-auto h-16 w-16 overflow-hidden rounded-full ring-1 ring-border">
@@ -97,7 +97,7 @@ function BackFace({ member }: { member: ExcoMember }) {
   const hasBio = !!member.bio;
   const hasLinks = !!(member.links && member.links.length > 0);
   return (
-    <Card className="absolute inset-0 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+    <Card className="absolute inset-0 transform-[rotateY(180deg)] backface-hidden">
       <div className="mr-1 ml-1 flex h-full flex-col items-center text-center">
         {!hasBio && !hasLinks ? (
           <p className="m-auto text-muted-foreground">More info coming soon</p>
