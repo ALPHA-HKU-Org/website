@@ -14,7 +14,7 @@ export function AnimatedFillButton({ href, children, size }: AnimatedFillButtonP
       asChild
       variant="outline"
       size={size}
-      className="rounded-full bg-gradient-to-r from-primary to-primary bg-[length:0%_100%] bg-no-repeat text-primary transition-[background-size,color] duration-300 hover:bg-[length:100%_100%] hover:text-primary-foreground"
+      className="rounded-full bg-linear-to-r from-primary to-primary bg-size-[0%_100%] bg-no-repeat text-primary transition-[background-size,color] duration-300 hover:bg-size-[100%_100%] hover:text-primary-foreground"
     >
       <SmartLink href={href}>{children}</SmartLink>
     </Button>
