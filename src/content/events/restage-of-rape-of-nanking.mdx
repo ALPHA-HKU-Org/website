@@ -34,14 +34,14 @@ import { siteConfig } from "@/lib/config";
     }
   />
 
-<PosterToggle
-  posters={[
-    { code: "en", label: "English", src: "/event/2025-12-13/poster.en.png" },
-    { code: "zh", label: "中文", src: "/event/2025-12-13/poster.zh.png" },
-  ]}
-  initialLanguageCode="en"
-  alt={frontmatter.title + " event poster"}
-/>
+  <PosterToggle
+    posters={[
+      { code: "en", label: "English", src: "/event/2025-12-13/poster.en.png" },
+      { code: "zh", label: "中文", src: "/event/2025-12-13/poster.zh.png" },
+    ]}
+    initialLanguageCode="en"
+    alt={frontmatter.title + " event poster"}
+  />
 
   <div className="grid gap-6 sm:grid-cols-3">
     <AnimatedFillButton

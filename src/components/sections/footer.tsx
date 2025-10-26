@@ -12,7 +12,7 @@ export function Footer() {
         <div className="mx-auto max-w-4xl">
           <div className="grid gap-8 text-left md:grid-cols-2 md:justify-items-center">
             <div className="flex flex-col items-center space-y-4 md:items-start">
-              <h3 className="font-semibold">Sitemap</h3>
+              <h2 className="font-semibold">Sitemap</h2>
               <ul className="grid grid-cols-2 gap-x-8 gap-y-2">
                 {siteConfig.mainNav.map((link) => (
                   <li key={link.href}>
@@ -27,7 +27,7 @@ export function Footer() {
               </ul>
             </div>
             <div className="flex flex-col items-center space-y-4">
-              <h3 className="font-semibold">Connect with us!</h3>
+              <h2 className="font-semibold">Connect with us!</h2>
               <SocialLinks
                 variant="footer"
                 className="flex flex-col items-start gap-3"

@@ -53,6 +53,8 @@ export function PosterToggle({ posters, initialLanguageCode, alt, className }: P
         width={0}
         height={0}
         sizes="100vw"
+        loading="lazy"
+        fetchPriority="high"
         className="h-auto w-full"
       />
     </div>

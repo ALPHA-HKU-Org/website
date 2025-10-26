@@ -36,7 +36,7 @@ export function WhatsHappening({ events }: { events: WhatsHappeningEvent[] }) {
               />
             </div>
             <div className="flex flex-1 flex-col space-y-2">
-              <h3 className="text-2xl font-semibold">{event.title}</h3>
+              <h2 className="text-2xl font-semibold">{event.title}</h2>
               <p className="text-muted-foreground">{event.description}</p>
               <div className="mt-auto pt-2">
                 <AnimatedFillButton
