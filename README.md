@@ -65,7 +65,7 @@ This guide is for developers maintaining or contributing to this project.
 │   │   ├── sections/    # Large components that can take up the entire screen
 │   │   └── ui/          # Only put shadcn/ui components here for clarity
 │   ├── lib/             # frequently reused functions and data
-│   ├── content/          # MDX contents, see the subfolders name for more details
+│   ├── content/         # MDX contents, see the subfolders name for more details
 ├── public/              # non-code assets
 ```
 
