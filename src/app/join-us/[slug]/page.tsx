@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const jobs = await getJobs();
-  const job = jobs.find((j) => j.slug === slug);
+  const job = jobs.find((jobItem) => jobItem.slug === slug);
   if (!job) return buildPageMetadata("/join-us");
   return buildPageMetadata(`/join-us/${job.slug}`, {
     title: job.name,
@@ -86,4 +86,5 @@ export default async function JoinUsJobPage({ params }: { params: Promise<{ slug
   );
 }
 
+// Return 404 instead of error
 export const dynamicParams = false;

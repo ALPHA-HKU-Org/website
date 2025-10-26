@@ -12,7 +12,7 @@ export const metadata: Metadata = buildPageMetadata("/join-us", { description })
 export default async function JoinUs() {
   const jobs = await getJobs();
   return (
-    <section className="m-auto flex flex-col gap-4 text-center">
+    <section className="flex h-[calc(100vh-var(--header-height))] flex-col">
       <PageHeader
         title={description}
         description="We provide opportunities for:"
@@ -30,7 +30,7 @@ export default async function JoinUs() {
           </AnimatedFillButton>
         ))}
       </div>
-      <p className="pt-3 text-sm text-muted-foreground md:text-base">
+      <p className="p-7 text-center text-sm text-muted-foreground md:text-base">
         For more information, contact us at{" "}
         <SmartLink
           href={`mailto:${siteConfig.email}`}
