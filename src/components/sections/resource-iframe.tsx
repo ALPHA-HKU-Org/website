@@ -44,7 +44,10 @@ const IFRAME_SIZE = {
 function getIsMobileNow(): boolean {
   if (typeof window === "undefined" || typeof navigator === "undefined") return false;
   // Wix uses UserAgent to detect mobile, so its better for us to stay consistent.
-  const nav = navigator as Navigator & { userAgentData?: { mobile?: boolean }; maxTouchPoints?: number };
+  const nav = navigator as Navigator & {
+    userAgentData?: { mobile?: boolean };
+    maxTouchPoints?: number;
+  };
   if (typeof nav.userAgentData?.mobile === "boolean") {
     if (nav.userAgentData.mobile) return true;
   }
@@ -52,7 +55,8 @@ function getIsMobileNow(): boolean {
   const ua = navigator.userAgent || "";
   const isIpadOs =
     /iPad/i.test(ua) && (navigator as Navigator & { maxTouchPoints?: number }).maxTouchPoints! > 1;
-  const isMobileUa = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Mobi/i.test(ua) && !isIpadOs;
+  const isMobileUa =
+    /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Mobi/i.test(ua) && !isIpadOs;
   if (isMobileUa) return true;
   return window.innerWidth <= 640;
 }
@@ -80,7 +84,9 @@ function useResponsiveScale(targetRef: RefObject<HTMLElement | null>, sourceWidt
 
   const updateScale = useCallback(() => {
     if (!targetRef.current) return;
-    setScale(targetRef.current.clientWidth && sourceWidth ? targetRef.current.clientWidth / sourceWidth : 1);
+    setScale(
+      targetRef.current.clientWidth && sourceWidth ? targetRef.current.clientWidth / sourceWidth : 1
+    );
   }, [targetRef, sourceWidth]);
 
   useEffect(() => {
@@ -135,13 +141,21 @@ export function ResourceIframe({
   const buttonLabel = isInternalLink ? "Open Full Page →" : "Open Original Site →";
 
   return (
-    <Card className={cn("w-full gap-0 md:gap-4", { "rounded-none border-0 p-0": hideHeader }, className)}>
+    <Card
+      className={cn(
+        "w-full gap-0 md:gap-4",
+        { "rounded-none border-0 p-0": hideHeader },
+        className
+      )}
+    >
       {!hideHeader && (
         <CardHeader>
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex flex-col">
               <CardTitle>{title}</CardTitle>
-              {authorLine && <span className="mt-2 text-xs text-muted-foreground">by {authorLine}</span>}
+              {authorLine && (
+                <span className="mt-2 text-xs text-muted-foreground">by {authorLine}</span>
+              )}
               <SmartLink
                 href={websiteUrl}
                 className="text-xs break-all text-muted-foreground underline underline-offset-4"
@@ -187,7 +201,10 @@ export function ResourceIframe({
               transform: `scale(${finalScale})`,
               transformOrigin: "top left",
               width: `${100 / finalScale}%`,
-              height: hideTopPx > 0 ? `calc(${100 / finalScale}% + ${hideTopPx}px)` : `${100 / finalScale}%`,
+              height:
+                hideTopPx > 0
+                  ? `calc(${100 / finalScale}% + ${hideTopPx}px)`
+                  : `${100 / finalScale}%`,
               position: "relative",
               top: hideTopPx > 0 ? `-${Math.max(0, hideTopPx) * finalScale}px` : undefined,
             }}

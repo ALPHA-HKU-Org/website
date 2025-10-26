@@ -36,8 +36,8 @@ export function Footer() {
             </div>
           </div>
           <div className="mt-8 border-t border-border/40 pt-8 text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} ALPHA University Chapter at the University of Hong Kong. All rights
-            reserved.
+            © {new Date().getFullYear()} ALPHA University Chapter at the University of Hong Kong.
+            All rights reserved.
             <br />
             <SmartLink
               href={siteConfig.parentOrg}

@@ -32,7 +32,9 @@ export function PageHeader({
   } as const;
   return (
     <div className={cn("text-center", className)}>
-      <HeadingTag className={cn(sizeStyles[size].title, "font-bold", titleClassName)}>{title}</HeadingTag>
+      <HeadingTag className={cn(sizeStyles[size].title, "font-bold", titleClassName)}>
+        {title}
+      </HeadingTag>
       {description ? (
         <p
           className={cn(

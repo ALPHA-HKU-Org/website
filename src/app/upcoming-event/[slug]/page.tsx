@@ -7,7 +7,11 @@ export async function generateStaticParams() {
   return events.map((event) => ({ slug: event.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
   const allEvents = await getEventSummaries();
   const event = allEvents.find((eventItem) => eventItem.slug === slug);

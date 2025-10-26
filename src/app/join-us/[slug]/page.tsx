@@ -11,7 +11,11 @@ export async function generateStaticParams() {
   return jobs.map((job) => ({ slug: job.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
   const jobs = await getJobs();
   const job = jobs.find((jobItem) => jobItem.slug === slug);

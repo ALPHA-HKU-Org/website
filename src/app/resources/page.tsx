@@ -19,8 +19,9 @@ export default function Resources() {
             {description}
             <br />
             <br />
-            ALPHA-HKU hereby extends our heartfelt gratitude for the author's generosity and we invite all of
-            you to browse through the websites for new insights of the human stories during WW2 in Asia.
+            ALPHA-HKU hereby extends our heartfelt gratitude for the author's generosity and we
+            invite all of you to browse through the websites for new insights of the human stories
+            during WW2 in Asia.
           </>
         }
         className="mb-8"

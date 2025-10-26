@@ -7,7 +7,13 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 import { Menu } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
-export function HeaderClient({ desktopNav, mobileNav }: { desktopNav: ReactNode; mobileNav: ReactNode }) {
+export function HeaderClient({
+  desktopNav,
+  mobileNav,
+}: {
+  desktopNav: ReactNode;
+  mobileNav: ReactNode;
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   // Close the mobile nav when clicking on a link.
@@ -16,7 +22,9 @@ export function HeaderClient({ desktopNav, mobileNav }: { desktopNav: ReactNode;
   // static site generation logic.
   function handleMobileNavClick(clickEvent: React.MouseEvent<HTMLDivElement>): void {
     const clickedElement: HTMLElement = clickEvent.target as HTMLElement;
-    const nearestAnchor: HTMLAnchorElement | null = clickedElement.closest("a") as HTMLAnchorElement | null;
+    const nearestAnchor: HTMLAnchorElement | null = clickedElement.closest(
+      "a"
+    ) as HTMLAnchorElement | null;
 
     // check if the element with this event handler is the parent of the clicked element
     if (nearestAnchor && clickEvent.currentTarget.contains(nearestAnchor)) {

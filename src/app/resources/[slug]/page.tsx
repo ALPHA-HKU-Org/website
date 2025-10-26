@@ -8,7 +8,11 @@ export async function generateStaticParams() {
   return resources.map((r) => ({ slug: r.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
   const resource = findResourceBySlug(slug);
   if (!resource) return buildPageMetadata("/resources");

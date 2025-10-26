@@ -27,10 +27,13 @@ export function ModeToggle() {
   return (
     <div
       onClick={toggleTheme}
-      className={cn("relative flex h-8 w-14 cursor-pointer items-center rounded-full p-1 transition-colors", {
-        "bg-primary": isDarkMode,
-        "bg-muted": !isDarkMode,
-      })}
+      className={cn(
+        "relative flex h-8 w-14 cursor-pointer items-center rounded-full p-1 transition-colors",
+        {
+          "bg-primary": isDarkMode,
+          "bg-muted": !isDarkMode,
+        }
+      )}
     >
       <div
         className={cn(

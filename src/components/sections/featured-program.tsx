@@ -28,7 +28,9 @@ export function FeaturedProgram({
           <div className="space-y-4 md:col-span-3">
             <h2 className="text-3xl font-bold">{heading}</h2>
             <p className="text-muted-foreground">{description}</p>
-            {ctaHref && ctaLabel ? <AnimatedFillButton href={ctaHref}>{ctaLabel}</AnimatedFillButton> : null}
+            {ctaHref && ctaLabel ? (
+              <AnimatedFillButton href={ctaHref}>{ctaLabel}</AnimatedFillButton>
+            ) : null}
           </div>
           <div className="relative aspect-video overflow-hidden rounded-lg md:col-span-2">
             {isVideo ? (

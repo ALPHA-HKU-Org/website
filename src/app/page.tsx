@@ -60,12 +60,13 @@ export default function Home() {
               >
                 ALPHA Education
               </SmartLink>
-              {"'"}s mandate, we are an independent student organization, the largest student initiative in
-              HKU, formed by an installation size of 30 students to spread the message of peace and humanity.
+              {"'"}s mandate, we are an independent student organization, the largest student
+              initiative in HKU, formed by an installation size of 30 students to spread the message
+              of peace and humanity.
               <br />
               <br />
-              This is an initiative with great potential leading to a Global Institute of Peace and Humanity
-              based in HK by 2027.
+              This is an initiative with great potential leading to a Global Institute of Peace and
+              Humanity based in HK by 2027.
             </>
           }
         >

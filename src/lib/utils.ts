@@ -28,5 +28,8 @@ export function isInternalHref(href: string): boolean {
 }
 
 export function flattenByChildren<T extends { children?: T[] }>(items: T[]): T[] {
-  return items.flatMap((item) => [item, ...(item.children ? flattenByChildren(item.children) : [])]);
+  return items.flatMap((item) => [
+    item,
+    ...(item.children ? flattenByChildren(item.children) : []),
+  ]);
 }
