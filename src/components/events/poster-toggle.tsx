@@ -53,7 +53,7 @@ export function PosterToggle({ posters, initialLanguageCode, alt, className }: P
         width={0}
         height={0}
         sizes="100vw"
-        className="h-auto w-full rounded-sm"
+        className="h-auto w-full"
       />
     </div>
   );

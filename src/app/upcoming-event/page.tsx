@@ -29,7 +29,7 @@ function EventCard({ eventSummary }: { eventSummary: EventSummary }) {
           size="sm"
           as="h3"
         />
-        <p className="text-sm text-muted-foreground">{summary}</p>
+        <p className="max-w-[70ch] text-sm text-muted-foreground">{summary}</p>
         <div className="mt-auto">
           <AnimatedFillButton
             href={`/upcoming-event/${slug}`}

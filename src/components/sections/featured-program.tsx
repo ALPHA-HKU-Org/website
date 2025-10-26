@@ -32,7 +32,7 @@ export function FeaturedProgram({
               <AnimatedFillButton href={ctaHref}>{ctaLabel}</AnimatedFillButton>
             ) : null}
           </div>
-          <div className="relative aspect-video overflow-hidden rounded-lg md:col-span-2">
+          <div className="relative aspect-video overflow-hidden rounded-md md:col-span-2">
             {isVideo ? (
               <video
                 src={mediaSrc}

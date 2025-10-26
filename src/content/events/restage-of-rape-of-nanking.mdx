@@ -2,31 +2,42 @@
 slug: "restage-of-rape-of-nanking"
 title: 'Restage of "Rape of Nanking"'
 date: "2025-12-13"
-summary: 'Restage of "Rape of Nanking"'
-cardImageSrc: "/home/Nanjing Massacre Memorial Day Poster.png"
+summary: 'Join us on Saturday, December 13, 2025, for a commemoration of the 1937 Nanjing Massacre. This event marks the 80th anniversary of Japan''s surrender in World War II and the victory in the War of Resistance. To honour and commemorate the victims, we will feature a screening of the award-winning documentary film "Iris Chang and the Nanjing Massacre," produced by ALPHA Education.'
+cardImageSrc: "/event/2025-12-13/poster.en.png"
 ---
 
 import { InfoTable } from "@/components/events/info-table";
 import { PosterToggle } from "@/components/events/poster-toggle";
 import { AnimatedFillButton } from "@/components/primitives/animated-fill-button";
 import { PageHeader } from "@/components/primitives/page-header";
+import { SmartLink } from "@/components/primitives/smart-link";
 import { Hero } from "@/components/sections/hero";
+import { siteConfig } from "@/lib/config";
 
-<Hero
-  slides={[{ imageSrc: frontmatter.cardImageSrc, content: "" }]}
-  heightClassName="h-[20rem]"
-/>
-
-<section className="mx-auto max-w-4xl space-y-6">
+<section className="mx-auto max-w-4xl space-y-10">
   <PageHeader
     title={frontmatter.title}
-    description={frontmatter.summary}
+    descriptionClassName="text-primary mt-4"
+    description={
+      <>
+        Join us on Saturday, December 13, 2025, for a commemoration of the 1937 Nanjing Massacre.
+        This event marks the 80th anniversary of Japan's surrender in World War II and the victory in the War of Resistance.
+        To honour and commemorate the victims, we will feature a screening of the award-winning documentary film
+        <i>“Iris Chang and the Nanjing Massacre,”</i> produced by{" "}
+        <SmartLink
+          href={siteConfig.parentOrg}
+          className="hover:underline"
+        >
+          ALPHA Education.
+        </SmartLink>
+      </>
+    }
   />
 
 <PosterToggle
   posters={[
-    { code: "en", label: "English", src: frontmatter.cardImageSrc },
-    { code: "zh", label: "中文", src: frontmatter.cardImageSrc },
+    { code: "en", label: "English", src: "/event/2025-12-13/poster.en.png" },
+    { code: "zh", label: "中文", src: "/event/2025-12-13/poster.zh.png" },
   ]}
   initialLanguageCode="en"
   alt={frontmatter.title + " event poster"}
