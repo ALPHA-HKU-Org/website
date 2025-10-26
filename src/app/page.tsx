@@ -43,8 +43,8 @@ export default function Home() {
         mediaSrc="/ALPHA-HKU.png"
         mediaAlt="ALPHA HKU Logo"
         isVideo={false}
-        ctaHref="/upcoming-event"
-        ctaLabel="More Details Coming Soon"
+        ctaHref="/upcoming-event/restage-of-rape-of-nanking"
+        ctaLabel="More Details"
       />
       <section className="mx-auto text-center">
         <PageHeader
