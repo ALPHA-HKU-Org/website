@@ -13,7 +13,7 @@ function EventCard({ eventSummary }: { eventSummary: EventSummary }) {
   const { slug, title, summary, date, cardImageSrc } = eventSummary;
   return (
     <article className="flex flex-col overflow-hidden rounded-xl border shadow-sm sm:flex-row">
-      <div className="relative min-h-[40vh] sm:w-64">
+      <div className="relative sm:w-64">
         <Image
           src={cardImageSrc ?? ""}
           alt={`${title} event card image`}
