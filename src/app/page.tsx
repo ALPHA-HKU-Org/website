@@ -1,4 +1,3 @@
-import { description } from "@/app/layout";
 import { AnimatedFillButton } from "@/components/primitives/animated-fill-button";
 import { PageHeader } from "@/components/primitives/page-header";
 import { SmartLink } from "@/components/primitives/smart-link";
@@ -9,7 +8,6 @@ import { buildPageMetadata, siteConfig } from "@/lib/config";
 import { Metadata } from "next";
 
 export const metadata: Metadata = buildPageMetadata("/", {
-  description,
   title: "ALPHA University Chapter at the University of Hong Kong",
 });
 

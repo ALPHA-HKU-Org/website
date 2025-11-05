@@ -12,8 +12,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const siteUrl = process.env.SITE_URL;
 
 const title = "ALPHA University Chapter at the University of Hong Kong";
-export const description =
-  "The first and only global student initiative based in Hong Kong for constructive peace and humanity. First international student chapter of ALPHA Education.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl!),
@@ -21,11 +19,11 @@ export const metadata: Metadata = {
     default: title,
     template: `%s - ${title}`,
   },
-  description: description,
+  description: siteConfig.description,
   manifest: "/favicon/site.webmanifest",
   openGraph: {
     title: title,
-    description: description,
+    description: siteConfig.description,
     url: siteUrl!,
     siteName: title,
     images: [
@@ -42,7 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: title,
-    description: description,
+    description: siteConfig.description,
     images: [siteConfig.seoImage],
   },
   icons: {

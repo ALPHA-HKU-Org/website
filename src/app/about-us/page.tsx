@@ -1,11 +1,10 @@
-import { description } from "@/app/layout";
 import { AnimatedFillButton } from "@/components/primitives/animated-fill-button";
 import { PageHeader } from "@/components/primitives/page-header";
 import { buildPageMetadata, siteConfig } from "@/lib/config";
 import { Metadata } from "next";
 
 const url = "/about-us";
-export const metadata: Metadata = buildPageMetadata(url, { description });
+export const metadata: Metadata = buildPageMetadata(url);
 
 export default function AboutUs() {
   const aboutSection = siteConfig.mainNav.find((item) => item.href === url);
