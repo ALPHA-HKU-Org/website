@@ -3,7 +3,7 @@ slug: "restage-of-rape-of-nanking"
 title: 'Restage of "Rape of Nanking"'
 date: "2025-12-13"
 summary: 'Join us on Saturday, December 13, 2025, for a commemoration of the 1937 Nanjing Massacre. This event marks the 80th anniversary of Japan''s surrender in World War II and the victory in the War of Resistance. To honour and commemorate the victims, we will feature a screening of the award-winning documentary film "Iris Chang: The Rape of Nanking", produced by ALPHA Education.'
-cardImageSrc: "/event/2025-12-13/poster.en.png"
+cardImageSrc: "/event/2025-12-13/poster.en.webp"
 ---
 
 import { InfoTable } from "@/components/events/info-table";
@@ -36,8 +36,8 @@ import { siteConfig } from "@/lib/config";
 
 <PosterToggle
   posters={[
-    { code: "en", label: "English", src: "/event/2025-12-13/poster.en.png" },
-    { code: "zh", label: "中文", src: "/event/2025-12-13/poster.zh.png" },
+    { code: "en", label: "English", src: "/event/2025-12-13/poster.en.webp" },
+    { code: "zh", label: "中文", src: "/event/2025-12-13/poster.zh.webp" },
   ]}
   initialLanguageCode="en"
   alt={frontmatter.title + " event poster"}
@@ -46,8 +46,23 @@ import { siteConfig } from "@/lib/config";
   <div className="grid gap-6 sm:grid-cols-3">
     <InfoTable
       rows={[
-        ["Location", ""],
-        ["Email", ""],
+        ["Location", "Room CYCP1, Level LG1, Chong Yuet Ming Chemistry Building, Main Campus, HKU, Pokfulam"],
+        ["Email",
+          <SmartLink
+            href="mailto:hkugaeo@gmail.com"
+            className="hover:underline"
+          >
+            hkugaeo@gmail.com
+          </SmartLink>
+        ],
+        ["URL",
+          <SmartLink
+            href="https://forms.gle/XnPD3kgAM9VHFR9j6"
+            className="hover:underline"
+          >
+            https://forms.gle/XnPD3kgAM9VHFR9j6
+          </SmartLink>
+        ],
       ]}
       className="col-span-full sm:col-span-2"
     />
