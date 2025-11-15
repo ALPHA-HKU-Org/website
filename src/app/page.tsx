@@ -38,7 +38,7 @@ export default function Home() {
       <FeaturedProgram
         heading={'Restage of "Rape of Nanking"'}
         description="Join us on Saturday, December 13, 2025, for a commemoration of the 1937 Nanjing Massacre. This event marks the 80th anniversary of Japan's surrender in World War II and the victory in the War of Resistance."
-        mediaSrc="/event/2025-12-13/poster.en.png"
+        mediaSrc="/event/2025-12-13/poster.en.webp"
         mediaAlt="Restage of 'Rape of Nanking' event poster"
         isVideo={false}
         ctaHref="/upcoming-event/restage-of-rape-of-nanking"
