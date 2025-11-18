@@ -45,7 +45,7 @@
     "@next/bundle-analyzer": "~16.0.3",
     "@next/eslint-plugin-next": "~16.0.3",
     "@tailwindcss/postcss": "~4.1.17",
-    "@types/node": "~24.9.2",
+    "@types/node": "~24.10.1",
     "@types/react": "~19.2.5",
     "@types/react-dom": "~19.2.3",
     "eslint": "~9.38.0",
