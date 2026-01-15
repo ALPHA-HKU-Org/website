@@ -120,9 +120,6 @@
 }
 
 @layer base {
-  html:not(.dark) {
-    filter: grayscale(100%);
-  }
   body {
     @apply bg-background text-foreground flex flex-col min-h-screen text-base transition-colors duration-300;
   }
