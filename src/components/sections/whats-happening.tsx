@@ -19,7 +19,7 @@ export function WhatsHappening({ events }: { events: WhatsHappeningEvent[] }) {
         className={cn(
           "mx-auto grid gap-8",
           ["md:grid-cols-1", "md:grid-cols-2", "md:grid-cols-3"][Math.min(events.length, 3) - 1],
-          ["max-w-2xl", "max-w-4xl", "max-w-6xl"][Math.min(events.length, 3) - 1]
+          ["max-w-fit", "max-w-4xl", "max-w-6xl"][Math.min(events.length, 3) - 1]
         )}
       >
         {events.map((event, index) => (
