@@ -43,6 +43,9 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [siteConfig.seoImage],
   },
+  verification: {
+    google: "SOIrNtvGMEz4-4bwN50Cf6wTEIn0iFZOphvov11aGS4",
+  },
   icons: {
     icon: [
       { url: "/favicon.ico" },

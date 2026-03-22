@@ -48,3 +48,6 @@ commit.txt
 
 # folder for storing testing files
 .testing
+# next-agents-md
+.next-docs/
+AGENTS.md
